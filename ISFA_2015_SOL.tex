@@ -1,0 +1,858 @@
+\documentclass[12pt, oneside]{article}
+\usepackage[latin1]{inputenc}
+%\usepackage[Glenn]{fncychap}
+\usepackage[T1]{fontenc} %zazegouza
+\usepackage[top= 1.5cm, left= 2cm, bottom=1.5cm, right=2cm]{geometry}
+% \geometry{margin=2in} % for example, change the margins to 2 inches all round
+% \geometry{landscape} % set up the page for landscape
+%   read geometry.pdf for detailed page layout information
+\usepackage{graphicx} % support the \includegraphics command and options
+\usepackage{color}
+\usepackage{xcolor}
+\usepackage{lettrine}
+\usepackage{multirow}
+\usepackage{multicol}
+\usepackage{fancybox}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{caption}
+\usepackage{pdfpages}
+\usepackage{slashbox}
+\usepackage{acronym}
+\usepackage[left,modulo]{lineno}
+\modulolinenumbers[1]
+
+
+\usepackage{times}
+\usepackage{lmodern}
+%%\usepackage{anttor}
+%\usepackage{arev}
+%\usepackage{ccfonts}
+%\usepackage{cmbright}
+\usepackage{fourier}
+%\usepackage{fouriernc}
+%\usepackage{gfsartemisia}
+%\usepackage{iwona}
+%\usepackage{kpfonts} %%
+%\usepackage{kurier}
+%\usepackage{mathptmx}
+
+
+
+
+%\ggraphy{}
+%\usepackage{csquotes}
+
+
+% \usepackage[parfill]{parskip} % Activate to begin paragraphs with an empty line rather than an indent
+
+%%% PACKAGES
+\usepackage{booktabs} % for much better looking tables
+\usepackage{array} % for better arrays (eg matrices) in maths
+
+\usepackage{subfig} % make it possible to include more than one captioned figure/table in a single float
+\usepackage{hyperref}
+\hypersetup{
+colorlinks=true, %colorise les liens
+breaklinks=true, %permet le retour à la ligne dans les liens trop longs
+urlcolor= blue, %couleur des hyperliens
+linkcolor= blue, %couleur des liens internes
+bookmarks=true, %créé des signets pour Acrobat
+bookmarksopen=true,
+%si les signets Acrobat sont créés,
+%les afficher complètement.
+pdftitle={Une évaluation des coûts de la petite monnaie: une approche par la programmation dynamique combinatoire}, %informations apparaissant dans
+pdfauthor={Goué},
+%dans les informations du document
+pdfsubject={petite monnaie}
+%sous Acrobat.
+}
+\usepackage[francais]{babel}%, english
+\usepackage{fancyhdr}
+\addto\captionsfrench{
+\renewcommand{\partname}{Partie}
+\renewcommand{\thepart}{\Roman{part}}
+}
+%\pagestyle{fancy}
+\usepackage{shorttoc}
+\setcounter{secnumdepth}{4}
+\setcounter{tocdepth}{3}
+\let\cleardoublepage\clearpage
+\usepackage{titlesec}
+\usepackage{shorttoc}
+\usepackage{lscape}
+\usepackage{setspace}
+\usepackage{multirow}
+\usepackage{colortbl}
+\usepackage{shorttoc}
+\usepackage[nohints]{minitoc}
+\usepackage{tabularx}
+\onehalfspacing %\onehalfspacing, singlespacing
+\usepackage{threeparttable}
+\addto \captionsfrench {
+\renewcommand {\figurename}{Figure}
+\renewcommand {\tablename}{Tableau}
+}
+\setcounter{secnumdepth}{3}
+%\usepackage{ctable}
+%\newcounter{savefootnote
+\pagestyle{fancy}
+\lhead{\scriptsize   ABIDJAN - 04/02/2017}
+\rhead{\scriptsize  \it mail:goueulricj07@gmail.com}
+\lfoot{\scriptsize   Ulrich GOUE}
+\rfoot{-\thepage-}
+\cfoot{}
+\renewcommand{\footrulewidth}{1.5pt}
+\renewcommand{\headrulewidth}{1.5pt}
+\fancypagestyle{plain}{
+\fancyfoot[R]{-\thepage-}
+\fancyfoot[L]{\footnotesize  Ulrich GOUE}
+}
+ \makeatletter
+ \@addtoreset{chapter}{part}
+\makeatother
+ \usepackage{minitoc}
+ \mtcselectlanguage{french}
+ 
+ \begin{document}
+  %\includepdf{page.pdf}
+  \begin{spacing}{1.5}
+%%%%%%%%%%%%%%%%%%%%%%%% WRITE INSIDE  WRITE INSIDE   WRITE INSIDE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  
+  %\frontmatter
+\section{Épreuve de Mathématiques}
+\subsection{Partie I: Une distance entre lois de variables aléatoires} 
+\textbf{Q1a.} Vu que $ X $ et $ Y $ sont des variables aléatoires à valeurs dans $ \mathbb{N} $, les séries $ \sum_{n}\mathbf{P}([X=n]) $ et $ \sum_{n}\mathbf{P}([Y=n]) $ sont convergentes (En effet $ \sum_{n}^{+\infty}\mathbf{P}([X=n])=\sum_{n}^{+\infty}\mathbf{P}([Y=n])=1 $.) Maintenant comme:
+$$ |\mathbf{P}([X=n])-\mathbf{P}([Y=n])|\leq \mathbf{P}([X=n])+\mathbf{P}([Y=n]) $$
+Il est alors clair que $ \sum_{n}|\mathbf{P}([X=n])-\mathbf{P}([Y=n])| $ converge.
+\\ \textbf{Q1b.} Caractérisons $ d(X,Y) $:
+\begin{eqnarray*}
+d(X,Y)=0
+&\Leftrightarrow &  \sum_{n}^{+\infty}|\mathbf{P}([X=n])-\mathbf{P}([Y=n])|=0 \\
+&\Leftrightarrow & \mathbf{P}([X=n])=\mathbf{P}([Y=n]), \forall n \in \mathbb{N}
+\end{eqnarray*}
+En d'autres termes $ d(X,Y)=0 $ ssi $ X $ et $ Y $ ont la même loi. Cependant dire que $ X $ et $ Y $ ont la même loi ne veut pas dire qu'elles sont égales. Pour s'en convaincre prenons $ N \in \mathbb{N} $ et considérons les variables aléatoires $ X $ et $ Y $ telles que $ X \sim \mathcal{B}(N,\frac{1}{2}) $ et $ Y=N-X $. On peut aisément voir que $ Y \sim \mathcal{B}(N,\frac{1}{2}) $.
+$$ \mathbf{P}([Y=k])= \mathbf{P}([X=N-k])=\frac{C_{N}^{N-k}}{2^{N}}=\frac{C_{N}^{k}}{2^{N}}=\mathbf{P}([X=k])$$ 
+Dans cet exemple ci $ X $ et $ Y $ ont la même sans être égales. En effet $ X=Y $ est équivalent à $ X=Y=\frac{N}{2} $; chose contradictoire!
+\\ \textbf{Q1c.} En appliquant l'inégalité triangulaire:
+$$ |\mathbf{P}([X=n])-\mathbf{P}([Z=n])|\leq |\mathbf{P}([X=n])-\mathbf{P}([Y=n])|+|\mathbf{P}([Y=n])-\mathbf{P}([Z=n])| $$
+En sommant cette inégalité sur $ \mathbb{N} $ on obtient bien:
+$$ d(X,Z)\leq d(X,Y)+d(Y,Z) $$
+\textbf{Q2a.} Par définition des ensembles $ A $, il vient que: $ |\mathbf{P}([X=k])-\mathbf{P}([Y=k])|=\mathbf{P}([X=k])-\mathbf{P}([Y=k]) $ pour $ k \in A $. Donc en sommant sur $ k $ dans $ A $, il vient que $ \mathbf{P}([X\in A])\geq \mathbf{P}([Y\in A]) $. On a également $ |\mathbf{P}([X=n])-\mathbf{P}([Y=n])|=\mathbf{P}([Y=n])-\mathbf{P}([X=n]) $ pour $ n \in A^{c} $\footnote{Pareillement $ \mathbf{P}([Y\in A^{c}])\geq \mathbf{P}([X\in A^{c}]) $}.  On a aussi $ \mathbf{P}([X\in A^{c}])=1-\mathbf{P}([X\in A]) $.
+%Pour $ Z \in \left\lbrace A,B\right\rbrace  $ à valeurs dans $ \mathbb{N} $: $ \mathbf{P}([Z\in A^{c}])=1-\mathbf{P}([Z\in A]) $.
+%\begin{eqnarray*}
+%\sum_{k \in A^{c}}\mathbf{P}([Z=k])
+%&=& \left( \sum_{k \in A^{c}}\mathbf{P}([Z=k])+\sum_{k \in A}\mathbf{P}([Z=k])\right) -\sum_{k \in A}\mathbf{P}([Z=k])\\
+%&=& \sum_{n}^{+\infty}\mathbf{P}([Z=n])-\sum_{k \in A}\mathbf{P}([Z=k]) \\
+%&=& 1-\sum_{k \in A}\mathbf{P}([Z=k])
+%\end{eqnarray*}
+A présent nous répondons à la question:
+\begin{eqnarray*}
+d(X,Y)
+&=&\frac{1}{2}\sum_{n}^{+\infty}|\mathbf{P}([X=n])-\mathbf{P}([Y=n])| \\
+&=& \frac{1}{2}\sum_{n \in A}|\mathbf{P}([X=n])-\mathbf{P}([Y=n])|+\frac{1}{2}\sum_{n \in A^{c}}|\mathbf{P}([X=n])-\mathbf{P}([Y=n])| \\
+&=& \frac{1}{2}\sum_{n \in A}\mathbf{P}([X=n])-\mathbf{P}([Y=n])-\frac{1}{2}\sum_{n \in A^{c}}\mathbf{P}([X=n])-\mathbf{P}([Y=n]) \\
+&=& \frac{\mathbf{P}([X\in A])-\mathbf{P}([Y\in A])}{2}-\frac{\mathbf{P}([X\in A^{c}])-\mathbf{P}([Y\in A^{c}])}{2} \\
+&=& \frac{\mathbf{P}([X\in A])-\mathbf{P}([Y\in A])}{2}-\frac{1-\mathbf{P}([X\in A])-1+\mathbf{P}([Y\in A])}{2} \\
+&=& \mathbf{P}([X\in A])-\mathbf{P}([Y\in A]) \\
+&=& |\mathbf{P}([X\in A])-\mathbf{P}([Y\in A])|
+\end{eqnarray*}
+\textbf{Q2b.}Par définition de $ A $, en prenant $ U $, $ V $ respectivement des parties de $ A $ et $ A^{c} $ il vient alors que $ \mathbf{P}([X\in U])\geq \mathbf{P}([Y\in U]) $ et $ \mathbf{P}([Y\in V])\geq \mathbf{P}([X\in V]) $. En outre si $ U' $ est telle que $ U\subset U' \subset A $ alors:
+\begin{eqnarray*}
+\mathbf{P}([X\in U'])-\mathbf{P}([Y\in U'])
+&=& (\mathbf{P}([X\in U])-\mathbf{P}([Y\in U]))+\underbrace{(\mathbf{P}([X\in U'\setminus U])-\mathbf{P}([Y\in U'\setminus U]))}_{\geq 0}\\
+&\geq & \mathbf{P}([X\in U])-\mathbf{P}([Y\in U])
+\end{eqnarray*} 
+Pareillement pour $ V' $ est une autre partie de $ A^{c} $ telle que $ V\subset V' $ alors
+$$ \mathbf{P}([Y\in V'])-\mathbf{P}([X\in V'])\geq \mathbf{P}([Y\in V])-\mathbf{P}([X\in V]) $$
+A présent nous sommes suffisamment armés pour achever cette question:
+\begin{eqnarray*}
+|\mathbf{P}([X\in B])-\mathbf{P}([Y\in B])|
+&=& |(\mathbf{P}([X\in B\cap A])-\mathbf{P}([Y\in B\cap A]))-(\mathbf{P}([Y\in B\cap A^{c}])-\mathbf{P}([X\in B\cap A^{c}]))|\\
+&\leq & \max\left(\mathbf{P}([X\in B\cap A])-\mathbf{P}([Y\in B\cap A]),\mathbf{P}([Y\in B\cap A^{c}])-\mathbf{P}([X\in B\cap A^{c}]) \right)\\ 
+&\leq & \max\left(\mathbf{P}([X\in A])-\mathbf{P}([Y\in A]),\mathbf{P}([Y\in A^{c}])-\mathbf{P}([X\in  A^{c}]) \right) \\
+&= & \max\left(\mathbf{P}([X\in A])-\mathbf{P}([Y\in A]),1-\mathbf{P}([Y\in A])-1+\mathbf{P}([X\in  A]) \right) \\
+&=&  \max\left(\mathbf{P}([X\in A])-\mathbf{P}([Y\in A]),\mathbf{P}([X\in  A])+\mathbf{P}([Y\in A]) \right) \\
+&=& \mathbf{P}([X\in A])-\mathbf{P}([Y\in A]) \\
+&=& d(X,Y)
+\end{eqnarray*}
+\textbf{Q3a.} La fonction $ f:x\mapsto \mbox{e}^{x} $ étant convexe elle est au dessus de ses tangentes particulièrement la tangente au point $ x=0 $:
+\begin{eqnarray*}
+\forall x \in \mathbb{R}, \mbox{e}^{x}
+&\geq & f(0)+f'(0)(x-0)\\
+&=& 1+1\times (x-0) \\
+&=& 1+x
+\end{eqnarray*}
+(Avec égalité ssi $ x=0 $).
+\\ \textbf{Q3b.} Pour tout entier $ k\geq 2 $, on a: $ \mathbf{P}([X=k])=0<\mathbf{P}([Y=k]) $. Donc dans notre cas $A \subset \left\lbrace 0,1\right\rbrace  $. Maintenant on sait que $ \mathbf{P}([X=0])=1-p $, $ \mathbf{P}([Y=0])=\mbox{e}^{-p} $ puis $ \mathbf{P}([X=1])=p $ et $ \mathbf{P}([Y=1])=p\mbox{e}^{-p} $.  
+\begin{itemize}
+\item[\textit{*Cas 1}:] Si $ p=0 $
+\\on voit que toutes ces probabilités sont égales et $A= \left\lbrace 0,1\right\rbrace  $ donc
+\\$ d(X,Y)=\mathbf{P}([X\in A])-\mathbf{P}([Y\in A])=0=p(1-\mbox{e}^{-p}) $
+\item[*Cas 2:] Si $ p \in \left] 0,1\right]  $
+\\ Dans ce cas on a bien $ \mbox{e}^{-p}>1-p $ et $ p>p\mbox{e}^{-p} $ donc $ A=\left\lbrace 1\right\rbrace  $ et 
+\\$ d(X,Y)=\mathbf{P}([X= 1])-\mathbf{P}([Y= 1])=p-p\mbox{e}^{-p}=p(1-\mbox{e}^{-p}) $
+\end{itemize}
+Donc dans tous les cas on a bien $ d(X,Y)=p(1-\mbox{e}^{-p}) $. De ce qui précède:
+\vspace{-0.5cm}
+$$ d(X,Y)=p(1-\mbox{e}^{-p})\leq p(1-(1-p))=p^{2}. $$
+\textbf{Résultat Intermédiaire:} Avant d'aborder la suite, nous allons montrer un résultat qui nous sera très utile aux questions Q4 et Q5.
+\\ \textbf{Proposition} Soit $ X $ une variable aléatoire à valeurs entières positives. On définit la matrice $ M_{X} $ de $ \mathcal{M}_{N}(\mathbb{R}) $ de terme général $ M_{X,ij}=\mathbb{P}([X=j-i]) $. Alors pour toute autre variable aléatoire $ Y $ à valeurs dans $\mathbb{N}$:$ M_{X}M_{Y}=M_{X+Y} $
+\\ \textbf{Preuve:} On utilise simplement la définition du produit matriciel:
+\begin{eqnarray*}
+M_{X+Y,ij}
+&=& \sum_{k=1}^{N}M_{X,ik}M_{X,kj}\\
+&=& \sum_{k=1}^{N} \mathbb{P}([X=k-i])\mathbb{P}([Y=j-k])\\
+&=& \sum_{k=i}^{j} \mathbb{P}([X=k-i])\mathbb{P}([Y=j-k])\\
+&=& \sum_{k=0}^{j-i} \mathbb{P}([X=k])\mathbb{P}([Y=j-i-k])\\
+&=& \mathbb{P}([X+Y=j-i])
+\end{eqnarray*}
+\textbf{Corollaire}: Soient $ X_{1},\cdots,X_{n} $ des variables aléatoires à valeurs dans $ \mathbb{N} $ et  indépendantes alors:
+\vspace{-0.5cm}
+$$ M_{\sum_{i=1}^{n}X_{i}}=\prod_{i=1}^{n}M_{X_{i}} $$
+\textbf{Preuve:} Elle découle d'une récurrence immédiate. Supposant la formule vraie pour $ n-1 $:
+\begin{eqnarray*}
+M_{\sum_{i=1}^{n}X_{i}}
+&=&M_{X_{1}+\sum_{i=2}^{n}X_{i}}\\
+&=& M_{X_{1}}M_{\sum_{i=2}^{n}X_{i}} \\
+&=& M_{X_{1}}\prod_{i=2}^{n}M_{X_{i}} \\
+&=& \prod_{i=1}^{n}M_{X_{i}}
+\end{eqnarray*}
+\\ \textbf{Q4a.} En remarquant que $ P_{i}=M_{X_{i}} $, d'après la proposition ci-dessus on a $ P_{1}P_{2}=M_{X_{1}+X_{2}} $. Ainsi sa première ligne contient les éléments $ (\mathbf{P}([X_{1}+X_{2}=j-1])_{1\leq j \leq N} $. Comme $ X_{1}+X_{2} $ charge que les points 0,1,2; plus explicitement la première ligne est constituée de $ \mathbf{P}([X_{1}+X_{2}=0] $, $\mathbf{P}([X_{1}+X_{2}=1]$, $\mathbf{P}([X_{1}+X_{2}=2]$ suivi de termes nuls.
+\\ \textbf{Q4b.} Pareillement $ \prod_{k=1}^{n}P_{k}=\prod_{k=1}^{n}M_{X_{k}}=M_{\sum_{k=1}^{n}X_{k}}=M_{U_{n}} $. Ainsi sa première ligne contient les éléments $ (\mathbf{P}(U_{n}=j-1])_{1\leq j \leq N} $. Comme $ U_{n} $ charge que les points $0,1,\ldots,n$; plus explicitement la première ligne est constituée de $ \mathbf{P}(U_{n}=0] $, $\mathbf{P}([U_{n}=1]\ldots, \mathbf{P}([U_{n}=n]$ suivi de termes nuls. 
+\\ \textbf{Q5a.} On applique la formule du binôme de Newton tout en manipulant habilement l'opérateur $ \sum $
+\begin{eqnarray*}
+\sum_{k=0}^{r}\frac{Q_{i}^{k}}{k!}
+&=& \sum_{K=0}^{r}\frac{p_{i}^{K}(R-I)^{K}}{K!} \\
+&=& \sum_{K=0}^{r}\frac{p_{i}^{K}}{K!}\sum_{j=0}^{K}(-1)^{K-j}C_{K}^{j}R^{j}\\
+&=& \sum_{K=0}^{r}\frac{p_{i}^{K}}{K!}\sum_{j=0}^{K}(-1)^{K-j}\frac{K!}{j!(K-j)!}R^{j} \\
+&=& \sum_{K=0}^{r}p_{i}^{K}\sum_{j=0}^{K}(-1)^{K-j}\frac{1}{j!(K-j)!}R^{j} \\
+&=& \sum_{j=0}^{r}\sum_{K=j}^{r}(-1)^{K-j}\frac{1}{j!(K-j)!}p_{i}^{K}R^{j}  \\
+&=& \sum_{j=0}^{r}\sum_{k=0}^{r-j}(-1)^{k}\frac{1}{j!k!}p_{i}^{k+j}R^{j}\quad (K=k+j) \\
+&=& \sum_{j=0}^{r}\frac{p_{i}^{j}}{j!}\left( \sum_{k=0}^{r-j}\frac{(-1)^{k}p_{i}^{k}}{k!}\right) R^{j}
+\end{eqnarray*}
+\textbf{Q5b.} $ R $ est une matrice de Jordan, il est alors facile de voir qu'elle est nilpotente d'ordre N. Ceci implique
+\begin{eqnarray*}
+\forall r\geq N,\sum_{k=0}^{r}\frac{Q_{i}^{k}}{k!}
+&=& \sum_{j=0}^{r}\frac{p_{i}^{j}}{j!}\left( \sum_{k=0}^{r-j}\frac{(-1)^{k}p_{i}^{k}}{k!}\right) R^{j} \\
+&=&\sum_{j=0}^{N-1}\frac{p_{i}^{j}}{j!}\left( \sum_{k=0}^{r-j}\frac{(-1)^{k}p_{i}^{k}}{k!}\right) R^{j}
+\end{eqnarray*}
+Et encore...
+\vspace{-0.4cm}
+\begin{eqnarray*}
+\exp Q_{i}
+&=& \lim_{r\rightarrow +\infty}\sum_{k=0}^{r}\frac{Q_{i}^{k}}{k!} \\
+&=& \lim_{r\rightarrow +\infty}\sum_{j=0}^{N-1}\frac{p_{i}^{j}}{j!}\left( \sum_{k=0}^{r-j}\frac{(-1)^{k}p_{i}^{k}}{k!}\right) R^{j} \\
+&=&  \sum_{j=0}^{N-1}\frac{p_{i}^{j}}{j!}\lim_{r\rightarrow +\infty}\left( \sum_{k=0}^{r-j}\frac{(-1)^{k}p_{i}^{k}}{k!}\right) R^{j}\\
+&=&  \sum_{j=0}^{N-1}\frac{p_{i}^{j}\mbox{e}^{-p_{i}}}{j!}R^{j}
+\end{eqnarray*}
+Mais pour faire la jonction avec la question suivante on prouve maintenant que $ M_{Y_{i}}=\exp Q_{i} $. Mais il est facile de le terme général de $ R^{j} $ est $ R^{j}_{kl}=\mathbf{1}_{[l-k=j]} $. Le terme général $ t_{i,kl} $ de $ \exp Q_{i} $ est alors:
+\vspace{-0.4cm}
+\begin{eqnarray*}
+t_{i,kl}
+&=& \sum_{j=0}^{N-1}\frac{p_{i}^{j}\mbox{e}^{-p_{i}}}{j!}\mathbf{1}_{[l-k=j]} \\
+&=& \frac{p_{i}^{l-k}\mbox{e}^{-p_{i}}}{(l-k)!}\mathbf{1}_{[l-k\geq 0]} \\
+&=& \mathbf{P}([Y_{i}=l-k])
+\end{eqnarray*}
+%C.Q.F.D.
+\\ \textbf{Q5c.} D'après la proposition ci-dessus on a $ \prod_{k=1}^{n}\exp Q_{k}=\prod_{k=1}^{n}M_{Y_{k}}=M_{\sum_{k=1}^{n}Y_{k}}=M_{V_{n}} $. Ainsi sa première ligne contient les éléments $ (\mathbf{P}(V_{n}=j-1])_{1\leq j \leq N} $. Comme $ V_{n} $ charge tous les entiers; plus explicitement la première ligne est constituée de $ \mathbf{P}(V_{n}=0] $, $\mathbf{P}([V_{n}=1]\ldots, \mathbf{P}([V_{n}=N]$.
+\\ \textbf{Q6a.} Notons $ C=AB $, Pour tout $ i\leq N $ on a:
+\begin{eqnarray*}
+\sum_{j=1}^{N}|a_{ij}+b_{ij}|
+&\leq &\sum_{j=1}^{N}|a_{ij}|+|b_{ij}|\\
+&\leq & \sum_{j=1}^{N}|a_{ij}|+\sum_{j=1}^{N}|b_{ij}| \\
+&\leq & ||A||+||B||
+\end{eqnarray*}
+Par conséquent $ ||A+B||\leq ||A||+||B|| $. On a également:
+\begin{eqnarray*}
+\sum_{j=1}^{N}||
+&=&\sum_{j=1}^{N}|\sum_{k=1}^{N}a_{ik}b_{kj}|\\
+&\leq & \sum_{j=1}^{N}\sum_{k=1}^{N}|a_{ik}|.|b_{kj}| \\
+&=& (\sum_{k=1}^{N}|a_{ik}|)(\sum_{j=1}^{N}|b_{kj}|) \\
+&\leq & ||A||.||B||
+\end{eqnarray*}
+D'où $ ||AB||\leq ||A||.||B|| $.
+\\ \textbf{Q6b.} Soit $ i\leq n $, la somme $c_{l}$ des éléments de la $ l $-ième ligne de $ \exp Q_{i} $  est:
+\begin{equation*}
+c_{l}=\sum_{j=1}^{n}\mathbf{P}(Y_{i}=j-l)=\sum_{j=0}^{N-l}\mathbf{P}(Y_{i}=j)\leq 1
+\end{equation*}
+Par conséquent $ || \exp Q_{i} ||\leq 1 $. Pareillement on prouve que $ || P_{i} ||\leq 1 $ ou même mieux $ || \prod_{i \in J}P_{i} ||\leq 1 $ avec $ J $ une partie de l'intervalle entier $ [1,N] $. 
+\\ \textbf{Q6c.} On prouve l'identité par récurrence. Le cas $ n=1 $ est immédiat. A présent supposons la relation vrai à l'ordre $ n-1 $ et prouvons l'hérédité.
+\begin{eqnarray*}
+||\prod_{i=1}^{n}P_{i}-\prod_{i=1}^{n}\exp Q_{i} ||
+&=& || (P_{1}-\exp Q_{1})(\prod_{i=2}^{n}P_{i})+\exp Q_{1}(\prod_{i=2}^{n}P_{i}-\prod_{i=2}^{n}\exp Q_{i}) || \\
+&\leq & ||P_{1}-\exp Q_{1}||.\underbrace{||\prod_{i=2}^{n}P_{i}||}_{(\leq 1)}+\underbrace{||\exp Q_{1}||}_{(\leq 1)}.||\prod_{i=2}^{n}P_{i}-\prod_{i=2}^{n}\exp Q_{i}|| \\
+& \leq & ||P_{1}-\exp Q_{1}||+||\prod_{i=2}^{n}P_{i}-\prod_{i=2}^{n}\exp Q_{i}|| \\
+&\leq & ||P_{1}-\exp Q_{1}||+\sum_{i=2}^{n}|| P_{i}-\exp Q_{i}|| \\
+&=& \sum_{i=1}^{n}|| P_{i}-\exp Q_{i}||
+\end{eqnarray*}
+\textbf{Q6d.} Si vous vous souvenez nous avons déjà utilisé les propriétés des matrices $ R^{j} $ à la question Q5b. Se basant dessus on a caractérisé $ \exp Q_{i} $. Maintenant appelons $ d_{k} $ la somme des valeurs absolues des éléments de la $ k $-ième ligne de $ P_{i}-\exp Q_{i} $:
+\begin{eqnarray*}
+d_{k}
+&=& \sum_{n=1}^{N}|\mathbf{P}([X_{i}=n-k])-\mathbf{P}([Y_{i}=n-k])| \\
+&=& \sum_{n=0}^{N-k}|\mathbf{P}([X_{i}=n])-\mathbf{P}([Y_{i}=n])| \\
+&=& 2\times \frac{1}{2}\sum_{n=0}^{+\infty}|\mathbf{P}([X_{i}=n])-\mathbf{P}([Y_{i}=n])| \\
+&=& 2 d(X_{i},Y_{i}) \\
+& \leq & 2p_{i}^{2}
+\end{eqnarray*}
+Donc on a bien $ || P_{i}-\exp Q_{i} || \leq 2p_{i}^{2}$.
+\\ \textbf{Q7a.} Notons $ e_{k} $ la somme des valeurs absolues des éléments de la $ k $-ième ligne de $ \prod_{i=1}^{n}P_{i}-\prod_{i=1}^{n}Q_{i} $. En procédant comme précédemment:
+\begin{equation*}
+e_{k}=\sum_{i=0}^{N-k}|\mathbf{P}([U_{n}=i])-\mathbf{P}([V_{n}=i])|
+\end{equation*}
+Donc on déduit que :
+\begin{eqnarray*}
+\sum_{i=0}^{N-1}|\mathbf{P}([U_{n}=i])-\mathbf{P}([V_{n}=i])|
+&=& ||\prod_{i=1}^{n}P_{i}-\prod_{i=1}^{n}\exp Q_{i} || \\
+&\leq & \sum_{i=1}^{n}|| P_{i}-\exp Q_{i}|| \\
+&\leq & \sum_{i=1}^{n} 2p_{i}^{2}
+\end{eqnarray*} 
+En faisant $ N\rightarrow +\infty $ on obtient $ 2d(U_{n},V_{n})\leq \sum_{i=1}^{n} 2p_{i}^{2} $ d'où
+\begin{equation*}
+d(U_{n},V_{n})\leq \sum_{i=1}^{n}p_{i}^{2}
+\end{equation*}
+\\ \textbf{Q7b.} En prenant $ p_{i}=\frac{\lambda}{n} $ on obtient alors
+\begin{equation*}
+d(U_{n},V_{n})\leq \sum_{i=1}^{n}\frac{\lambda^{2}}{n^{2}}=\frac{\lambda^{2}}{n}\rightarrow 0
+\end{equation*} 
+ce qui veut dire que $ U_{n} $ et $ V_{n} $ ont asymptotiquement les mêmes lois. Maintenant vu que $ U_{n}\sim \mathcal{B}(n,\frac{\lambda}{n}) $ et $ V_{n}\sim \mathcal{P}(n\frac{\lambda}{n})\equiv \mathcal{P}(\lambda) $, notre propriété d'approximation est prouvée.
+\subsection{Partie II: Records d'une permutation}
+\textbf{Q1}: En posant $ \gamma_{n}=H_{n}-\ln(n) $ on montre que $ (\gamma_{n})_{n \in \mathbb{N}^{*}} $ est décroissante et minorée.
+\begin{eqnarray*}
+\gamma_{n+1}-\gamma_{n}
+&=& (H_{n+1}-H_{n})-(\ln(n+1)-\ln(n)) \\
+&=& \frac{1}{n+1}-\ln\left( 1+\frac{1}{n} \right) 
+\end{eqnarray*}
+Mais puisque $ \ln(1+x)\geq \frac{x}{1+x} $ on a donc $ \ln\left( 1+\frac{1}{n} \right)\geq \frac{1/n}{1+1/n}=\frac{1}{n+1} $. Par conséquent $ \gamma_{n+1}\leq \gamma_{n} $ et la suite $ (\gamma_{n})_{n \in \mathbb{N}^{*}} $ est décroissante. Par ailleurs, il est connu que $ x \geq \ln(1+x) $, il s'en suit alors:
+\begin{eqnarray*}
+\gamma_{n}
+&=& \sum_{k=1}^{n}\frac{1}{k}-\ln(n) \\
+& \geq & \sum_{k=1}^{n} \ln(1+\frac{1}{n})-\ln(n) \\
+&=& \underbrace{\sum_{k=1}^{n} \ln(k+1)-\ln(k)}_{\mbox{télescopage}} -\ln(n) \\
+&=& \ln(n+1)-\ln(n)=\ln(1+\frac{1}{n}) \\
+&\geq & 0.
+\end{eqnarray*}
+ Notre suite est aussi minorée d'où le résultat.
+\\ \textbf{Q2.} Toutes les réponses sont dans ce tableau
+\begin{table}[!htbp] 
+\centering
+\begin{tabular}{c c c}
+\hline \hline
+$ \sigma $ & $ R_{3}(\sigma) $ & $ \mathbf{P}(\left\lbrace \sigma \right\rbrace ) $ \\
+\hline \hline
+(1,2,3) & 3 & $\frac{1}{6}$  \\
+(2,3,1) & 2 & $\frac{1}{6}$ \\
+(3,1,2) & 1 & $\frac{1}{6}$ \\
+(2,1,3) & 2 & $\frac{1}{6}$\\
+(3,2,1) & 1 & $\frac{1}{6}$\\
+(1,3,2) & 2 & $\frac{1}{6}$\\
+\hline
+$ \mathbf{P}([R_{3}=1])=\frac{1}{3} $ & $ \mathbf{P}([R_{3}=2])=\frac{1}{2} $ & $ \mathbf{P}([R_{3}=3])=\frac{1}{6} $ \\
+\hline
+$ \mathbf{E}(R_{3})=\frac{11}{6} $ & $ \mathbf{V}(R_{3})=\frac{17}{36} $ & \\ 
+\hline \hline
+\end{tabular}
+\end{table}
+\\ \textbf{Q3}. En fait $ [R_{n}=1] $ regroupe toutes les permutations vérifiant $ \sigma_{1}=n $. On sait déjà que 1 est record, donc s'il existe $ j\neq 1 $ tel que $ \sigma_{j}=n $ alors $ j $ serait un autre record, ce qui est contradictoire! Ainsi $ \mbox{Card}([R_{n}=1])=(n-1)! $. Il est aussi évident que $ [R_{n}=n] $ est la seule permutation croissante $ (1,2,\ldots,n) $. Autrement on pourrait trouver $ i<j $ tel que $ \sigma_{i}>\sigma_{j} $. Dans ce cas $ j $ n'est pas un record et alors $ R_{n}\leq n-1 $, Contradiction! D'où $ \mbox{Card}([R_{n}=1])=(n-1)! $. En divisant ces cardinaux par $ n! $
+\begin{equation*}
+\mathbf{P}([R_{n}=1])=\frac{(n-1)!}{n!}=\frac{1}{n} \quad \mathbf{P}([R_{n}=n])=\frac{1}{n!}
+\end{equation*}
+\textbf{Q4a.} Soit $ \sigma $ une permutation qui n'a que deux records en 1 et $ p $. Notons $ A_{p}^{(2)} $ le nombre de telles permutations. Ici on prouve qu'on a nécessairement $ \sigma_{p}=n $. En effet soit  soit $ j $ tel que $ \sigma_{j}=n $. On ne peut avoir $ j<p $ sinon $ p $ ne serait pas un record, ni $ j>p $ sinon $ j $ serait un autre record portant le nombre de records à au moins $ 3 $. Ainsi $ j=p $. Maintenant par définition d'un record les nombres $ \sigma_{1},\ldots,\sigma_{p-1} $ sont choisis quelconques dans l'intervalle entier $ [1,n-1] $ excepté le fait que le plus grand d'entre eux soit $ \sigma_{1} $\footnote{Raisonnons par l'absurde et supposons que $ \sigma_{k}=\max(\sigma_{i})_{i<p} $ avec $ k>1 $. Alors $ k $ est un autre record pour $ \sigma $ portant le nombre de recors à au moins trois. Contradiction!} ce qui nous donne $ (p-2)!C_{n-1}^{p-1} $ choix. Maintenant quand aux éléments $ \sigma_{p+1},\ldots,\sigma_{n} $ ils peuvent être tirés de façon quelconque parmi les nombres restants ce qui donne $ (n-p)! $ manières. En gros $ A_{p}^{(2)}=(n-p)!(p-2)!C_{n-1}^{p-1} $ 
+\\ \textbf{Q4b.} Le second record pouvant être atteint en un point $ p $ entre $ 2 $ et $ n $, on a d'après la question précédente:
+\begin{eqnarray*}
+\mathbf{P}([R_{n}=2])
+&=& \frac{1}{n!}\sum_{p=2}^{n}A_{p}^{(2)}\\
+&=& \frac{1}{n!}\sum_{p=2}^{n} (n-p)!(p-2)!C_{n-1}^{p-1} \\
+&=& \frac{1}{n!}\sum_{p=2}^{n} (n-p)!(p-2)!\frac{(n-1)!}{(p-1)!(n-p)!} \\
+&=& \frac{(n-1)!}{n!}\sum_{p=2}^{n}\frac{(p-2)!}{(p-1)!} \\
+&=& \frac{1}{n}\sum_{p=2}^{n}\frac{1}{p-1} \\
+&=& \frac{1}{n}\sum_{k=1}^{n-1}\frac{1}{k} \quad (k=p-1)
+\end{eqnarray*}
+\textbf{Q4c.} En utilisant Q1 et Q4b:
+\begin{equation*}
+\mathbf{P}([R_{n}=2])=\frac{H_{n-1}}{n}\sim \frac{\ln(n-1)}{n} \sim \frac{\ln(n)}{n}
+\end{equation*}
+\textbf{Q5a.} $ T_{i} $ est une loi de Bernoulli par définition, reste à savoir calculer $ \mathbf{P}([T_{i}=1]) $. Pour une permutation ayant $ i $ pour record, il est clair que $ \sigma_{i}\geq i $. Maintenant si $ \sigma_{i}=l $ est fixé (avec $ l\geq i $), les nombres $ \sigma_{1},\ldots,\sigma_{i-1} $ sont choisis quelconques dans l'intervalle entier $ [1,l-1] $ ce qui nous donne $ (i-1)!C_{l-1}^{i-1} $ choix. Maintenant quand aux éléments $ \sigma_{i+1},\ldots,\sigma_{n} $ ils peuvent être tirés de façon quelconque parmi les nombres restants ce qui donne $ (n-i)! $ manières.
+\begin{eqnarray*}
+\mathbf{P}([T_{i}=1])
+&=&\frac{1}{n!}\sum_{l=i}^{n}(n-i)!(i-1)!C_{l-1}^{i-1} \\
+&=& \frac{1}{n!}(n-i)!(i-1)!C_{n}^{i} \\
+&=& \frac{1}{n!}(n-i)!(i-1)!\frac{n!}{i!(n-i)!}\\
+&=& \frac{(i-1)!}{i!} \\
+&=& \frac{1}{i}
+\end{eqnarray*}
+\textbf{Q5b.} Il va sans dire que: $ R_{n}=\sum_{i=1}^{n}T_{i} $ donc 
+\begin{eqnarray*}
+\mathbf{E}(R_{n})
+&=& \sum_{i=1}^{n}\mathbf{E}(T_{i}) \\
+&=& \sum_{i=1}^{n}\mathbf{P}([T_{i}=1]) \\
+&=& \sum_{i=1}^{n} \frac{1}{i} \\
+&=& H_{n}
+\end{eqnarray*}
+Par conséquent $ \mathbf{E}(R_{n})\sim \ln(n) $.   
+\\ \textbf{Q6a.} Notons $ A^{(ij)} $ l'ensemble des permutations de $ \mathcal{S}_{n} $ ayant exactement trois records atteints en 1,$ i $ et $ j $. On note aussi $ A^{(ij)}_{k} $ l'ensemble des permutations de $ A^{(ij)} $ vérifiant $ \sigma_{j}=k $. Maintenant il est clair que si $ j $ est un record d'une permutation $ \sigma $ alors $ \sigma_{j}\geq j $, chose qui permet d'affirmer que $ A^{(ij)}=\cup_{k=j}^{n}A^{(ij)}_{k} $. Cette union consistant en des ensembles disjoints alors
+\begin{equation*}
+\mbox{Card}(A^{(ij)})=\sum_{k=j}^{n}\mbox{Card}(A^{(ij)}_{k})
+\end{equation*} 
+Maintenant pour un élément typique de $ A^{(ij)}_{k}$, il vient que pour tout $ (i',j')<(i-1,j-1) $ on a $ \sigma_{i'}<\sigma_{i} $, $ \sigma_{j'}<\sigma_{j} $ et  $ \sigma_{j}=k $ . Pour arriver à dénombrer de telles permutations il nous suffit de savoir compter comment choisir des éléments $ c_{1},c_{2},\cdots,c_{j} $ de l'intervalle entier $ [1,n] $ tel que  pour tout $ (i',j')<(i-1,j-1) $ on a $ c_{i'}<c_{i} $, $ c_{j'}<c_{j} $ et  $ c_{j}=k $. Notons ce nombre $ B_{k}^{(ij)} $. En effet pour construire $ A^{(ij)}_{k}$, il nous suffit de prendre $ c_{1},c_{2},\cdots,c_{j} $ comme ci-dessus et poser $ c_{m}=\sigma_{m}  $ pour $ m\leq j $ et prendre les autres éléments de l'intervalle entier $ [1,n] $ qui ne sont pas dans $\left\lbrace  c_{i}|1\leq i \leq m\right\rbrace  $ et les repartir de façon quelconque entre les $ \sigma_{j+1},\sigma_{j+2},\cdots,\sigma_{n} $, chose qui peut bien entendu se faire de $ (n-j)! $ manières. En gros on a prouvé que $ \mbox{Card}(A^{(ij)}_{k})=B_{k}^{(ij)}(n-j)! $, reste maintenant à calculer $ B_{k}^{(ij)} $. Dans $ B_{k}^{(ij)} $ le choix de $ c_{j}=k $ est fixé. On voit bien que tous les $ c_{l} $ restant sont inférieurs à $ k $, ils sont alors pris dans l'intervalle entier $ [1,k-1] $ chose qui peur se faire de $ C_{k-1}^{j-1} $ manières. Dès qu'ils sont tiré, l'élément $c_{i}$ ne peut être pris que parmi les termes de rang variant entre $ i $ et $ j-1 $ quand ils sont rangés dans l'ordre croissant. A présent supposons que $ c_{i} $ est le terme de rang $ l $. Maintenant pour les éléments $ c_{m} $, avec $ m\leq i-1 $ ils ont pris parmi les $ l-1 $ plus petits et peuvent être disposées librement ce qui  fait $ (i-1)!C_{l-1}^{i-1} $ choix. Les éléments restants sont les $ c_{m} $, avec $i+1\leq m\leq j-1 $ et ils peuvent aussi être disposés librement ce qui fait encore $ (j-i-1)! $ possibilités. D'où
+\begin{eqnarray*}
+B_{k}^{(ij)}
+&=& C_{k-1}^{j-1}\sum_{l=i}^{j-1}(i-1)!C_{l-1}^{i-1}(j-i-1)! \\
+&=& \left( C_{k-1}^{j-1}(i-1)!(j-i-1)!\right) \sum_{l=i}^{j-1}C_{l-1}^{i-1} \\
+&=& \left( C_{k-1}^{j-1}(i-1)!(j-i-1)!\right)C_{(j-1-1)+1}^{i-1+1} \\
+&=& \left( C_{j-1}^{i}(i-1)!(j-i-1)!\right)C_{k-1}^{j-1} \\
+&=& \left(\frac{(j-1)!}{i!(j-i-1)!}(i-1)!(j-i-1)! \right) C_{k-1}^{j-1} \\
+&=& \frac{1}{i}(j-1)!C_{k-1}^{j-1}
+\end{eqnarray*}
+On calcul notre cardinal initial
+\begin{eqnarray*}
+\mbox{Card}(A^{(ij)})
+&=&\sum_{k=j}^{n}B_{k}^{(ij)}(n-j)!\\
+&=& \sum_{k=j}^{n}\frac{1}{i}(j-1)!C_{k-1}^{j-1}(n-j)! \\
+&=&  \sum_{k=j}^{n}\frac{1}{i}(j-1)!C_{k-1}^{j-1}(n-j)!\\
+&=&\frac{1}{i} \underbrace{\sum_{k=j}^{n}(j-1)!C_{k-1}^{j-1}(n-j)!}_{=n!/j}  \\
+&=& \frac{n!}{ij}
+\end{eqnarray*}
+Donc on est prêt à conclure\footnote{Dans notre cas l'indépendance des évènements $ [T_{i}=1] $ et $ [T_{j}=1] $ suffit pour conclure à l'indépendance de $ T_{i} $ et $ T_{j} $.}
+\begin{eqnarray*}
+\mathbf{P}([T_{i}=1]\cap [T_{j}=1])
+&=& \frac{\mbox{Card}(A^{(ij)})}{n!} \\
+&=& \frac{1}{ij} \\
+&=& \mathbf{P}([T_{i}=1])\times \mathbf{P}([T_{j}=1])
+\end{eqnarray*}
+\textbf{Q6b.} Comme $ R_{n}=\sum_{i=1}^{n}T_{i} $ et que les $ T_{i} $ sont indépendantes 
+\begin{eqnarray*}
+\mathbf{V}(R_{n})
+&=& \sum_{i=1}^{n}\mathbf{V}(T_{i}) \\
+&=& \sum_{i=1}^{n}\mathbf{P}([T_{i}=1])(1-\mathbf{P}([T_{i}=1])) \\
+&=& \sum_{i=1}^{n} \frac{1}{i}\left(1-\frac{1}{i} \right)  \\
+&=& \left( \sum_{i=1}^{n} \frac{1}{i}\right) -\left( \sum_{i=1}^{n} \frac{1}{i^{2}}\right)  \\
+&=& H_{n}-\sum_{i=1}^{n} \frac{1}{i^{2}}
+\end{eqnarray*}
+Comme $ \sum_{i=1}^{+\infty} \frac{1}{i^{2}}<+\infty $ par conséquent $ \mathbf{V}(R_{n})\sim \ln(n) $. 
+\\ \textbf{Q7.} Dire que $ \sigma \in [R_{n}=k] $ revient à dire que $ \sigma $ à $ k-1 $ records autres que 1, disons $ i_{2},\ldots,i_{k} $. Par conséquent en sommant sur ces nombres:
+\begin{eqnarray*}
+\mathbf{P}([R_{n}=k])
+&=& \sum_{2\leq i_{2}<i_{3}<\ldots <i_{k}\leq n}\mathbf{P}\left( \left( \cap_{l=2}^{k}[T_{i_{l}}=1] \right)   \cap  \left( \cap_{j \not\in \left\lbrace i_{2},\ldots,i_{k} \right\rbrace }[T_{j}=0] \right) \right) \\
+&=& \sum_{2\leq i_{2}<i_{3}<\ldots <i_{k}\leq n} \left( \prod_{l=2}^{k} \mathbf{P}([T_{i_{l}}=1])\right)  \times  \left( \prod_{j \not\in \left\lbrace i_{2},\ldots,i_{k} \right\rbrace }\mathbf{P}([T_{j}=0])\right) \\
+&=& \sum_{2\leq i_{2}<i_{3}<\ldots <i_{k}\leq n} \left( \prod_{l=2}^{k} \frac{1}{i_{l}}\right)  \times  \left( \prod_{j \not\in \left\lbrace i_{2},\ldots,i_{k} \right\rbrace }\left( 1-\frac{1}{j}\right) \right)\\
+&=& \sum_{2\leq i_{2}<i_{3}<\ldots <i_{k}\leq n}\frac{1}{i_{2}}\frac{1}{i_{3}}\cdots \frac{1}{i_{k}}\prod_{j \not\in \left\lbrace i_{2},\ldots,i_{k} \right\rbrace }\left( 1-\frac{1}{j}\right)
+\end{eqnarray*}
+\textbf{Q8a.} D'après ce qui précède:
+\begin{eqnarray*}
+\mathbf{P}([R_{n}=3])
+&=& \sum_{2\leq i_{2}<i_{3}\leq n}\frac{1}{i_{2}}\frac{1}{i_{3}}\prod_{j \not\in \left\lbrace i_{2},i_{3} \right\rbrace }\frac{j-1}{j} \\
+&=& \sum_{2\leq i_{2}<i_{3}\leq n}\frac{1}{i_{2}}\frac{1}{i_{3}}\frac{i_{2}}{i_{2}-1}\frac{i_{3}}{i_{3}-1}\prod_{j=2}^{n}\frac{j-1}{j}\\
+&=& \sum_{2\leq i_{2}<i_{3}\leq n}\frac{1}{i_{2}-1}\frac{1}{i_{3}-1} \underbrace{\prod_{j=2}^{n}\frac{j-1}{j}}_{\mbox{télescopage}} \\
+&=& \sum_{2\leq i_{2}<i_{3}\leq n}\frac{1}{i_{2}-1}\frac{1}{i_{3}-1}\frac{2-1}{n}\\
+&=& \frac{1}{n}\sum_{1\leq i<j\leq n-1}\frac{1}{i}\frac{1}{j} \quad (i=i_{2}-1,j=i_{3}-1)
+\end{eqnarray*}
+\textbf{Q8b.} En continuant un peu les calculs
+\begin{eqnarray*}
+\mathbf{P}([R_{n}=3])
+&=& \frac{1}{n}\sum_{1\leq i<j\leq n-1}\frac{1}{i}\frac{1}{j} \\
+&=& \frac{1}{2n}\left\lbrace \left( \sum_{k=1}^{n-1}\frac{1}{k} \right) ^{2}-\sum_{k=1}^{n-1}\frac{1}{k^{2}}\right\rbrace \\
+&=& \frac{1}{2n}\left\lbrace H_{n-1}^{2}-\sum_{k=1}^{n-1}\frac{1}{k^{2}}\right\rbrace
+\end{eqnarray*}
+Comme $ \sum_{i=1}^{+\infty} \frac{1}{i^{2}}<+\infty $ par conséquent
+\begin{equation*}
+\mathbf{P}([R_{n}=3])\sim \frac{\ln^{2}(n-1)}{2n}\sim \frac{1}{2}\frac{\ln^{2}(n)}{n}
+\end{equation*}
+\subsection{Partie III: Deux résultats asymptotiques}
+\textbf{Q1a.} Soit $ \sigma \in \left[ |\frac{R_{n}}{\ln n}-1|\geq  \epsilon \right]  $. Raisonnons par l'absurde en supposant que $ \sigma \in \left[ |\frac{R_{n}}{\ln n}-\frac{H_{n}}{\ln n}|<  \frac{\epsilon}{2} \right]  $ pour $ n $ suffisamment grand. Comme $ H_{n} \sim \ln n $, alors pour $n$ suffisamment grand il vient que  $ |\frac{H_{n}}{\ln n}-1|<  \frac{\epsilon}{2} $. Par conséquent:
+\begin{equation*}
+|\frac{R_{n}(\sigma)}{\ln n}-1|\leq |\frac{R_{n}(\sigma)}{\ln n}-\frac{H_{n}}{\ln n}|+|\frac{H_{n}}{\ln n}-1|<\frac{\epsilon}{2}+\frac{\epsilon}{2}=\epsilon
+\end{equation*}
+i.e. $ \sigma \in \left[ |\frac{R_{n}}{\ln n}-1|<  \epsilon \right]  $, contradiction! D'où $ \sigma \in \left[ |\frac{R_{n}}{\ln n}-\frac{H_{n}}{\ln n}|\geq  \frac{\epsilon}{2} \right]  $.On a donc prouvé que:
+\begin{equation*}
+\left[ |\frac{R_{n}}{\ln n}-1|\geq  \epsilon \right] \subset \left[ |\frac{R_{n}}{\ln n}-\frac{H_{n}}{\ln n}|<  \frac{\epsilon}{2} \right]
+\end{equation*}
+\textbf{Q1bi.} D'après Q5b. on sait que $ \mathbf{E}(R_{n})=H_{n} $. En appliquant l'inégalité de Markov:
+\begin{eqnarray*}
+\mathbf{P}\left( \left[ |\frac{R_{n}}{\ln n}-\frac{H_{n}}{\ln n}|<  \epsilon \right] \right)
+&\leq & \frac{1}{\epsilon^{2}}\mathbf{V}\left( \frac{R_{n}}{\ln n} \right) \\
+&=&\frac{1}{\epsilon^{2}} \frac{\mathbf{V}(R_{n})}{\ln^{2} n}\\
+& \sim & \frac{1}{\epsilon^{2}} \frac{1}{\ln n}  
+\end{eqnarray*}
+On a a donc prouvé que
+\begin{displaymath}
+\lim_{n\rightarrow +\infty}\mathbf{P}\left( \left[ |\frac{R_{n}}{\ln n}-\frac{H_{n}}{\ln n}|<  \epsilon \right] \right)=0
+\end{displaymath}
+\textbf{Q1bii} D'après Q1a. on a alors:
+\begin{equation*}
+\mathbf{P}\left( \left[ |\frac{R_{n}}{\ln n}-1|\geq  \epsilon \right] \right)\leq \mathbf{P}\left( \left[ |\frac{R_{n}}{\ln n}-\frac{H_{n}}{\ln n}|<  \frac{\epsilon}{2} \right] \right)\rightarrow_{n\rightarrow +\infty}=0
+\end{equation*} 
+\textbf{Q2a.} Prenons $ X \sim \mathcal{B}(p) $ 
+\begin{equation*}
+G_{X}(t)=(1-p)+tp=1+p(t-1)
+\end{equation*}
+\textbf{Q2b.} Prenons $ Y \sim \mathcal{P}(\lambda) $
+\begin{eqnarray*}
+G_{Y}(t)
+&=& \sum_{k=0}^{+\infty}\mbox{e}^{-\lambda}\frac{\lambda^{k}t^{k}}{k!} \\
+&=& \sum_{k=0}^{+\infty}\mbox{e}^{-\lambda}\frac{(\lambda t)^{k}}{k!} \\
+&=& \mbox{e}^{-\lambda+\lambda t}=\mbox{e}^{\lambda(t-1)}
+\end{eqnarray*}
+\textbf{Q2c.}Ce résultat est vraiment classique !!!
+\begin{eqnarray*}
+G_{S_{n}}(t)
+&=& \mathbf{E}(t^{S_{n}}) \\
+&=& \mathbf{E}(t^{\sum_{k=1}^{n}X_{k}}) \\
+&=& \mathbf{E}(\prod_{k=1}^{n}t^{X_{k}}) \\
+&=& \prod_{k=1}^{n}\mathbf{E}(t^{X_{k}}) \quad (\mbox{ car }X_{i}\perp X_{j}\Rightarrow t^{X_{i}} \perp t^{X_{j}}) \\
+&=& \prod_{k=1}^{n}G_{X_{k}}(t)
+\end{eqnarray*} 
+\textbf{Q2d.} Il suffit d'appliquer le résultat tout en se souvenant que $ T_{i}\sim \mathcal{B}(1/i) $: 
+\begin{eqnarray*}
+\forall t \in [0,1], G_{W_{n}}(t)
+&=& \prod_{i=m+1}^{2m}G_{T_{i}}(t) \\
+&=& \prod_{i=m+1}^{2m} \left( 1+\frac{t-1}{i}\right) 
+\end{eqnarray*} 
+\textbf{Q2e.} Définissons une quantité $ h_{m} $ qui nous sera utile dans la suite
+\begin{eqnarray*}
+h_{m}=\sum_{i=m+1}^{2m}\frac{1}{i}=H_{2m}-H_{m}=(\ln(2m)+\gamma)-(\ln(m)+\gamma)+o(1)=\ln(2)+o(1)
+\end{eqnarray*} 
+Un autre résultat intermédiaire est que pour tout $ x\in \left] -1,0\right]  $:
+\begin{eqnarray*}
+| \ln(1+x)-x|\leq \frac{x^{2}}{2}
+\end{eqnarray*} 
+Nous sommes maintenant prêt. Pour tout $ t \in [0,1] $:
+\begin{eqnarray*}
+| \ln\left( G_{W_{n}}(t) \right)-(t-1)h_{m}  |
+&=& | \sum_{i=m+1}^{2m} \ln\left( 1+\frac{t-1}{i}\right)-\frac{t-1}{i} | \\
+& \leq &  \sum_{i=m+1}^{2m} | \ln\left( 1+\frac{t-1}{i}\right)-\frac{t-1}{i} | \\
+& \leq & \frac{(t-1)^{2}}{2}\sum_{i=m+1}^{2m}\frac{1}{i^{2}}\rightarrow 0
+\end{eqnarray*}
+Ainsi d'après le théorème des gendarmes:
+\begin{equation*}
+\lim_{n\rightarrow +\infty}\ln\left( G_{W_{n}}(t) \right)=(t-1)\ln2
+\end{equation*}
+Par continuité de l'exponentielle
+\begin{equation*}
+\lim_{n\rightarrow +\infty} G_{W_{n}}(t)=\mbox{e}^{(t-1)\ln2}
+\end{equation*}
+On reconnaît bien la fonction génératrice de la loi de Poisson $ \mathcal{P}(\ln 2) $. Par conséquent la suite de terme général $ W_{n} $ converge en loi vers la loi de Poisson $ \mathcal{P}(\ln 2) $.
+
+\section{Épreuve à option (A): Mathématiques}
+
+
+\subsection{Partie 1:premiers exemples}
+\textbf{Q1ai.} Notons $ \mathcal{P}_{a}(x) $ le projeté orthogonal de $ x $ sur la droite $ D $ engendrée par $ a $. Comme $ D\oplus D^{\perp}=\mathbb{R}^{3} $ donc on peut écrire $ x=\mu a +y $ avec $ \langle y,a\rangle =0 $. Ceci implique encore $ \langle x,a \rangle =\mu \Vert a \Vert^{2}+\langle y,a\rangle=\mu \Vert a \Vert^{2} $. On déduit que $ \mu=\frac{\langle x,a \rangle}{\Vert a \Vert^{2}} $. Finalement
+\begin{equation*}
+\mathcal{P}_{a}(x)=\frac{\langle x,a \rangle}{\Vert a \Vert^{2}}a
+\end{equation*}
+\\ \textbf{Q1aii.} La matrice H étant symétrique elle est diagonalisable. En notant $ \lambda_{i} $ ses valeurs propres pour $ i=1,2,3 $, on peut écrire $ \mbox{Ker}(H-\lambda_{1}I_{3})\oplus \mbox{Ker}(H-\lambda_{2}I_{3}) \oplus \mbox{Ker}(H-\lambda_{3}I_{3})=\mathbb{R}^{3} $. Si on appelle $ C_{1} $, $ C_{2} $ et $ C_{3} $ les colonnes de $ H $ on peut voir aisément que $ C_{1}+2C_{2}+C_{3}=0 $ ainsi $ 0 $ est valeur propre de $ H $ avec multiplicité 1. On peut alors noter que $ \lambda_{0}=0 $. Dans ce cas ci on peut prouver que $ \mbox{Ker}(H-\lambda_{2}I_{3}) \oplus \mbox{Ker}(H-\lambda_{3}I_{3})=\mbox{Im}(h)$. En effet pour tout $ x \in \mathbb{R^{3}} $, on peut écrire $ x=x_{1}+x_{2}+x_{3} $ avec $ x_{i} \in \mbox{Ker}(H-\lambda_{i}I_{3}) $. On a alors $ h(x)=\lambda_{2}x_{2}+\lambda_{3}x_{3} $. Et réciproquement $ h(\frac{y_{2}}{\lambda_{2}}+\frac{y_{3}}{\lambda_{3}})=y_{2}+y_{3} $ pour $ y_{2} \in \mbox{Ker}(H-\lambda_{2}I_{3}) $ et $ y_{3} \in \mbox{Ker}(H-\lambda_{3}I_{3}) $. On vient donc de prouver que $ \mbox{Ker}(h)\oplus \mbox{Im}(h)=\mathbb{R}^{3} $ en plus $ \mbox{Ker}(h) $ et $ \mbox{Im}(h) $ sont orthogonaux car les $ \mbox{Ker}(H-\lambda_{i}I_{3}) $ le sont. En conséquence $ \mbox{Ker}(h) $ et $ \mbox{Im}(h) $ sont des supplémentaires orthogonaux.
+\\ \textbf{Q1aiii.} On a prouvé à la question précédente que $ \mbox{Ker}(h)=\mbox{Vec}(a) $ avec $ a=(1,2,1)' $. On note $ p_{H} $ la projection orthogonale sur $\mbox{Im}(h) $. Et puisque $ \mbox{Ker}(h)$ et $ \mbox{Im}(h)=\mathbb{R}^{3} $ sont des supplémentaires orthogonaux alors $ p_{H}(x)=x-\mathcal{P}_{a}(x) $. Poussant les calculs un peu plus loin:
+\begin{eqnarray*}
+p_{H}(x)
+&=& x-\frac{\langle x,a \rangle}{\Vert a \Vert^{2}}a \\
+&=& x-a\frac{a^{t}x}{\Vert a \Vert^{2}} \\
+&=& \left( I_{3}-\frac{aa^{t}}{\Vert a \Vert^{2}} \right)x 
+\end{eqnarray*}
+La matrice de $ p_{H} $ dans la base canonique de $ \mathbb{R}^{3} $ est alors:
+$$
+I_{3}-\frac{aa^{t}}{\Vert a \Vert^{2}}=
+\begin{bmatrix}
+1 & 0 & 0 \\
+0& 1 & 0 \\
+0 & 0 &1   
+\end{bmatrix}
+-\frac{1}{6}
+\begin{bmatrix}
+1 \\
+2 \\
+1   
+\end{bmatrix}
+\begin{bmatrix}
+1 & 2 &1    
+\end{bmatrix}
+=
+\begin{bmatrix}
+\frac{5}{6} & -\frac{1}{3} & -\frac{1}{6} \\
+-\frac{1}{3}& \frac{1}{3} &-\frac{1}{3} \\
+-\frac{1}{6} & -\frac{1}{3} & \frac{5}{6}   
+\end{bmatrix}
+$$
+\\ \textbf{Q1bi.} On note que la matrice $ H=(H_{ij}) $ est symétrique donc
+\begin{equation*}
+\mbox{tr}(h\circ h)=\mbox{tr}(H^{2})=\mbox{tr}(HH^{t})=\sum_{i=1}^{3}\sum_{j=1}^{3}H_{ij}^{3}=93
+\end{equation*}
+\\ \textbf{Q1bii.} On sait que 0 est valeur propre de $ h $ et notons $ \mu $ et $ \lambda $ ses autres valeurs propres. On tire aisément que $ \lambda+\mu=\mbox{tr}(H)=9 $ et $ \lambda^{2}+\mu^{2}=\mbox{tr}(H^{2})=93 $. On sait que $ \lambda \mu=\frac{(\lambda+\mu)^{2}-(\lambda^{2}+\mu^{2})}{2}=\frac{81-93}{2}=-6 $. $ \lambda $ et $ \mu $ sont donc les zéros du polynôme $ r^{2}-9r-6 $ à savoir $ \frac{9\pm\sqrt{105}}{2} $. En conclusion:
+\begin{equation*}
+\mbox{Sp}(h)=\left\lbrace 0,\frac{9+\sqrt{105}}{2},\frac{9-\sqrt{105}}{2} \right\rbrace 
+\end{equation*}
+\\ \textbf{Q2a.} En remarquant que le terme $ (i,j) $ de $ H_{\varphi}^{(n)} $ est celui de $ H_{\tau}^{(n)} $ par $ (-1)^{i+j-2} $; L'on peut déduire qu'on peut passer de $ H_{\tau}^{(n)} $ à $ H_{\varphi}^{(n)} $ en multipliant d'abord les $ j-ème $ colonnes de $ H_{\tau}^{(n)} $ par $ (-1)^{j-1} $ puis les $ i-ème $ lignes de $ H_{\tau}^{(n)} $ par $ (-1)^{i-1} $. Par conséquent  $ H_{\varphi}^{(n)}=PH_{\tau}^{(n)}P $ avec $$ P=\mbox{diag}(1,-1,\cdots,(-1)^{j-1},\cdots,(-1)^{n-1}) $$
+On remarque aisément que $ P^{-1}=P $ ainsi $ H_{\varphi}^{(n)}=PH_{\tau}^{(n)}P^{-1} $, du coup $ H_{\varphi}^{(n)} $ et $ H_{\tau}^{(n)} $ sont semblables.
+\\ \textbf{Q2bi.} Appelons $ C_{j} $ la $ j$-ième colonne de $ H_{\tau}^{(n)} $.  On remarque aisément que pour tout $ i,j\leq n $, $ \tau(i+j-1)-\tau(i+j-2)=\tau(i+j)-\tau(i+j-1)=1 $. Ce qui veut dire que $ C_{j+1}-C_{j}=C_{j+2}-C_{j+1} $ ou de façon équivalente $ C_{j+2}=2C_{j+1}-C_{j} $. Se basant sur la dernière relation on voit récursivement que $ C_{j} \in \mbox{Vec}(C_{1},C_{2})=\mbox{Vec}(g(e_{1}),g(e_{2}))$. Il ressort évidente que le système $ (g(e_{1}),g(e_{2})) $ est libre donc $ \mbox{Im}(g)= \mbox{Vec}(g(e_{1}),g(e_{2}))$ ou encore $ \mbox{Im}(g)= \mbox{Vec}(g(e_{2})-g(e_{1}),g(e_{1}))$. On pose maintenant $ f_{2}=g(e_{1})=\sum_{k=1}^{n}ke_{k} $ et $ f_{1}=g(e_{2})-g(e_{1})=\sum_{k=1}^{n}(k+1)e_{k}-\sum_{k=1}^{n}ke_{k}=\sum_{k=1}^{n}e_{k} $. Ainsi l'image de $ g $ est le sous espace vectoriel $ F $ de $ \mathbb{R}^{n} $ engendré par les deux vecteurs:
+$$
+\left\{ 
+\begin{array}{rl}
+f_{1}=\sum_{k=1}^{n}e_{k}  \\ 
+f_{2}=\sum_{k=1}^{n}ke_{k}   
+\end{array} 
+\right.
+$$
+\textbf{Q2bii.} A la question précédente on a établi $ g(e_{j+1})-f(e_{j})=g(e_{j+2})-g(e_{j+1}) $ par conséquent on peut donc déduire que $ g(e_{j+1})-g(e_{j})=f_{1} $. A présent calculons $ g(e_{j}) $:
+\begin{equation*}
+g(e_{j})=g(e_{1})+\sum_{k=1}^{j-1}g(e_{k+1})-g(e_{k})=f_{2}+(j-1)(g(e_{2})-g(e_{1}))=f_{2}+(j-1)f_{1}
+\end{equation*}
+On est prêt maintenant à sortir la matrice de $ g_{|F} $ dans la base $ (f_{1},f_{2}) $:
+\begin{equation*}
+g(f_{1})=\sum_{k=1}^{n}g(e_{k})=\sum_{k=1}^{n}(f_{2}+(k-1)f_{1})=f_{1}(\sum_{k=1}^{n}k-1)+nf_{2}=\mathbf{\frac{n(n-1)}{2}}f_{1}+ \mathbf{n} f_{2}
+\end{equation*}
+\begin{equation*}
+g(f_{2})=\sum_{k=1}^{n}kg(e_{k})=\sum_{k=1}^{n}(kf_{2}+(k^{2}-k)f_{1})=f_{1}(\sum_{k=1}^{n}k^{2}-k)+(\sum_{k=1}^{n})f_{2}=\mathbf{\frac{n(n^{2}-1)}{3}}f_{1}+ \mathbf{\frac{n(n+1)}{2}} f_{2}
+\end{equation*}
+Où on a utilisé
+
+\begin{eqnarray*}
+\sum_{k=1}^{n}(k^{2}-k)
+&=& (\sum_{k=1}^{n}k^{2})-(\sum_{k=1}^{n}k)\\
+&=& \frac{n(n+1)(2n+1)}{6}-\frac{n(n+1)}{2} \\
+&=& \frac{n(n+1)}{2}\left( \frac{2n+1}{3}-1 \right) \\
+&=& \frac{n(n+1)}{2}\frac{2(n-1)}{3}\\
+&=& \frac{n(n^{2}-1)}{3}
+\end{eqnarray*}
+La matrice $ G $ de $ g_{|F} $ dans la base $ (f_{1},f_{2}) $
+$$
+G=\begin{bmatrix}
+\frac{n(n-1)}{2} & \frac{n(n^{2}-1)}{3} \\
+n& \frac{n(n+1)}{2}  
+\end{bmatrix}
+$$
+\textbf{Q2c.} Soit $ \mathcal{F} $ une base de $ \mbox{Ker}(g) $ (évidemment composée de $ (n-2) $ vecteurs). Maintenant soit $ \mathcal{C} $ la base de $ \mathbb{R}^{n} $ formée de $ \mathcal{F} $, $ f_{1} $ et $ f_{2} $. Alors la matrice de $ g $ dans $ \mathcal{C} $ est alors $ H=\mbox{diag}(0,G) $. Les valeurs propres de $ H $ sont donc 0 (multiplicité $ n-2 $), et les valeurs propres de $ G $. Ainsi diagonalisons $ G $. Ces valeurs propres sont donc les zéros de $\kappa(\lambda)= \lambda^{2}-\mbox{tr}(G)\lambda+\mbox{det}(G) $. On laisse le lecteur établir que: $ \kappa(\lambda)=\lambda^{2}-n^{2}\lambda-\frac{n^{2}(n^{2}-1)}{12} $. les zéros en questions sont $ \lambda_{1,2}=\frac{n^{2}\pm n \sqrt{\frac{4n^{2}-1}{3}}}{2} $. Maintenant il est clair que $ H $ est équivalente à $ H_{\tau}^{(n)} $ donc à $ H_{\varphi}^{(n)} $, d'où:
+\begin{equation*}
+\mbox{Sp}(H_{\varphi}^{(n)})=\mbox{Sp}(H_{\tau}^{(n)})=\mbox{Sp}(H)=\left\lbrace 0,\frac{n^{2}+n \sqrt{\frac{4n^{2}-1}{3}}}{2},\frac{n^{2}-n \sqrt{\frac{4n^{2}-1}{3}}}{2} \right\rbrace 
+\end{equation*}
+\textbf{Q3ai.} En vertu des résultats sur la croissance comparée $ \lim_{t\rightarrow +\infty}t^{2}(\sum_{i=1}^{n}c_{i}t^{i-1})^{2}\mbox{e}^{-t}=0 $. De façon équivalente $ (\sum_{i=1}^{n}c_{i}t^{i-1})^{2}\mbox{e}^{-t}=_{+\infty}o(\frac{1}{t^{2}}) $. Et comme $ t\mapsto \frac{1}{t^{2}} $ est intégrale au voisinage de $ +\infty $ il en est de même pour $ t\mapsto (\sum_{i=1}^{n}c_{i}t^{i-1})^{2}\mbox{e}^{-t} $ d'où la convergence de:
+\begin{equation*}
+\int_{0}^{+\infty}(\sum_{i=1}^{n}c_{i}t^{i-1})^{2}\mbox{e}^{-t}dt
+\end{equation*}  
+\\ \textbf{Q3aii.} On calcule ...
+\begin{eqnarray*}
+\int_{0}^{+\infty}(\sum_{i=1}^{n}c_{i}t^{i-1})^{2}\mbox{e}^{-t}dt
+&=&\int_{0}^{+\infty}(\sum_{i=1}^{n}\sum_{j=1}^{n}c_{i}c_{j}t^{i+j-2})\mbox{e}^{-t}dt \\
+&=&\sum_{i=1}^{n}\sum_{j=1}^{n}\int_{0}^{+\infty}c_{i}c_{j}t^{i+j-2}\mbox{e}^{-t}dt \\
+&=&\sum_{i=1}^{n}\sum_{j=1}^{n}c_{i}c_{j} \psi(i+j-2)
+\end{eqnarray*}
+avec $ \psi(k)=\int_{0}^{+\infty}t^{k}\mbox{e}^{-t}dt $. En vertu des mêmes arguments que la question précédente $ \psi(k) $ est bien défini. Nous allons la calculer de façon récursive tout en gardant à l'esprit que $ \psi(0)=1 $\footnote{$ \psi(0)=\int_{0}^{+\infty}\mbox{e}^{-t}dt=\left[-\mbox{e}^{-t} \right]_{0}^{+\infty}=1 $}.
+\begin{eqnarray*}
+\psi(k)
+&=& \int_{0}^{+\infty}t^{k}(-\mbox{e}^{-t})'dt \\
+&=& \left[-t^{k}\mbox{e}^{-t} \right]_{0}^{+\infty}- \int_{0}^{+\infty}-k t^{k-1}\mbox{e}^{-t}dt \\
+&=& k\psi(k-1)
+\end{eqnarray*}
+On peut alors conclure que $ \psi(k)=k!=\varphi(k) $. Nous pouvons maintenant achever comme suit:
+\begin{eqnarray*}
+\int_{0}^{+\infty}(\sum_{i=1}^{n}c_{i}t^{i-1})^{2}\mbox{e}^{-t}dt
+&=& \sum_{i=1}^{n}\sum_{j=1}^{n}c_{i}c_{j} \psi(i+j-2) \\
+&=& \sum_{i=1}^{n}\sum_{j=1}^{n}c_{i}c_{j} \varphi(i+j-2) \\
+&=& C^{t}H_{\varphi}^{(n)}C
+\end{eqnarray*}
+\\ \textbf{Q3b.} De ce qui précède $ C^{t}H_{\varphi}^{(n)}C> 0 $ pour tout vecteur $ C $ non nul de $ \mathbb{R}^{n} $. Par conséquent $ H_{\varphi}^{(n)} $ est une matrice symétrique définie positive, elle est donc diagonalisable et toutes  ses valeurs propres sont strictement positives.
+\\ \textbf{Q4.} Ici $ \varphi(k)=1/(k+1) $. On procède comme suit:
+\begin{eqnarray*}
+\int_{0}^{1}(\sum_{i=1}^{n}c_{i}t^{i-1})^{2}dt
+&=&\int_{0}^{1}(\sum_{i=1}^{n}\sum_{j=1}^{n}c_{i}c_{j}t^{i+j-2})dt \\
+&=&\sum_{i=1}^{n}\sum_{j=1}^{n}\int_{0}^{1}c_{i}c_{j}t^{i+j-2}dt \\
+&=&\sum_{i=1}^{n}\sum_{j=1}^{n}c_{i}c_{j}\frac{1}{i+j-1} \\
+&=&\sum_{i=1}^{n}\sum_{j=1}^{n}c_{i}c_{j} \varphi(i+j-2) \\
+&=& C^{t}H_{\varphi}^{(n)}C
+\end{eqnarray*}
+On en déduit que $ C^{t}H_{\varphi}^{(n)}C> 0 $ pour tout vecteur $ C $ non nul de $ \mathbb{R}^{n} $. Par conséquent $ H_{\varphi}^{(n)} $ est une matrice symétrique définie positive, elle est donc diagonalisable et toutes  ses valeurs propres sont strictement positives.
+
+
+\subsection{Partie 2:Les formes bilinéaires Delta n}
+\textbf{Q1a.} L'espace vectoriel des formes bilinéaires de $ E_{n} \times E_{n} $ à la même dimension que les matrices symétriques de $ \mathcal{M}_{n+1}(\mathbb{R}) $ c'est à dire $ \frac{(n+1)(n+2)}{2} $.
+\\ \textbf{Q1b.} Il est évident (d'accord ?):
+\begin{itemize}
+\item[$ \surd $] Pour tout $ A,B \in E_{n} $, $ \Delta_{n}(A,B)=\Delta(B,A) $
+\item[$ \surd $] Pour tout $ A \in E_{n} $, l'application $ X\mapsto \Delta_{n}(A,X) $ est linéaire 
+\end{itemize}
+\textbf{Q1c}. Posons $ C=AB=\sum_{k=0}^{2n}c_{k}X^{k} $ avec $ c_{k}=\sum_{i=0}^{k}a_{i}b_{k-i} $ et $ a_{l}=b_{l}=0 $ pour tout $ l>n $.
+\begin{eqnarray*}
+\delta_{n}(AB)
+&=& \sum_{k=0}^{2n}c_{k}\varphi(k) \\
+&=& \sum_{k=0}^{2n}\sum_{i=0}^{k}a_{i}b_{k-i}\varphi(k) \\
+&=& \sum_{i=0}^{2n}\sum_{k=i}^{2n}a_{i}b_{k-i}\varphi(k) \\
+&=& \sum_{i=0}^{n}\sum_{k=i}^{n+i}a_{i}b_{k-i}\varphi(k) \quad (a_{l}=b_{l}=0 \mbox{ pour tout } l>n) \\
+&=& \sum_{i=0}^{n}\sum_{j=0}^{n}a_{i}b_{j}\varphi(i+j) \quad (j=k-i)\\
+&=& \Delta_{n}(A,B)
+\end{eqnarray*} 
+\textbf{Q1d.} Prenons une forme bilinéaire $ \Delta $ de $ E_{n} \times E_{n} $ et une forme linéaire $ \delta $ de $ E_{2n} $ tel que $ \Delta(A,B)=\delta(AB) $. Enfin notons $ \Gamma $ la matrice de $ \Delta $ et $ \varphi $ l'application liée à $ \delta $ de sorte $ \Delta(A,B)=\sum_{i=0}^{n}\sum_{j=0}^{n}a_{i}b_{j}\Gamma_{i+1,j+1} $ et $ \delta(Q)=\sum_{k=0}^{2n}c_{k}\varphi(k) $. Maintenant en appliquant $ \Delta(A,B)=\delta(AB) $ avec $ A=X^{i} $ et $ B=X^{j} $ on obtient $ \Gamma_{i+1,j+1}=\varphi(i+j) $. Écrit autrement on a donc $ \Gamma_{i,j}=\varphi(i+j-2) $ pour tout $ i,j $ dans l'intervalle entier $ [1,n+1] $. Considérons les matrice de $ B_{k} $ de $ \mathcal{M}_{n+1}(\mathbb{R}) $ définies par $ B_{k}=(\mathbf{\delta}_{i+j-2,k})_{1\leq i,j\leq n+1} $  où $ k\leq 2n $ et $ \mathbf{\delta} $ désigne le symbole de Kronecker. Du coup par définition des $ \Gamma_{i,j} $ on peut aisément écrire $ \Gamma=\sum_{k=0}^{2n}\varphi(k)B_{k} $. Ceci prouve bien l'espace des formes bilinéaires symétriques  de $ E_{n} \times E_{n} $ qui peuvent s'écrire $ (A,B)\mapsto \delta(AB) $ avec $ \delta $ forme linéaire sur $ E_{2n} $ est bien de dimension $ 2n+1 $.
+\\ \textbf{Q2a.} Posons $ Q=\sum_{k=0}^{2n}c_{k}X^{k} $, on a:
+\begin{eqnarray*}
+\delta_{n}(Q)
+&=& \sum_{k=0}^{2n}c_{k}\mathbf{E}(Y^{k}) \\
+&=& \mathbf{E}\left( \sum_{k=0}^{2n} c_{k}Y^{k}\right) \\
+&=& \mathbf{E}(Q(Y)) 
+\end{eqnarray*}
+\\ \textbf{Q2b.} Dans cette section il suffit de trouver une condition sur $ n $ et $ d $ pour que $ (\Delta_{n}(A,A)=0\Leftrightarrow A=0) $ ou de façon équivalente $ (\delta_{n}(A^{2})=0\Leftrightarrow A=0) $. Ici nous prouvons que la condition est $ d>n $. Supposons que $ d>n $. Puis prenons un polynôme $ A $ de $ E_{n} $ tel que $ \delta_{n}(A^{2})=0 $. Ceci veut dire que $ \mathbf{E}(A^{2}(Y))=0 $. On en déduit que $ A^{2}(Y)=0 $ ou encore $ A(Y)=0 $. Plus formellement on vient de prouver que $ \forall k\leq d,A(y_{k})=0 $. Ceci veut dire que $ A=0 $ sinon $ A $ aurait plus de $ n $ racines (en réalité $ d $ racines avec $ d>n $). Ceci prouve maintenant la première partie. A présent supposons que $ d\leq n $, nous allons exhiber un polynôme non nul $ \tilde{A} $ tel que $ \delta_{n}(\tilde{A}^{2})=0 $. En effet on prend $ \tilde{A}=\prod_{i=1}^{d}(X-y_{i}) $. Ceci achève la deuxième partie de la preuve et la condition recherchée est bien $ d>n $. 
+\\ \textbf{Q3ai.} On vérifie aisément que:
+\begin{eqnarray*}
+\Delta_{2}(a_{2}X^{2}+a_{1}X+a_{0},b_{2}X^{2}+b_{1}X+b_{0})
+&=& \sum_{i=1}^{3}\sum_{j=1}^{3}a_{i-1}b_{j-1}\frac{1}{i+j-1}\\
+&=& a_{0}b_{0}+a_{1}b_{1}\frac{1}{3}+a_{2}b_{2}\frac{1}{5}+2\left( a_{0}b_{1}\frac{1}{2}+a_{0}b_{2}\frac{1}{3}+a_{1}b_{2}\frac{1}{4} \right) \\
+&=&
+\begin{bmatrix}
+a_{0} & a_{1} & a_{2}
+\end{bmatrix} 
+\begin{bmatrix}
+1 & \frac{1}{2} & \frac{1}{3} \\
+\frac{1}{2}& \frac{1}{3} &\frac{1}{4} \\
+\frac{1}{3} & \frac{1}{4} & \frac{1}{5}   
+\end{bmatrix}
+\begin{bmatrix}
+b_{0} \\
+b_{1} \\
+ b_{2}
+\end{bmatrix}  \\
+&=& C_{A}^{t}H_{\varphi}^{(3)}C_{B} 
+\end{eqnarray*}
+\\ \textbf{Q3aii.} On voit bien que $ H_{\varphi}^{(3)} $ est la matrice de $ \Delta_{2} $ dans la base canonique de $ \mathbb{R}^{3} $. D'après Q4 de la première partie $ H_{\varphi}^{(3)} $ est définie positive donc $ \Delta_{2} $ est définie positive. Notons $ \|.\|_{\varphi} $ la norme associée à ce produit scalaire.
+\\ \textbf{Q3b.} On note $ e_{1}=1,\quad e_{2}=X,\quad e_{3}=X^{3} $ et $ \mathcal{B}'_{2}=(e'_{1},e'_{2},e'_{3}) $. Par le procédé d'orthonormalisation de Schmidt on a:
+\begin{equation*}
+e'_{1}=\frac{e_{1}}{\|e_{1}\|} \quad  e'_{2}=\frac{e_{2}-\Delta(e_{2},e'_{1})e'_{1}}{\|e_{2}-\Delta(e_{2},e'_{1})e'_{1}\|} \quad e'_{3}=\frac{e_{3}-\Delta(e_{3},e'_{1})e'_{1}-\Delta(e_{3},e'_{2})e'_{2}}{\|e_{3}-\Delta(e_{3},e'_{1})e'_{1}-\Delta(e_{3},e'_{2})e'_{2}\|}
+\end{equation*}
+ On trouve
+$$ e'_{1}=1,\quad e'_{2}=\sqrt{12}\left( X-\frac{1}{2} \right),\quad e'_{3}=\sqrt{180}\left( X^{2}-X+\frac{1}{6} \right)   $$
+\textbf{Q3ci.} Vu que $ N=\mbox{Pass}(\mathcal{B}'_{2},\mathcal{B}_{2}) $ on a:
+$$
+N=\mbox{mat}_{\mathcal{B}_{2}}\mathcal{B}'_{2}=\begin{bmatrix}
+1 & \frac{-\sqrt{12}}{2} & \sqrt{180} \\
+0& \sqrt{12} & -\sqrt{180} \\
+0 & 0 & \frac{\sqrt{180}}{6}   
+\end{bmatrix}
+$$
+N est bien triangulaire.
+\\ \textbf{Q3cii.} Vu que $ M=\mbox{Pass}(\mathcal{B}_{2},\mathcal{B}'_{2}) $ alors $ M^{t}H_{\varphi}^{(3)}M $ est la matrice du produit scalaire $ \Delta_{2} $ dans la base $ \mathcal{B}'_{2}) $. Or la base $ \mathcal{B}'_{2}) $ est orthonormale pour le produit scalaire $ \Delta_{2} $ donc $ M^{t}H_{\varphi}^{(3)}M=I_{3} $. Par définition $ N $ et $ M $ sont inverses, ainsi en multipliant la dernière relation par $ N^{t} $ à gauche et $ N $ à droite on obtient clairement que $ H_{\varphi}^{(3)}=N^{t}N $.
+\\ \textbf{Q3cii.} Considérons la base $ \mathcal{B}_{n}=(1,X,\cdots,X^{n}) $ et la $ \mathcal{B}'_{n} $ obtenue à partir de $ \mathcal{B}_{n} $ par le procédé d'orthonormalisation de Schmidt. On note $ M_{n}=\mbox{Pass}(\mathcal{B}_{n},\mathcal{B}'_{n}) $ et $ N_{n}=\mbox{Pass}(\mathcal{B}'_{n},\mathcal{B}_{n}) $. Par définition $ N_{n} $ est bien triangulaire supérieure puisque par construction $ e'_{j} \in \mbox{Vec}(e_{1},\cdots,e_{j}) $ pour $ j\leq n+1 $ (avec $ e_{j}=X^{j-1} $). Vu que $ M_{n}=\mbox{Pass}(\mathcal{B}_{n},\mathcal{B}'_{n}) $ alors $ M_{n}^{t}H_{\varphi}^{(n)}M_{n} $ est la matrice du produit scalaire $ \Delta_{n} $ dans la base $ \mathcal{B}'_{n}) $. Or la base $ \mathcal{B}'_{n}) $ est orthonormale pour le produit scalaire $ \Delta_{n} $ donc $ M_{n}^{t}H_{\varphi}^{(3)}M_{n}=I_{n} $. Par définition $ N_{n} $ et $ M_{n} $ sont inverses, ainsi en multipliant la dernière relation par $ N_{n}^{t} $ à gauche et $ N_{n} $ à droite on obtient clairement que $ H_{\varphi}^{(n)}=N_{n}^{t}N_{n} $. Il suffit donc de prendre $ T^{(n)}=N_{n} $.
+
+
+
+\subsection{Partie 3:polynômes positifs et matrices de moments}
+\textbf{Q1a.} Soit $ P $ un polynôme positif. Raisonnons par l'absurde et supposons qu'il existe une racine $ \alpha $ du polynôme $ P $ qui soit de multiplicité impaire. Nous allons montrer que le polynôme $ P $ change de signe. En outre on sait que  si $ P $ admet une racine complexe $ z=a+ib $, le conjugué $ \bar{z} $ est aussi un zéro de $ P $ avec la même multiplicité que $ z $. De sorte que $ P $ est divisible par le polynôme $ (X-z)(X-\bar{z})=X^{2}-2\mbox{Re}(z)X+|z|^{2}=X^{2}-2aX+a^{2}+b^{2} $. En notant $ \alpha_{1}, \alpha_{2},\cdots,\alpha_{p} $ les racines réelles de multiplicité impaire. On voit que $ P $ peut s'écrire sous la forme:
+\begin{equation*}
+P=\lambda\left( \prod_{i=1}^{p}(X-\alpha_{i}) \right) \left( \prod_{j=1}^{m}(X-\alpha_{i})^{2\beta_{j}} \right) \left( \prod_{k=1}^{l}(X^{2}-2a_{k}X+a_{k}^{2}+b_{k}^{2})^{\gamma_{k}} \right), \quad \lambda \in \mathbb{R}^{*}
+\end{equation*}
+où $ m\geq p $ est le nombre de toutes les racines réelles, $ l $ le nombre de racines complexes. $ \gamma_{k} $ est l'ordre de multiplicité de la $ k $-ième racine complexe. En vertu de cette égalité on peut conclure que $ P $ a le même signe que $\lambda \prod_{i=1}^{p}(X-\alpha_{i}) $ qui quant à lui change de signe (indépendamment de $ \lambda $). Il en est donc de même pour $ P $. Contradiction! par conséquent toute racine réelle d'un polynôme positif doit avoir un ordre de multiplicité pair.
+\\ \textbf{Remarque}: Se basant sur cette question on déduit que tout polynôme positif $ P $ a la forme ci-dessous:
+\begin{equation*}
+P= \kappa^{2}\left( \prod_{j=1}^{m}(X-\alpha_{i})^{2\beta_{j}} \right) \left( \prod_{k=1}^{l}(X^{2}-2a_{k}X+a_{k}^{2}+b_{k}^{2})^{\gamma_{k}} \right), \quad \kappa \in \mathbb{R}^{*}
+\end{equation*} 
+\\ \textbf{Q1b.} De ce qui précède un polynôme positif de degré 2 a nécessairement la forme: $ P=\kappa^{2}(X^{2}-2aX+a^{2}+b^{2}) $. On achève la question car on peut écrire: $ P=(\kappa(X-a))^{2}+(\kappa b)^{2} $. 
+\\ \textbf{Q1c.} C'est un classique:
+\begin{eqnarray*}
+(AC+BD)^{2}+(AD-BC)^{2}
+&=& A^{2}C^{2}+2ACBD+B^{2}D^{2}+A^{2}D^{2}-2ABCD+B^{2}C^{2} \\
+&=& A^{2}C^{2}+B^{2}D^{2}+A^{2}D^{2}+B^{2}C^{2} \\
+&=& (A^{2}+B^{2})(C^{2}+D^{2})
+\end{eqnarray*}
+\textbf{Remarque 2:} On peut étendre le résultat en prouvant que pour tout entier $ n $  qu'on exhiber des polynômes $ E_{n} $ et $ F_{n} $ tel que $ \prod_{i=1}^{n}(A_{i}^{2}+B_{i}^{2})=E_{n}^{2}+F_{n}^{2} $. On prouve le résultat par récurrence sur $ n $. Le cas $ n=1 $ est immédiat vu qu'on pose $ E_{1}=A_{1} $ et $ F_{1}=B_{1} $. Maintenant supposons qu'elle est vraie à l'ordre $ n-1 $ et prouvons l'hérédité au rang $ n $:
+\begin{eqnarray*}
+\prod_{i=1}^{n}(A_{i}^{2}+B_{i}^{2})
+&=& \left( \prod_{i=1}^{n-1}(A_{i}^{2}+B_{i}^{2})\right)(A_{n}^{2}+B_{n}^{2}) \\
+&=& (E_{n-1}^{2}+F_{n-1}^{2})(A_{n}^{2}+B_{n}^{2}) \\
+&=& (E_{n-1}A_{n}+F_{n-1}B_{n})^{2}+(E_{n-1}B_{n}-F_{n-1}A_{n})^{2}
+\end{eqnarray*}
+Fin de la récurrence avec $ E_{n}=E_{n-1}A_{n}+F_{n-1}B_{n} $ et $ F_{n}=E_{n-1}B_{n}-F_{n-1}A_{n} $.  C.Q.F.D.
+\\ \textbf{Q1d.} En se servant de la remarque de Q1, on peut écrire P sous la forme:
+\begin{equation*}
+P= \kappa^{2}\left( \prod_{j=1}^{m}(X-\alpha_{i})^{2\beta_{j}} \right) \left( \prod_{k=1}^{l}((X-a_{k})^{2}+b_{k}^{2})^{\gamma_{k}} \right)
+\end{equation*}
+En utilisant la remarque de la question précédente il existe des polynômes $ E,F $ tel que:
+\begin{equation*}
+\prod_{k=1}^{l}((X-a_{k})^{2}+b_{k}^{2})^{\gamma_{k}}=E^{2}+F^{2}
+\end{equation*}
+D'où 
+\begin{equation*}
+P=(GE)^{2}+(GF)^{2}, \quad \mbox{avec } G=\kappa\prod_{j=1}^{m}(X-\alpha_{i})^{\beta_{j}}
+\end{equation*}
+Ce qu'il fallait démontrer.
+\\ \textbf{Q1e.} On sait pour tout $ A \in E_{n} $, $ \Delta_{n}(A,A)=\delta_{n}(A^{2}) $. Par conséquent $ \Delta_{n} $ est un produit scalaire ssi $ \delta_{n}(A^{2})>0 $ pour tout $ A \in E_{n} $ non nul. A présent supposons que $ \Delta_{n} $ est un produit scalaire.  Maintenant pour tout $ P \in E_{n} $ polynôme positif on peut trouver des polynômes non tous nuls $ A,B $ de $ E_{n} $ tel que $ P=A^{2}+B^{2} $ donc $ \delta_{n}(P)=\delta_{n}(A^{2})+\delta_{n}(B^{2})>0 $.  Réciproquement supposons que $ \delta_{n}(P)>0 $ pou tout polynôme positif  $ P \in E_{2n} $. Alors pour tout $ A \in E_{n} $ non nul, $ A^{2} $ est un polynôme positif de $ E_{2n} $ donc $ \delta_{n}(A^{2})>0 $. 
+\\ \textbf{Q2a.} Par définition $ P_{n} $ est orthogonal à $ \mbox{Vec}(P_{0},\cdots,P_{j}) $ pour tout $ j<n $. Maintenant $ (P_{i})_{0\leq i \leq n} $ forme une famille de polynômes à degré échelonné partant de $ 0 $ à $ n $. par conséquent $ (P_{0},\cdots,P_{j}) $ est une base de $ E_{j} $ donc $ \mbox{Vec}(P_{0},\cdots,P_{j})=E_{j} $. En conséquence $ P_{n} $ est orthogonal à $ E_{j} $ pour tout $ j<n $. En particulier pour $ j=n-2 $, $ P_{n} $ est orthogonal à $ E_{n-2} $ ou à tout polynôme de degré inférieur ou égal à $ n-2 $. 
+\\ \textbf{Q2b.} On prouve dans un premier temps que toutes les racines de $ P_{n} $ sont réelles. Raisonnons par l'absurde et supposons que $ P_{n} $ admet une racine complexe $ z $. En outre on sait que  si $ P_{n} $ admet une racine complexe $ z=a+ib $, le conjugué $ \bar{z} $ est aussi un zéro de $ P $ avec la même multiplicité que $ z $. De sorte que $ P_{n} $ est divisible par le polynôme $ Q=(X-z)(X-\bar{z})=X^{2}-2\mbox{Re}(z)X+|z|^{2}=X^{2}-2aX+a^{2}+b^{2} $, $ Q $ est bien sûr un polynôme positif. Par conséquent on peut écrire que $ P_{n}=Q\tilde{P}_{n} $ avec $ \tilde{P}_{n} \in E_{n-2} $. Le produit de deux polynômes positifs étant positif $ Q\tilde{P}_{n}^{2} $ est alors positif. On a alors:
+\begin{eqnarray*}
+0
+&=& \Delta_{n}(P_{n},\tilde{P}_{n})\\
+&=& \Delta_{n}(Q\tilde{P}_{n},\tilde{P}_{n}) \\
+&=& \delta_{n}(Q\tilde{P}_{n}^{2}) \\
+&> & 0
+\end{eqnarray*}
+Contradiction! Par conséquent toutes les racines de $ P_{n} $ sont réelles. Il reste maintenant à prouver que  toutes ses racines réelles sont simples. Raisonnons par l'absurde et supposons que $ P_{n} $ admet une racine d'ordre au moins 2, $ \alpha $. Dans ce cas on peut écrire $ P_{n}=(X-\alpha)^{2}\bar{P}_{n} $ avec $ \bar{P}_{n} \in E_{n-2} $. En utilisant les mêmes arguments que précédemment:
+\begin{eqnarray*}
+0
+&=& \Delta_{n}(P_{n},\bar{P}_{n})\\
+&=& \Delta_{n}((X-\alpha)^{2}\bar{P}_{n},\bar{P}_{n}) \\
+&=& \delta_{n}((X-\alpha)^{2}\tilde{P}_{n}^{2}) \\
+&> & 0
+\end{eqnarray*}
+Contradiction! D'où toutes les racines de $ P_{n} $ sont réelles et simples, i.e. $ P_{n} $ est scindé à racines simples sur $ \mathbb{R} $.
+\\ \textbf{Q3a.} Prenons des réels $ (\lambda_{1},\lambda_{2},\cdots,\lambda_{n}) $ tel que $ \sum_{i=1}^{n}\lambda_{i}L_{i}=0 $. En évaluant la somme précédente en $ \alpha_{k} $ on trouve $ \lambda_{k}=0 $. Par conséquent $ (L_{1},L_{2},\cdots,L_{n}) $ est une famille libre maximale de $ E_{n-1} $ elle en est donc une base. Posons $ H=\sum_{i=1}^{n}L_{i} $. Le polynôme $ H-1 $ est de degré au plus $ n-1 $ mais vaut zéros en n points distincts à savoir $ \alpha_{1},\alpha_{2},\cdots,\alpha_{n} $. Par conséquent il est nul, i.e. $ H=\sum_{i=1}^{n}L_{i}=1 $.
+\\ \textbf{Q3bi.} Prenons $ Q \in E_{2n-1} $. Effectuons la division euclidienne de $ Q $ par $ P_{n} $. Alors il existe un unique couple de polynômes $ (A,R) $ tel que $ Q=P_{n}A+R $. il est clair que $ \deg(R)< \deg(P_{n})=n $ donc $ \deg(R)\leq n-1 $ soit $ R \in E_{n-1} $. Par ailleurs $ \deg(Q)=\deg(A)+\deg(P_{n})=\deg(A)+n $ d'où $ \deg(A)=\deg(Q)-n\leq 2n-1-n=n-1 $, i.e. $ A \in E_{n-1} $. 
+\\ \textbf{Q3bii.} Toujours avec les mêmes notations de la question précédente l'on a nécessairement $ R(\alpha_{i})=Q(\alpha_{i}) $ puisque les $ \alpha_{i} $ sont les zéros de $ P_{n} $. En utilisant la base $ (L_{1},L_{2},\cdots,L_{n}) $ on se souvient que $ R=\sum_{i=1}^{n}R(\alpha_{i})L_{i} $ donc $ R=\sum_{i=1}^{n}Q(\alpha_{i})L_{i} $. Maintenant par définition de $ P_{n} $ il vient que: $ \delta_{n}(P_{n}A)=\Delta_{n}(P_{n},A)=0 $ ($ P_{n} $ étant orthogonal à $ A $). Enfin:
+\begin{eqnarray*}
+\delta_{n}(Q)
+&=& \delta_{n}\left( P_{n}A+\sum_{i=1}^{n}Q(\alpha_{i})L_{i} \right) \\
+&=& \underbrace{\delta_{n}\left( P_{n}A \right)}_{=0}+\delta_{n}\left( \sum_{i=1}^{n}Q(\alpha_{i})L_{i} \right) \\
+&=&  \sum_{i=1}^{n}Q(\alpha_{i})\delta_{n}(L_{i})
+\end{eqnarray*}
+\\ \textbf{Q3c.} L'idée ici est de prouver que $ \delta_{n}(L_{i})=\delta_{n}(L_{i}^{2}) $. Remarquons pour $ i \neq j $ le polynôme $ X-\alpha_{i} $ divise $ L_{j} $ et qu'il existe un réel $ \mu_{i} $ tel que $ \mu_{i}(X-\alpha_{i})L_{i}=P_{n} $. On peut aussi poser $ R_{j}^{(i)}=\frac{L_{j}}{X-\alpha_{i}} $. On montre que $ \delta_{n}(L_{i}L_{j})=0 $:
+\begin{eqnarray*}
+\delta_{n}(L_{i}L_{j})
+&=& \frac{1}{\mu_{i}}\delta_{n}\left( \mu_{i}(X-\alpha_{i})L_{i}\frac{L_{j}}{X-\alpha_{i}} \right) \\
+&=& \frac{1}{\mu_{i}} \delta_{n}(P_{n}R_{j}^{(i)})  \\
+&=& \frac{1}{\mu_{i}} \Delta_{n}(P_{n},R_{j}^{(i)}) \\
+&=& 0 \mbox{ (car }  R_{j}^{(i)} \in E_{n-2})
+\end{eqnarray*}
+On est prêt à achever:
+\begin{eqnarray*}
+\delta_{n}(L_{i})
+&=& \delta_{n}(L_{i}(\sum_{i=1}^{n}L_{i}=1)) \\
+&=&\delta_{n}(L_{i}^{2})+ \sum_{j \neq i}\delta_{n}(L_{i}L_{j}) \\
+&=& \delta_{n}(L_{i}^{2}) \\
+&>& 0 (\mbox{ D'après Q1e. })
+\end{eqnarray*}
+Ceci prouve $ p_{1},p_{2},\cdots,p_{n} $ sont strictement positifs. Nous prouvons maintenant que leur somme est égale à 1:
+\begin{eqnarray*}
+\sum_{i=1}^{n}p_{i}
+&=& \sum_{i=1}^{n}\delta_{n}(L_{i}) \\
+&=& \delta_{n}\left( \sum_{i=1}^{n}L_{i} \right) \\
+&=& \delta_{n}(1) \\
+&=& 1  
+\end{eqnarray*} 
+\\ \textbf{Q4a.} Considérons une variable aléatoire définie sur un espace probabilisé $ (\Omega, \mathcal{A},\mathbf{P}) $ prenant $ n $ valeurs distinctes $ \alpha_{1},\alpha_{2},\cdots, \alpha_{n} $ avec les probabilités respectives $ \delta_{n}(L_{1}),\delta_{n}(L_{2}),\cdots,\delta_{n}(L_{n}) $ strictement positives. Évidemment de ce qui précède $ \sum_{k=1}^{n}\delta_{n}(L_{k})=1 $. On montre que cette variable aléatoire $ Z $ convient. Pour tout $ k $ appartenant à l'intervalle entier $ [1,2n-1] $:
+\begin{eqnarray*}
+\varphi(k)
+&=& \delta_{n}(X^{k}) \\
+&=& \sum_{i=1}^{n}\alpha_{i}^{k}\delta_{n}(L_{i}) \\
+&=& \mathbf{E}(Z^{k})
+\end{eqnarray*} 
+\\ \textbf{Q4b.} Ici on montre que le nombre minimal de valeurs prises par $ Z $ est $ n $. Maintenant appelons ce entier minimal $ n_{\varphi} $. D'après la question précédente on peut exhiber une v.a. $ Z $ à $ n $ valeurs satisfaisant ladite condition donc $ n_{\varphi}\leq n $. Maintenant il reste à montrer que $ n_{\varphi}\geq n $. Pour cela il suffit de prouver que pour tout entier $ p<n $ on ne peut pas trouver une v.a. prenant au plus  $ p $ valeurs et satisfaisant notre condition d'intérêt. Raisonnons par l'absurde et supposons qu'une telle v.a. $ Z_{p} $ existe et qu'elle charge les points $ \alpha_{1},\alpha_{2},\cdots, \alpha_{p} $ avec les probabilités respectives $ \pi_{1},\pi_{2},\cdots,\pi_{p} $  positives (pas nécessairement strictement positives). En gros on voit que le vecteur $ (\alpha_{1},\alpha_{2},\cdots, \alpha_{p},\pi_{1},\pi_{2},\cdots,\pi_{p}) $ de $ \mathbb{R}^{2p} $ est solution du système non linéaire à $ 2n $ équations:
+\begin{equation*}
+(\mathcal{S}): \frac{1}{k+1}=\sum_{i=1}^{p}\alpha_{i}^{k}\pi_{i}, \quad 0\leq k \leq 2n-1
+\end{equation*}
+Considérons le polynôme $ Q=\prod_{i=1}^{p}(X-\alpha_{i}) $. Si on note que $ Q=X^{n}-\sum_{i=1}^{p}b_{i}X^{p-i} $. Par conséquent $ (\mathcal{S}) $ implique $ (1/k)_{1\leq k \leq 2n} $ sont les termes de la récurrence linéaire:
+\begin{equation*}
+u_{n}=\sum_{i=1}^{p}b_{i}u_{n-i}
+\end{equation*} 
+Par conséquent en notant $ v_{i}=(\frac{1}{i},\frac{1}{i+1},\cdots,\frac{1}{i+p}) $. On a un clairement:
+\begin{equation*}
+v_{p+1}=\sum_{i=1}^{p}b_{i}v_{p+1-i}
+\end{equation*}  
+En d'autres termes le système $ (v_{1},\cdots,v_{p+1}) $ est lié. Ceci est absurde puisque les $ (v_{i})_{1\leq i \leq p+1} $ sont les colonnes de la matrice inversible $ H_{\varphi}^{(p+1)} $  et donc ils forment un système libre\footnote{Il est à noter que $ 2p+1<2n $.} . Notre hypothèse est donc prouvée et $ n_{\varphi}=n $.
+
+ 
+\newpage
+\vspace{5cm}
+\begin{center}
+\huge
+{\fontfamily{pzc}\selectfont
+J'espère que cette Solution vous aidera  et Bonne Chance pour votre Concours. 
+\\Contactez moi à \textbf{l'adresse de haut de page} en cas de questions.
+\\ Également avertissez moi si vous soupçonnez une quelconque erreur.
+\\Cordialement Ulrich GOUE}
+\end{center}
+
+%%%%%%%%%%%%%%%%%%%%%%%% WRITE INSIDE  WRITE INSIDE   WRITE INSIDE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  \end{spacing}
+  \end{document}

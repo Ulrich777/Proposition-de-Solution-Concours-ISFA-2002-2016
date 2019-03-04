@@ -1,0 +1,941 @@
+\documentclass[10pt, oneside]{article}
+\usepackage[latin1]{inputenc}
+%\usepackage[Glenn]{fncychap}
+\usepackage[T1]{fontenc} %zazegouza
+\usepackage[top= 1.5cm, left= 2cm, bottom=1.5cm, right=2cm]{geometry}
+% \geometry{margin=2in} % for example, change the margins to 2 inches all round
+% \geometry{landscape} % set up the page for landscape
+%   read geometry.pdf for detailed page layout information
+\usepackage{graphicx} % support the \includegraphics command and options
+\usepackage{color}
+\usepackage{xcolor}
+\usepackage{lettrine}
+\usepackage{multirow}
+\usepackage{multicol}
+\usepackage{fancybox}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{caption}
+\usepackage{pdfpages}
+\usepackage{slashbox}
+\usepackage{acronym}
+\usepackage[left,modulo]{lineno}
+\modulolinenumbers[1]
+
+
+%\usepackage{times}
+%%\usepackage{anttor}
+%\usepackage{arev}
+%\usepackage{ccfonts}
+%\usepackage{cmbright}
+%\usepackage{fourier}
+%\usepackage{fouriernc}
+%\usepackage{gfsartemisia}
+%\usepackage{iwona}
+%\usepackage{kpfonts} %%
+%\usepackage{kurier}
+%\usepackage{mathptmx}
+\usepackage{lmodern}
+
+
+
+%\ggraphy{}
+%\usepackage{csquotes}
+
+
+% \usepackage[parfill]{parskip} % Activate to begin paragraphs with an empty line rather than an indent
+
+%%% PACKAGES
+\usepackage{booktabs} % for much better looking tables
+\usepackage{array} % for better arrays (eg matrices) in maths
+
+\usepackage{subfig} % make it possible to include more than one captioned figure/table in a single float
+\usepackage{hyperref}
+\hypersetup{
+colorlinks=true, %colorise les liens
+breaklinks=true, %permet le retour à la ligne dans les liens trop longs
+urlcolor= blue, %couleur des hyperliens
+linkcolor= blue, %couleur des liens internes
+bookmarks=true, %créé des signets pour Acrobat
+bookmarksopen=true,
+%si les signets Acrobat sont créés,
+%les afficher complètement.
+pdftitle={Une évaluation des coûts de la petite monnaie: une approche par la programmation dynamique combinatoire}, %informations apparaissant dans
+pdfauthor={Goué},
+%dans les informations du document
+pdfsubject={petite monnaie}
+%sous Acrobat.
+}
+\usepackage[francais]{babel}%, english
+\usepackage{fancyhdr}
+\addto\captionsfrench{
+\renewcommand{\partname}{Partie}
+\renewcommand{\thepart}{\Roman{part}}
+}
+%\pagestyle{fancy}
+\usepackage{shorttoc}
+\setcounter{secnumdepth}{4}
+\setcounter{tocdepth}{3}
+\let\cleardoublepage\clearpage
+\usepackage{titlesec}
+\usepackage{shorttoc}
+\usepackage{lscape}
+\usepackage{setspace}
+\usepackage{multirow}
+\usepackage{colortbl}
+\usepackage{shorttoc}
+\usepackage[nohints]{minitoc}
+\usepackage{tabularx}
+\onehalfspacing %\onehalfspacing, singlespacing
+\usepackage{threeparttable}
+\addto \captionsfrench {
+\renewcommand {\figurename}{Figure}
+\renewcommand {\tablename}{Tableau}
+}
+\setcounter{secnumdepth}{3}
+%\usepackage{ctable}
+%\newcounter{savefootnote
+\pagestyle{fancy}
+\lhead{\scriptsize   ABIDJAN - 04/02/2017}
+\rhead{\scriptsize  \it mail:goueulricj07@gmail.com}
+\lfoot{\scriptsize   Ulrich GOUE}
+\rfoot{-\thepage-}
+\cfoot{}
+\renewcommand{\footrulewidth}{1.5pt}
+\renewcommand{\headrulewidth}{1.5pt}
+\fancypagestyle{plain}{
+\fancyfoot[R]{-\thepage-}
+\fancyfoot[L]{\footnotesize  Ulrich GOUE}
+}
+ \makeatletter
+ \@addtoreset{chapter}{part}
+\makeatother
+ \usepackage{minitoc}
+ \mtcselectlanguage{french}
+ 
+ \begin{document}
+  %\includepdf{page.pdf}
+  \begin{spacing}{1.5}
+%%%%%%%%%%%%%%%%%%%%%%%% WRITE INSIDE  WRITE INSIDE   WRITE INSIDE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  
+  %\frontmatter
+\section{Épreuve de Mathématiques}
+\subsection{Partie I: Quelques cas déterministes} 
+ 
+\hspace{-0.4cm}\textbf{Q1}: Pour prouver la convergence de la suite $ (\gamma_{n})_{n \in \mathbb{N}^{*}} $, nous montrerons qu'elle décroissante et minorée.
+\begin{eqnarray*}
+\gamma_{n+1}-\gamma_{n}
+&=& (H_{n+1}-H_{n})-(\ln(n+1)-\ln(n)) \\
+&=& \frac{1}{n+1}-\ln\left( 1+\frac{1}{n} \right) 
+\end{eqnarray*}
+Mais puisque $ \ln(1+x)\geq \frac{x}{1+x} $ on a donc $ \ln\left( 1+\frac{1}{n} \right)\geq \frac{1/n}{1+1/n}=\frac{1}{n+1} $. Par conséquent $ \gamma_{n+1}\leq \gamma_{n} $ et la suite $ (\gamma_{n})_{n \in \mathbb{N}^{*}} $ est décroissante. Par ailleurs, il est connu que $ x \geq \ln(1+x) $, il s'en suit alors:
+\begin{eqnarray*}
+\gamma_{n}
+&=& \sum_{k=1}^{n}\frac{1}{k}-\ln(n) \\
+& \geq & \sum_{k=1}^{n} \ln(1+\frac{1}{n})-\ln(n) \\
+&=& \underbrace{\sum_{k=1}^{n} \ln(k+1)-\ln(k)}_{\mbox{télescopage}} -\ln(n) \\
+&=& \ln(n+1)-\ln(n)=\ln(1+\frac{1}{n}) \\
+&\geq & 0.
+\end{eqnarray*}
+ Notre suite est aussi minorée d'où le résultat.
+ 
+\hspace{-0.4cm}\textbf{Q2a}. Il suffit juste de manipuler l'opérateur $ \sum $:
+ \begin{eqnarray*}
+ \sum_{n=1}^{2N}\frac{(-1)^{n}}{n}
+ &=& \sum_{n=1}^{2N}\frac{1+(-1)^{n}}{n}-\sum_{n=1}^{2N}\frac{1}{n} \\
+ &=& \sum_{n=1}^{N}\frac{2}{2n}-H_{2N} \\
+ &=& H_{N}-H_{2N}
+ \end{eqnarray*}
+ 
+\hspace{-0.4cm}\textbf{Q2b} . Notons la somme partielle $ T_{N}=\sum_{n=1}^{N}\frac{(-1)^{n}}{n} $. La question est donc équivalente à prouver la convergence de $ (T_{n})_{n \in \mathbb{N}^{*}} $. Autrement il est suffisant de montrer la convergence des suites $ (T_{2n})_{n \in \mathbb{N}^{*}} $ et $ (T_{2n+1})_{n \in \mathbb{N}} $.  Puisque $ T_{2n}-T_{2n+1}=\frac{1}{2n+1} $, il est donc suffisant de prouver la convergence $ (T_{2n})_{n \in \mathbb{N}^{*}} $. La relation précédente implique donc que $ (T_{2n+1})_{n \in \mathbb{N}} $ converge et vers la même limite que $ (T_{2n})_{n \in \mathbb{N}^{*}} $. 
+\\ Par la question Q1, on a également $ H_{n}=\ln(n)+\gamma+o(1) $. En conséquence:
+\begin{eqnarray*}
+T_{2N}
+&=& H_{N}-H_{2N} \\
+&=& (\ln(N)+\gamma)-(\ln(2N)+\gamma)+o(1) \\
+&=& -\ln(2)+o(1)
+\end{eqnarray*}  
+Donc $ \lim_{N\rightarrow \infty}T_{2N}=-\ln(2) $. Somme toute chose dite, la série $ \sum \frac{(-1)^{n}}{n}  $ converge et sa somme est $ -\ln(2) $.
+
+\hspace{-0.4cm}\textbf{Q3}. Notons $ U_{N}=\sum_{n=1}^{N}\frac{\varepsilon_{n}}{n} $. Ici on prouve que la sous-suite $ (U_{3n})_{n \in \mathbb{N}^{*}} $ diverge. Dans ce cas elle sera aussi équivalente aux sous-suites $ (U_{3n+1})_{n \in \mathbb{N}} $ et $ (U_{3n+2})_{n \in \mathbb{N}} $.    Comme précédemment on va juste manipuler l'opérateur $ \sum $:
+\begin{eqnarray*}
+U_{3N}
+&=& \sum_{n=1}^{3N}\frac{\varepsilon_{n}}{n} \\
+&=&\sum_{n=1}^{3N}\frac{1}{n}-\sum_{n=1}^{N}\frac{2}{3n} \\
+&=& H_{3N}-\frac{2}{3}H_{N} \\
+&=& (\ln(3N)+\gamma)-\frac{2}{3}(\ln(N)+\gamma)+o(1) \\
+&=& \frac{1}{3}\ln(N)+\ln(3)+\frac{\gamma}{3}+o(1) 
+\end{eqnarray*}
+Ainsi comme prédit, la suite $ (U_{3n})_{n \in \mathbb{N}^{*}} $ converge vers $ +\infty $, il en est alors de même pour $ (U_{3n+1})_{n \in \mathbb{N}} $ et $ (U_{3n+2})_{n \in \mathbb{N}} $. En gros la série $ \sum \frac{\varepsilon_{n}}{n} $ diverge. 
+
+\hspace{-0.4cm}\textbf{Q4a}. On a:
+\begin{eqnarray*}
+\sum_{n=0}^{N}\left( \frac{1}{4n+1}-\frac{1}{4n+3}\right) 
+&=& \sum_{n=0}^{2N+1} \frac{(-1)^{n}}{2n+1} \\
+&=& \sum_{n=0}^{2N+1} \int_{0}^{1}(-1)^{n}x^{2n}dx \\
+&=& \int_{0}^{1} \sum_{n=0}^{2N+1} (-1)^{n}x^{2n}dx \\
+&=& \int_{0}^{1} \frac{1-(-x^{2})^{2N+1+1}}{1+x^{2}}dx\\
+&=& \int_{0}^{1} \frac{1-x^{4N+4}}{1+x^{2}}dx
+\end{eqnarray*}
+
+\hspace{-0.4cm}\textbf{Q4b}. On procède en deux points. D'abord on note $ W_{N}=\sum_{n=0}^{N}\left( \frac{1}{4n+1}-\frac{1}{4n+3}\right) $. Il vient:
+\begin{equation*}
+\int_{0}^{1} \frac{1}{1+x^{2}}dx=\left[ \arctan(x) \right]_{0}^{1}=\frac{\pi}{4}. 
+\end{equation*}
+Maintenant on prouve la convergence:
+\begin{eqnarray*}
+\mid W_{N}-\frac{\pi}{4}\mid
+&=& \mid \int_{0}^{1} \frac{1-x^{4N+4}}{1+x^{2}}dx- \int_{0}^{1} \frac{1}{1+x^{2}}dx \mid \\
+&=& \int_{0}^{1} \frac{x^{4N+4}}{1+x^{2}}dx \\
+& \leq & \int_{0}^{1} x^{4N+4} dx \\
+&=& \frac{1}{4N+5}\rightarrow 0
+\end{eqnarray*} 
+Ainsi $ \lim_{N\rightarrow \infty}W_{N}=\frac{\pi}{4}$, c.a.d $ \sum_{n=0}^{+\infty}\left( \frac{1}{4n+1}-\frac{1}{4n+3}\right)=\frac{\pi}{4} $.
+
+\hspace{-0.4cm}\textbf{Q4c}. On a:
+\begin{eqnarray*}
+\sum_{n=0}^{N}\left( \frac{1}{4n+2}-\frac{1}{4n+4}\right) 
+&=& \sum_{n=0}^{2N+1} \frac{(-1)^{n}}{2(n+1)} \\
+&=& \frac{1}{2}\sum_{n=0}^{2N+1} \int_{0}^{1}(-1)^{n}x^{n}dx \\
+&=& \frac{1}{2}\int_{0}^{1} \sum_{n=0}^{2N+1} (-1)^{n}x^{n}dx \\
+&=& \frac{1}{2}\int_{0}^{1} \frac{1-(-x)^{2N+1+1}}{1+x}dx\\
+&=& \frac{1}{2}\int_{0}^{1} \frac{1-x^{2N+2}}{1+x}dx
+\end{eqnarray*}
+On note $ X_{N}=\sum_{n=0}^{N}\left( \frac{1}{4n+2}-\frac{1}{4n+4}\right) $ et on prouve la convergence de $ (X_{n})_{n \in \mathbb{N}} $.
+\begin{eqnarray*}
+\mid X_{N}-\frac{\ln(2)}{2}\mid
+&=& \frac{1}{2}\mid \int_{0}^{1} \frac{1-x^{2N+2}}{1+x}dx- \int_{0}^{1} \frac{1}{1+x}dx \mid \\
+&=& \frac{1}{2}\int_{0}^{1} \frac{x^{2N+2}}{1+x}dx \\
+& \leq & \frac{1}{2}\int_{0}^{1} x^{2N+2} dx \\
+&=& \frac{1}{4N+6}\rightarrow 0
+\end{eqnarray*} 
+Ainsi $ \lim_{N\rightarrow \infty}X_{N}=\frac{\ln(2)}{2}$, c.a.d $ \sum_{n=0}^{+\infty}\left( \frac{1}{4n+2}-\frac{1}{4n+2}\right)=\frac{\ln(2)}{2} $.  Pour prouver la convergene de $ \sum \frac{\varepsilon_{n}}{n} $, convergence qui peut se résumer en la convergence de $ (Z_{n})_{n \in \mathbb{N}^{*}} $ où $ Z_{N}= \sum_{n=0}^{N} \frac{\varepsilon_{n}}{n}$, il suffit tout simplement de montrer que $ (Z_{4n})_{n \in \mathbb{N}^{*}} $ converge en utilisant le même type d'argument qu'à la question Q2b. Or $ Z_{4N+4}=W_{N}+X_{N} $, ce qui prouve la converge de  $ (Z_{4n})_{n \in \mathbb{N}^{*}} $ et la limite est la somme de la limite des deux suites $ (W_{n})_{n \in \mathbb{N}} $ et $ (X_{n})_{n \in \mathbb{N}} $ à savoir $ \frac{\pi}{4}+\frac{\ln(2)}{2} $. Finalement la série $ \sum \frac{\varepsilon_{n}}{n} $ converge et sa somme est $ \frac{\pi}{4}+\frac{\ln(2)}{2} $.
+
+\hspace{-0.4cm}\textbf{Q5a}\footnote{Dans cette preuve, on améliore la majoration de l'énoncé} Il suffit de faire le bon regroupement:
+\begin{eqnarray*}
+\sum_{k=2pn+1}^{2pn+2p}\frac{\varepsilon_{n}}{n}
+&=& \sum_{i=1}^{p} \frac{1}{2pn+i}-\frac{1}{2pn+p+i} \\
+&=& \sum_{i=1}^{p} \frac{p}{(2pn+i)(2pn+p+i)} \\
+& \leq & \sum_{i=1}^{p} \frac{p}{(2pn)(2pn)} \\
+&=& \frac{p^{2}}{4p^{2}n^{2}} \\
+&=& \frac{1}{4n^{2}}
+\end{eqnarray*} 
+
+\hspace{-0.4cm}\textbf{Q5b}. En réalité à la question précédente on a montré \footnote{Le lecteur pourra remarquer: $ S_{2p(n+1)}-S_{2pn}=\sum_{k=2pn+1}^{2pn+2p}\frac{\varepsilon_{n}}{n} $ } que $ S_{2p(n+1)}-S_{2pn}\leq \frac{1}{4n^{2}} $. Mais on s'aperçoit facilement grâce à la question précédente que $ S_{2p(n+1)}-S_{2pn}\geq 0 $, ainsi la suite $ (S_{2pn})_{n \in \mathbb{N}^{*}} $ est croissante. Donc si nous prouvons qu'elle est majorée nous avons terminé. Pour y arriver on écrit:
+\begin{eqnarray*}
+S_{2pn}
+&=&S_{2p}+\sum_{k=1}^{n-1}S_{2p(k+1)}-S_{2pk} \\
+&\leq& S_{2p}+\frac{1}{4}\sum_{k=1}^{n-1}\frac{1}{k^{2}} \\
+&\leq& S_{2p}+\frac{1}{4}\sum_{k=1}^{+\infty}\frac{1}{k^{2}} \\
+&=& S_{2p}+\frac{\sigma}{4}
+\end{eqnarray*} 
+où $ \sigma=\sum_{k=1}^{+\infty}\frac{1}{k^{2}} (=\frac{\pi^{2}}{6}) $. La suite est ainsi bornée. C.Q.F.D.  
+
+\hspace{-0.4cm}\textbf{Q5c}. On note $ S_{n}=\sum_{k=1}^{n} \frac{\varepsilon_{k}}{k} $. Pour prouver la convergence de la série $ \sum \frac{\varepsilon_{n}}{n} $, il suffit de prouver la convergence des suites $ (S_{2pn+i})_{n \in \mathbb{N}^{*}} $ vers la même limite pour $ i \in \left\lbrace 0,1,...,2p-1\right\rbrace  $. A la question précédente, on vient juste de prouver que $ (S_{2pn})_{n \in \mathbb{N}^{*}} $ convergence. Maintenant pour $ i \in \left\lbrace 1,...,2p-1\right\rbrace  $, on a:
+\begin{equation*}
+S_{2pn+i}=S_{2pn}+\sum_{k=1}^{i}\frac{\varepsilon_{2pn+k}}{2pn+k}
+\end{equation*}
+De la relation précédente on voit bien que $ (S_{2pn+i})_{n \in \mathbb{N}^{*}} $ est convergente et converge vers la même limite que $ (S_{2pn})_{n \in \mathbb{N}^{*}} $. Ceci conclut notre preuve et on peut bien écrire:
+\begin{equation*}
+\Sigma_{p}=\sum_{n=1}^{+\infty} \frac{\varepsilon_{n}}{n}
+\end{equation*} 
+
+\hspace{-0.4cm}\textbf{Q6a}. On manipule habilement l'opérateur $ \sum $
+\begin{eqnarray*}
+\sum_{n=0}^{N}\left( \frac{1}{2pn+1}+\ldots+\frac{1}{2pn+p}-\frac{1}{2pn+p+1}-\ldots-\frac{1}{2pn+p} \right)
+&=& \sum_{n=0}^{N}\sum_{i=1}^{p}\left( \frac{1}{2pn+i}-\frac{1}{2pn+p+i} \right) \\
+&=& \sum_{n=0}^{N}\sum_{i=1}^{p} \int_{0}^{1}(x^{2pn+i-1}-x^{2pn+p+i-1})dx \\
+&=& \sum_{n=0}^{N}\sum_{i=1}^{p} \int_{0}^{1} x^{i-1}(1-x^{p})x^{2pn}dx \\
+&=& \sum_{n=0}^{N} \int_{0}^{1}\sum_{i=1}^{p} x^{i-1}(1-x^{p})x^{2pn}dx \\
+&=& \sum_{n=0}^{N} \int_{0}^{1}(1+x+\ldots + x^{p-1})(1-x^{p})x^{2pn}dx
+\end{eqnarray*} 
+
+\hspace{-0.4cm}\textbf{Q6b}. Toujours en utilisant la question précédente:
+\begin{eqnarray*}
+S_{2p(N+1)}
+&=& \sum_{n=0}^{N}\left( \frac{1}{2pn+1}+\ldots+\frac{1}{2pn+p}-\frac{1}{2pn+p+1}-\ldots-\frac{1}{2pn+p} \right) \\
+&=& \sum_{n=0}^{N} \int_{0}^{1}(1+x+\ldots + x^{p-1})(1-x^{p})x^{2pn}dx \\
+&=& \int_{0}^{1}(1+x+\ldots + x^{p-1})(1-x^{p})\sum_{n=0}^{N} x^{2pn}dx \\
+&=& \int_{0}^{1}(1+x+\ldots + x^{p-1})(1-x^{p})\frac{1-x^{2p(N+1)}}{1-x^{2p}}dx \\
+&=& \int_{0}^{1}(1+x+\ldots + x^{p-1})(1-x^{p})\frac{1-x^{2p(N+1)}}{(1-x^{p})(1+x^{p})}dx \\
+&=& \int_{0}^{1}\frac{1+x+\ldots + x^{p-1}}{1+x^{p}}(1-x^{2p(N+1)})dx \\
+&=& \int_{0}^{1}\frac{1+x+\ldots + x^{p-1}}{1+x^{p}}dx-\int_{0}^{1}\frac{1+x+\ldots + x^{p-1}}{1+x^{p}}x^{2p(N+1)}dx 
+\end{eqnarray*} 
+Il reste maintenant à prouver que $ \int_{0}^{1}\frac{1+x+\ldots + x^{p-1}}{1+x^{p}}x^{2p(N+1)}dx \rightarrow 0 $:
+\begin{eqnarray*}
+\int_{0}^{1}\frac{1+x+\ldots + x^{p-1}}{1+x^{p}}x^{2p(N+1)}dx
+&\leq & \int_{0}^{1}px^{2p(N+1)}dx \\
+&=& \frac{p}{2pN+2p+1}\rightarrow 0
+\end{eqnarray*}
+D'où
+\begin{displaymath}
+\lim_{N\rightarrow +\infty}S_{2p(N+1)}=\int_{0}^{1}\frac{1+x+\ldots + x^{p-1}}{1+x^{p}}dx
+\end{displaymath}
+
+\hspace{-0.4cm}\textbf{Q6c}. A Q5c on a prouvé que $ \Sigma_{p}=\lim_{N\rightarrow +\infty}S_{2pN} $, or on sait également que : 
+$$ \lim_{N\rightarrow +\infty}S_{2p(N+1)}=\lim_{N\rightarrow +\infty}S_{2pN}=\int_{0}^{1}\frac{1+x+\ldots + x^{p-1}}{1+x^{p}}dx $$
+En d'autres termes: $\Sigma_{p} =\int_{0}^{1}\frac{1+x+\ldots + x^{p-1}}{1+x^{p}}dx $.
+
+\hspace{-0.4cm}\textbf{Q7a}. Posons $ \phi(x)=\frac{1}{b} \arctan\left( \frac{x-a}{b} \right)  $, alors:
+$$ \phi'(x)=\frac{1}{b}\frac{\frac{1}{b}}{1+\left( \frac{x-a}{b} \right)^{2}}=\frac{1}{(x-a)^{2}+b^{2}} $$
+
+\hspace{-0.4cm}\textbf{Q7b}. En gardant à l'esprit que: $ x^{3}+1=(x+1)(x^{2}-x+1) $ on a:
+\begin{eqnarray*}
+\Sigma_{3}
+&=& \int_{0}^{1}\frac{1+x+ x^{2}}{1+x^{3}}dx \\
+&=& \int_{0}^{1}\frac{1+x}{1+x^{3}}dx+\int_{0}^{1}\frac{x^{2}}{1+x^{3}}dx \\
+&=& \int_{0}^{1}\frac{1}{1-x+x^{2}}dx+\frac{1}{3}\left[ \ln(1+x^{3}) \right] _{0}^{1}\\
+&=& \int_{0}^{1}\frac{1}{1-x+x^{2}}dx+\frac{1}{3}\ln(2)
+\end{eqnarray*}
+On a aussi:
+\begin{eqnarray*}
+\int_{0}^{1}\frac{1}{x^{2}-x+1}dx
+&=& \int_{0}^{1}\frac{1}{(x-\frac{1}{2})^{2}+(\frac{\sqrt{3}}{2})^{2}}dx \\
+&=& \left[ \frac{2}{\sqrt{3}}\arctan\left( \frac{2x-1}{\sqrt{3}} \right)  \right] _{0}^{1} \\
+&=& \frac{2}{\sqrt{3}}\left[ \arctan\left(\frac{1}{\sqrt{3}} \right)-\arctan\left(\frac{-1}{\sqrt{3}} \right)  \right] \\
+&=& \frac{2}{\sqrt{3}} \times 2 \arctan\left(\frac{1}{\sqrt{3}} \right)=\frac{2}{\sqrt{3}} \times 2 \times \frac{\pi}{6} \\
+&=& \frac{2 \pi}{3\sqrt{3}}
+\end{eqnarray*}
+D'où $ \Sigma_{3}=\frac{2 \pi}{3\sqrt{3}}+\frac{1}{3}\ln(2) $.
+
+\hspace{-0.4cm}\textbf{Q8a}. Cette intégrale est seulement impropre en $ +\infty $ car la fonction sous-jacente est continue en 0. En ce qui concerne la borne $ +\infty $, on remarque que $ \frac{1+x+\ldots + x^{p-2}}{1+x^{p}}=o\left( \frac{1}{x^{3/2}} \right)  $. Comme $ x \mapsto \frac{1}{x^{3/2}} $ est intégrable au voisinage de $ +\infty $, il en est de même que $ x\mapsto \frac{1+x+\ldots + x^{p-2}}{1+x^{p}} $. Par conséquent $ \int_{0}^{+\infty}\frac{1+x+\ldots + x^{p-2}}{1+x^{p}}dx $ converge.
+\begin{eqnarray*}
+\int_{0}^{+\infty}\frac{1+x+\ldots + x^{p-2}}{1+x^{p}}dx
+&=& \int_{0}^{1}\frac{1+x+\ldots + x^{p-2}}{1+x^{p}}dx+\int_{1}^{+\infty}\frac{1+x+\ldots + x^{p-2}}{1+x^{p}}dx\\
+&=& \int_{0}^{1}\frac{1+x+\ldots + x^{p-2}}{1+x^{p}}dx+\int_{1}^{+\infty}\frac{1+x+\ldots + x^{p-2}}{1+x^{p}}\frac{dx}{x^{2}}\\
+&=& \int_{0}^{1}\frac{1+x+\ldots + x^{p-2}}{1+x^{p}}dx+\int_{1}^{+\infty}\frac{1+\frac{1}{x}+\ldots + \frac{1}{x^{p-2}}}{1+\frac{1}{x^{p}}}\frac{dx}{x^{2}}\\
+&=&\int_{0}^{1}\frac{1+x+\ldots + x^{p-2}}{1+x^{p}}dx+\int_{1}^{+\infty}\frac{1+\frac{1}{x}+\ldots + \frac{1}{x^{p-2}}}{1+\frac{1}{x^{p}}}d\left( \frac{-1}{x}\right) \\
+&=& \int_{0}^{1}\frac{1+x+\ldots + x^{p-2}}{1+x^{p}}dx-\int_{1}^{0}\frac{1+x+\ldots + x^{p-2}}{1+x^{p}}dx \\
+&=& 2\int_{0}^{1}\frac{1+x+\ldots + x^{p-2}}{1+x^{p}}dx  
+\end{eqnarray*}
+Avec ce dernier résultat, on achève comme suit:
+\begin{eqnarray*}
+\Sigma_{p}
+&=& \int_{0}^{1}\frac{1+x+\ldots + x^{p-1}}{1+x^{p}}dx \\
+&=& \int_{0}^{1}\frac{x^{p-1}}{1+x^{p}}dx+\int_{0}^{1}\frac{1+x+\ldots + x^{p-2}}{1+x^{p}}dx\\
+&=& \left[  \frac{\ln(1+x^{p})}{p}\right]_{0}^{1}+\frac{1}{2}\int_{0}^{+\infty}\frac{1+x+\ldots + x^{p-2}}{1+x^{p}}dx \\
+&=& \frac{\ln(2)}{p}+\frac{1}{2}\int_{0}^{+\infty}\frac{1+x+\ldots + x^{p-2}}{1+x^{p}}dx 
+\end{eqnarray*}
+
+\hspace{-0.4cm}\textbf{Q8b}. Il suffit de faire le bon changement de variable comme suit:
+\begin{eqnarray*}
+\int_{0}^{+\infty}\frac{x(1+x^{2}+x^{4}+\ldots+x^{2p-4})}{1+x^{2p}}dx
+&=& \frac{1}{2} \int_{0}^{+\infty}\frac{(1+x^{2}+(x^{2})^{2}+\ldots+ (x^{2})^{p-2})}{1+(x^{2})^{p}}d(x^{2}) \\
+&=_{(u=x^{2})}& \frac{1}{2} \int_{0}^{+\infty}\frac{(1+u+u^{2}+\ldots+ u^{p-2})}{1+u^{p}}du
+\end{eqnarray*}
+
+\hspace{-0.4cm}\textbf{Q8c}. On utilise les informations de Q8a et Q8b:
+\begin{eqnarray*}
+\Sigma_{2p}
+&=& \frac{\ln(2)}{2p}+\frac{1}{2}\int_{0}^{+\infty}\frac{1+x+\ldots + x^{2p-2}}{1+x^{2p}}dx\\
+&=&\frac{\ln(2)}{2p}+\frac{1}{2}\int_{0}^{+\infty}\frac{x(1+x^{2}+x^{4}+\ldots+x^{2p-4})}{1+x^{2p}}dx+\frac{1}{2}\int_{0}^{+\infty}\frac{1+x^{2}+x^{4}+\ldots + x^{2p-2}}{1+x^{2p}}dx \\
+&=&\frac{\ln(2)}{2p}+\frac{1}{4}\int_{0}^{+\infty}\frac{1+x+\ldots + x^{p-2}}{1+x^{p}}dx +\frac{1}{2}\int_{0}^{+\infty}\frac{1+x^{2}+x^{4}+\ldots + x^{2p-2}}{1+x^{2p}}dx\\
+&=& \frac{1}{2}\left( \frac{\ln(2)}{p}+\frac{1}{2}\int_{0}^{+\infty}\frac{1+x+\ldots + x^{p-2}}{1+x^{p}}dx \right)+ \frac{1}{2}\int_{0}^{+\infty}\frac{1+x^{2}+x^{4}+\ldots + x^{2p-2}}{1+x^{2p}}dx \\
+&=& \frac{1}{2}\Sigma_{p}+\frac{1}{2}\int_{0}^{+\infty}\frac{1+x^{2}+x^{4}+\ldots + x^{2p-2}}{1+x^{2p}}dx
+\end{eqnarray*}
+
+\hspace{-0.4cm}\textbf{Q9a}. On note $ g_{\alpha}(t)=\frac{1}{t-e^{i\alpha}} $. Cherchons une primitive $ G_{\alpha} $ de $ g_{\alpha} $:
+\begin{eqnarray*}
+g_{\alpha}(t)
+&=&\frac{1}{t-\cos(\alpha)-i\sin(\alpha)} \\
+&=& \frac{t-\cos(\alpha)+i\sin(\alpha)}{t-\cos(\alpha)^{2}+\sin^{2}(\alpha)} 
+\end{eqnarray*}
+On peut donc choisir comme primitive:
+$$  G_{\alpha} (t)=\frac{1}{2}\ln\left( ( t-\cos(\alpha))^{2}+\sin^{2}(\alpha)\right)+i\mbox{sign}(\sin(\alpha))\arctan\left( \frac{t-\cos(\alpha)}{|\sin(\alpha)|} \right)  $$
+Donc:
+$$ \int_{-A}^{A}\frac{dt}{t-e^{i\alpha}}=\frac{1}{2}\ln\left( \frac{(A-\cos(\alpha))^{2}+\sin^{2}(\alpha)}{(A+\cos(\alpha))^{2}+\sin^{2}(\alpha)} \right)+i\mbox{sign}(\sin(\alpha))\left[ \arctan\left( \frac{A-\cos(\alpha)}{|\sin(\alpha)|} \right)+\arctan\left( \frac{A+\cos(\alpha)}{|\sin(\alpha)|} \right) \right]   $$
+Par conséquent:
+\begin{eqnarray*}
+\lim_{A\rightarrow +\infty}\int_{-A}^{A}\frac{dt}{t-e^{i\alpha}}
+&=&\frac{1}{2}\ln(1)+i\mbox{sign}(\sin(\alpha))\left( \frac{\pi}{2}+\frac{\pi}{2}\right) \\
+&=& i\mbox{sign}(\sin(\alpha)) \pi  \\
+&=& \left\{ 
+\begin{array}{rl}
+i\pi &  \mbox{si } \alpha \in \left] 0,\pi\right[  \\ 
+-i\pi &  \mbox{sinon }   
+\end{array} 
+\right.
+\end{eqnarray*}  
+
+\hspace{-0.4cm}\textbf{Q9bi}. Dans cette question il s'agit  de prouver qu'il existe un unique polybôme $ L_{r} $ de $ \mathbb{C}_{2p-1}[X] $ vérifiant $ L_{r}(z_{k})=\delta_{kr} $ pour $ 0\leq k \leq 2p-1 $, $ \delta_{kr} $ étant le symbôle de Kronecker. On prouve l'existance en posant:
+\begin{equation*}
+L_{r}= \frac{\prod_{1\leq i \leq 2p-1,i\neq r}(X-z_{i})}{\prod_{1\leq i \leq 2p-1,i\neq r}(z_{r}-z_{i})}
+\end{equation*}
+A ce niveau, on voit sans difficulté que $ L_{r}(z_{k})=\delta_{kr} $. Quant à l'unicité, supposons par l'absurde qu'il existe un autre polynôme $ L'_{r} $ de $ \mathbb{C}_{2p-1}[X] $ vérifiant les mêmes conditions que $ L_{r} $. Dans de telles considérations le polynôme $ L'_{r}-L_{r} $ serait un polynôme de $ \mathbb{C}_{2p-1}[X] $ aynat plus de $ 2p-1 $ racines (exactement $ 2p $) qui sont les  $z_{k} $ avec $ 0\leq k \leq 2p-1 $. Contradiction! D'où l'unicité.
+
+\hspace{-0.4cm}\textbf{Q9bii}. Notons $ \mathcal{B}=(L_{0},L_{1},...,L_{2p-1}) $. On montre d'abord que $ \mathcal{B} $ est une famille libre de $ \mathbb{C}_{2p-1}[X] $. On considère des nombres complexes $ \beta_{0},\beta_{1},...,\beta_{2p-1} $ tels que $ \sum_{k=0}^{2p-1}\beta_{k}L_{k}=0 $. Il est aussi vrai que:
+\begin{equation*}
+\forall x \in \mathbb{C},\quad \sum_{k=0}^{2p-1}\beta_{k}L_{k}(x)=0 
+\end{equation*} 
+En prenant $ x=z_{k} $, on obtient bel et bien $ \beta_{k}=0 $. La famille $ \mathcal{B} $ est par conséquent libre. Toutefois elle est libre maximale car $ \dim(\mathbb{C}_{2p-1}[X])=2p $, elle est donc une base.
+
+\hspace{-0.4cm}\textbf{Q9ci}. Avant de répondre clairement à cette question, il est important de remarquer que les  $z_{k} $  ($ 0\leq k \leq 2p-1 $) sont les zéros du polynôme $ 1+X^{2p} $\footnote{donc $ 1+X^{2p}=\prod_{1\leq i \leq 2p-1}(X-z_{i}) $.}.  La famille $ \mathcal{B} $ étant une base de $ \mathbb{C}_{2p-1}[X] $, il existe donc des nombres complexes $ \lambda'_{0},\lambda'_{1},...,\lambda'_{2p-1} $ tels que $ X^{2q}=\sum_{k=0}^{2p-1}\lambda'_{k}L_{k}=0 $. On n'a plus qu'à remarquer que:
+\begin{eqnarray*}
+\frac{L_{k}(t)}{1+t^{2p}}
+&=& \frac{1}{\prod_{1\leq i \leq 2p-1,i\neq k}(z_{k}-z_{i})}\frac{\prod_{1\leq i \leq 2p-1,i\neq k}(t-z_{i})}{\prod_{1\leq i \leq 2p-1}(t-z_{i})} \\
+&=& \frac{1}{\prod_{1\leq i \leq 2p-1,i\neq k}(z_{k}-z_{i})}\frac{1}{(t-z_{k})} 
+\end{eqnarray*} 
+
+Donc en posant $ \lambda_{k}=\lambda'_{k}/[\prod_{1\leq i \leq 2p-1,i\neq k}(z_{k}-z_{i})] $, et en particulier pour un réel $ t $:
+\begin{eqnarray*}
+\frac{t^{2q}}{1+t^{2p}}
+&=&\sum_{k=0}^{2p-1}\lambda'_{k}\frac{L_{k}(t)}{1+t^{2p}} \\
+&=& \sum_{k=0}^{2p-1}\lambda'_{k}\frac{1}{\prod_{1\leq i \leq 2p-1,i\neq k}(z_{k}-z_{i})}\frac{1}{(t-z_{k})}\\
+&=& \sum_{k=0}^{2p-1} \frac{\lambda_{k}}{t-z_{k}}
+\end{eqnarray*} 
+
+\hspace{-0.4cm}\textbf{Q9cii}. De la question précédente on peut écrire
+$$ \frac{t^{2q+1}}{1+t^{2p}}=\sum_{k=0}^{2p-1}\lambda_{k} \frac{t}{t-z_{k}} $$.
+Maintenant $ \lim_{t\rightarrow +\infty}\frac{t}{t-z_{k}}=1 $ et $ \lim_{t\rightarrow +\infty}\frac{t^{2q+1}}{1+t^{2p}}=0 $ car $ 2q+1<2p $ \footnote{En effet $ q\leq p-1 $ implique que $ 2q+1\leq 2p-1< 2p $}. En faisant tendre la dernière relation vers l'infini, on obtien bel et bien:
+$$ \sum_{k=0}^{2p-1}\lambda_{k}=0  $$ 
+
+\hspace{-0.4cm}\textbf{Q9ciii}. Comme $ \frac{t^{2q}}{1+t^{2p}}= \sum_{k=0}^{2p-1} \frac{\lambda_{k}}{t-z_{k}} $ donc $ \lambda_{k}=\lim_{t\rightarrow z_{k}}t^{2q}\frac{t-z_{k}}{1+t^{2p}} $. En poursuivant les calculs:
+\begin{eqnarray*}
+\lambda_{k}
+&=& z_{k}^{2q} \lim_{t\rightarrow z_{k}}\frac{t-z_{k}}{1+t^{2p}}\\
+&=& z_{k}^{2q} \lim_{t\rightarrow z_{k}}\frac{1}{2pt^{2p-1}} \mbox{ (règle de l'hopital) } \\
+&=& z_{k}^{2q} \frac{1}{2p z_{k}^{2p-1}} \\
+&=& z_{k}^{2q} \frac{1}{2p (-z_{k}^{-1})}=-\frac{z_{k}^{2q+1}}{2p} \mbox{ (car } z_{k}^{2p}=-1)
+\end{eqnarray*} 
+
+\hspace{-0.4cm}\textbf{Q9d}. On va s'engager dans un long calcul...
+\begin{eqnarray*}
+\int_{-\infty}^{\infty}\frac{x^{2q}}{1+x^{2p}}dx
+&=& \lim_{A\rightarrow +\infty} \int_{-A}^{A}\frac{x^{2q}}{1+x^{2p}}dx \\
+&=& \lim_{A\rightarrow +\infty} \int_{-A}^{A}\sum_{k=0}^{2p-1} \frac{\lambda_{k}}{x-z_{k}}dx \\
+&=& \lim_{A\rightarrow +\infty} \int_{-A}^{A}\sum_{k=0}^{p-1} \left( \frac{\lambda_{k}}{x-z_{k}}+\frac{\lambda_{k+p}}{x-z_{k+p}}\right) dx \\
+&=&\sum_{k=0}^{p-1} \lim_{A\rightarrow +\infty} \int_{-A}^{A}\left( \frac{\lambda_{k}}{x-z_{k}}+\frac{\lambda_{k+p}}{x-z_{k+p}}\right) dx \\
+&=& \sum_{k=0}^{p-1}(\lambda_{k}i \pi-\lambda_{k+p}i\pi) \mbox{ [car }\arg(z_{k}) \in \left] 0,\pi\right[ \mbox{ et } \arg(z_{k+p}) \in \left] \pi,2\pi\right[ \quad ]\\
+&=& \sum_{k=0}^{p-1}2\lambda_{k}i \pi=-\sum_{k=0}^{p-1}2 \frac{z_{k}^{2q+1}}{2p} i \pi \\
+&=&- \frac{i \pi}{p}\sum_{k=0}^{p-1}z_{k}^{2q+1}
+\end{eqnarray*}
+
+Maintenant on conclut en utilisant la parité de $ x\mapsto \frac{x^{2q}}{1+x^{2p}} $:
+\begin{eqnarray*}
+\int_{0}^{\infty}\frac{x^{2q}}{1+x^{2p}}dx
+&=&\frac{1}{2} \int_{-\infty}^{\infty}\frac{x^{2q}}{1+x^{2p}}dx \\
+&=& - \frac{i \pi}{2p}\sum_{k=0}^{p-1}z_{k}^{2q+1}\\
+&=& - \frac{i \pi}{2p}\sum_{k=0}^{p-1}\exp\left( \left[ \frac{(2k+1)(2q+1)}{2p} \right]i \pi  \right) 
+\end{eqnarray*} 
+
+\hspace{-0.4cm}\textbf{Q10}. En utilisant Q8c avec $ p=2 $ on a:
+$$ \Sigma_{4}=\frac{1}{2}\Sigma_{2}+\frac{1}{2}\int_{0}^{+\infty}\frac{1+x^{2}}{1+x^{4}}dx $$.
+D'après la question Q4c on a: $ \Sigma_{2}=\frac{\pi}{4}+\frac{\ln(2)}{2} $. Maintenant en utilisant Q9d
+$$ \int_{0}^{\infty}\frac{1}{1+x^{4}}dx=- \frac{i \pi}{4}\left[  \exp\left( \frac{i \pi}{4} \right)+\exp\left( \frac{i \pi}{4} \right) \right]= - \frac{i \pi}{4}\left(\frac{2i}{\sqrt{2}} \right)=\frac{\pi}{2\sqrt{2}}   $$
+$$ \int_{0}^{\infty}\frac{x^{2}}{1+x^{4}}dx=- \frac{i \pi}{4}\left[  \exp\left( \frac{3i \pi}{4} \right)+\exp\left( \frac{9i \pi}{4} \right) \right]= - \frac{i \pi}{4}\left(\frac{2i}{\sqrt{2}} \right)=\frac{\pi}{2\sqrt{2}}   $$
+Ainsi:
+\begin{eqnarray*}
+\Sigma_{4}
+&=& \frac{1}{2}\left( \frac{\pi}{4}+\frac{\ln(2)}{2} \right)+\frac{1}{2}\left( \frac{\pi}{2\sqrt{2}}+\frac{\pi}{2\sqrt{2}}\right)\\
+&=& \frac{1}{4}\left[\pi\left(\frac{1}{2}+\sqrt{2} \right)+\ln(2)  \right]  
+\end{eqnarray*}
+
+\subsection{Partie II: Un cas aléatoire}
+\hspace{-0.4cm}\textbf{A1ai}. On remarque déjà que les ensembles de la forme $ \left\lbrace |S_{n}-S_{p}|\leq \varepsilon \right\rbrace  $ sont mésurables, i.e. $ \left\lbrace |S_{n}-S_{p}|\leq \varepsilon \right\rbrace \in \mathcal{A}  $. Du coup $ \cap_{n,p\geq N} \left\lbrace |S_{n}-S_{p}|\leq \varepsilon \right\rbrace \in \mathcal{A} $ puisqu'il est une intersection dénombrable d'ensembles mésurables. Egalement par un argument similaire (union dénombrable) on a aussi $ \cup_{N=1}^{+\infty}\cap_{n,p\geq N} \left\lbrace |S_{n}-S_{p}|\leq \varepsilon \right\rbrace \in \mathcal{A} $.
+
+\hspace{-0.4cm}\textbf{A1aii}. On raisonne simplement par équivalence:
+\begin{eqnarray*}
+\omega \in \mathcal{C}
+&\Leftrightarrow& \forall \varepsilon>0 \quad  \exists N \in \mathbb{N}^{*} \quad \forall (n,p)\in \mathbb{N}^{2} \quad (p\geq N \mbox{ et }n\geq N \Rightarrow |S_{n}-S_{p}|\leq \varepsilon).\\
+&\Leftrightarrow& \forall \varepsilon>0 \quad  \exists N \in \mathbb{N}^{*} \quad \omega \in \cap_{n,p\geq N} \left\lbrace |S_{n}-S_{p}|\leq \varepsilon \right\rbrace \\
+&\Leftrightarrow& \forall \varepsilon>0 \quad \omega \in \cup_{N=1}^{+\infty}\cap_{n,p\geq N} \left\lbrace |S_{n}-S_{p}|\leq \varepsilon \right\rbrace \\
+&\Leftrightarrow& \forall \varepsilon>0 \quad \omega \in B(\varepsilon) \\
+&\Leftrightarrow& \omega \in \cap_{\varepsilon > 0}B(\varepsilon)    
+\end{eqnarray*}
+Ce qui veut dire que:
+$$ \mathcal{C}=\cap_{\varepsilon > 0}B(\varepsilon) $$
+
+\hspace{-0.4cm}\textbf{A1aiii}. Soit $ \varepsilon $ et $ \varepsilon' $ tels que $0< \varepsilon<\varepsilon' $:
+$$ \left\lbrace |S_{n}-S_{p}|\leq \varepsilon \right\rbrace \subseteq \left\lbrace |S_{n}-S_{p}|\leq \varepsilon' \right\rbrace $$
+D'où:
+$$ \cup_{N=1}^{+\infty}\cap_{n,p\geq N} \left\lbrace |S_{n}-S_{p}|\leq \varepsilon \right\rbrace \subseteq \cup_{N=1}^{+\infty}\cap_{n,p\geq N} \left\lbrace |S_{n}-S_{p}|\leq \varepsilon' \right\rbrace $$ 
+En d'autres termes:
+$$ B(\varepsilon) \subseteq B(\varepsilon') $$ 
+
+\hspace{-0.4cm}\textbf{A1aiv}. On sait que $ \frac{1}{k}>0 $ pour tout $ k \in \mathbb{N}^{*} $ donc:
+$$ \cap_{\varepsilon>0}B(\varepsilon)\subseteq \cap_{k=1}^{+\infty}B\left( \frac{1}{k} \right)  $$
+Maintenant considérons $ \omega \in \cap_{k=1}^{+\infty}B\left( \frac{1}{k} \right) $. Et soit $ \varepsilon>0 $, alors il existe un entier $ k_{0} \in \mathbb{N}^{*} $ tel que $ \frac{1}{k_{0}}<\varepsilon $. Et commme $ B\left( \frac{1}{k_{0}} \right) \subseteq B(\varepsilon) $, alors $ \omega \in B(\varepsilon) $. i.e. $ \omega \in \cap_{\varepsilon>0}B(\varepsilon) $. On  a alors notre dernière inclusion:
+$$\cap_{k=1}^{+\infty}B\left( \frac{1}{k} \right) \subseteq \cap_{\varepsilon>0}B(\varepsilon) $$
+Avec ces deux inclusions on a bien:
+$$\cap_{k=1}^{+\infty}B\left( \frac{1}{k} \right) = \cap_{\varepsilon>0}B(\varepsilon) \mbox{ soit } \mathcal{C}=\cap_{k=1}^{+\infty}B\left( \frac{1}{k} \right)$$
+\hspace{-0.4cm}\textbf{A2a}. Supposons que $ \mathbb{P}\left( B\left( \frac{1}{k} \right) \right) =1 $ pour tout $ k \in \mathbb{N}^{*} $. Mais en remarquant que la suite $ \left( B\left( \frac{1}{k} \right) \right)_{k \in \mathbb{N}^{*}} $ est parfaitement décroissante, on a:
+\begin{eqnarray*}
+\mathbb{P}(\mathcal{C})
+&=& \mathbb{P}\left( \cap_{k=1}^{+\infty}B\left( \frac{1}{k} \right) \right) \\
+&=& \lim_{k\rightarrow +\infty} \mathbb{P}\left( B\left( \frac{1}{k} \right) \right) \\
+&=& \lim_{k\rightarrow +\infty}1 \\
+&=& 1.
+\end{eqnarray*}
+
+Maintenant supposons que $ \mathbb{P}(\mathcal{C})=1 $. Alors il suffit de remarquer que:
+$$ 1=\mathbb{P}(\mathcal{C})=\mathbb{P}\left( \cap_{k=1}^{+\infty}B\left( \frac{1}{k} \right) \right)\leq \mathbb{P}\left( B\left( \frac{1}{k} \right) \right) \leq 1  $$
+Par conséquent $ \mathbb{P}\left( B\left( \frac{1}{k} \right) \right) =1 $ pour tout $ k \in \mathbb{N}^{*} $. Ceci achève l'équivalence. 
+
+\hspace{-0.4cm}\textbf{A2b}. Montrons d'abord l'équivalence:
+$$ \mathbb{P}\left( B\left( \frac{1}{k} \right) \right) =1,\forall k \in \mathbb{N}^{*} \Leftrightarrow \mathbb{P}\left( B\left( \varepsilon \right) \right) =1,\forall \varepsilon >0  $$
+On a clairement l'inclusion ci-dessous comme acquise car $ \frac{1}{k}>0 $ pour $ k \in \mathbb{N}^{*} $:
+$$ \mathbb{P}\left( B\left( \varepsilon \right) \right) =1,\forall \varepsilon >0\Longrightarrow \mathbb{P}\left( B\left( \frac{1}{k} \right) \right) =1,\forall k \in \mathbb{N}^{*}  $$
+Maintenant supposons que $ \mathbb{P}\left( B\left( \frac{1}{k} \right) \right) =1,\forall k \in \mathbb{N}^{*} $. On sait que pour  $ \varepsilon>0 $, alors il existe un entier $ k_{0} \in \mathbb{N}^{*} $ tel que $ \frac{1}{k_{0}}<\varepsilon $. Et commme $ B\left( \frac{1}{k_{0}} \right) \subseteq B(\varepsilon) $, il s'en suit:
+$$ 1=\mathbb{P}\left( B\left( \frac{1}{k_{0}} \right) \right)\leq \mathbb{P}\left( B\left( \varepsilon \right) \right)\leq 1  $$
+Alors $ \mathbb{P}\left( B\left( \varepsilon \right) \right)=1, \forall \varepsilon>0 $. Ceci achève notre équivalence. On repond maintenant à la question comme-ci:
+\begin{eqnarray*}
+\mathbb{P}(\mathcal{C})=1
+&\Leftrightarrow & \mathbb{P}\left( B\left( \frac{1}{k} \right) \right) =1,\forall k \in \mathbb{N}^{*} \\
+&\Leftrightarrow & \mathbb{P}\left( B\left( \varepsilon \right) \right) =1,\forall \varepsilon >0 \\
+&\Leftrightarrow & \mathbb{P}\left( \cup_{N=1}^{+\infty}\cap_{n,p\geq N} \left\lbrace |S_{n}-S_{p}|\leq \varepsilon \right\rbrace \right)=1,\forall \varepsilon >0 \\
+&\Leftrightarrow & \mathbb{P}\left( \cap_{N=1}^{+\infty}\cup_{n,p\geq N} \left\lbrace |S_{n}-S_{p}|> \varepsilon \right\rbrace \right)=0,\forall \varepsilon >0 
+\mbox{ (par passage au complémentaire) }
+\end{eqnarray*} 
+\hspace{-0.4cm}\textbf{A2c}. Posons $ C_{N}(\varepsilon)=\cup_{n,p\geq N} \left\lbrace |S_{n}-S_{p}|> \varepsilon \right\rbrace $, mais sans problèmes il apparaît clairement $ \left( C_{N}( \varepsilon) \right)_{N \in \mathbb{N}^{*}} $ est une suite décroissante donc: 
+$$ \mathbb{P}\left( \cap_{N=1}^{+\infty}\cup_{n,p\geq N} \left\lbrace |S_{n}-S_{p}|> \varepsilon \right\rbrace \right)=\lim_{N\rightarrow +\infty} \mathbb{P}\left( \cup_{n,p\geq N} \left\lbrace |S_{n}-S_{p}|> \varepsilon \right\rbrace \right)  $$
+Alors avec ce résultat, il nous suffit juste d'utiliser l'information de la question A2b:
+\begin{eqnarray*}
+\mathbb{P}(\mathcal{C})=1
+&\Leftrightarrow & \mathbb{P}\left( \cap_{N=1}^{+\infty}\cup_{n,p\geq N} \left\lbrace |S_{n}-S_{p}|> \varepsilon \right\rbrace \right)=0,\forall \varepsilon >0 \\
+&\Leftrightarrow & \lim_{N\rightarrow +\infty} \mathbb{P}\left( \cup_{n,p\geq N} \left\lbrace |S_{n}-S_{p}|> \varepsilon \right\rbrace \right)=0,\forall \varepsilon >0 
+\end{eqnarray*}
+C.Q.F.D.
+
+
+\textbf{B1a}. Il suffit d'utiliser une définition de la théorie de la mesure\footnote{Un peu utiliser une preuve relevant du calcul-proba en remarquant $ \mathbf{1}_{A} $ est une loi de Bernouilli vérifiant que $ \mathbb{P}(\mathbf{1}_{A}=1)=\mathbb{P}(A) $.}
+$$ \mathbb{E}(\mathbf{1}_{A})=\int \mathbf{1}_{A}d\mathbb{P}=\int_{A} d\mathbb{P}=\mathbb{P}(A) $$
+\hspace{-0.4cm}\textbf{B1b}. Cette question est très facile:
+\begin{eqnarray*}
+\mathbb{E}(S_{p}-S_{N})
+&=& \mathbb{E}\left( \sum_{k=N+1}^{p}Y_{k}\right)  \\
+&=& \sum_{k=N+1}^{p}\mathbb{E}(Y_{k}) \\
+&=& 0 \mbox{ ( car } \mathbb{E}(Y_{k})=0, \forall k \in \mathbb{N}^{*})
+\end{eqnarray*}
+
+\begin{eqnarray*}
+\mathbb{E}\left( (S_{p}-S_{N})^{2}\right) 
+&=& \mathbb{E}\left( \left( \sum_{k=N+1}^{p}Y_{k}\right) ^{2}\right) \\
+&=& \mathbb{E}\left( \sum_{k=N+1}^{p}Y_{k}^{2}+2\sum_{N+1\leq i < j \leq p}Y_{i}Y_{j} \right) \\
+&=& \mathbb{E}\left( \sum_{k=N+1}^{p}Y_{k}^{2}\right)+2\mathbb{E}\left( \sum_{N+1\leq i < j \leq p}Y_{i}Y_{j}\right)\\
+&=& \sum_{k=N+1}^{p}\mathbb{E}\left( Y_{k}^{2} \right)+2 \sum_{N+1\leq i < j \leq p} \underbrace{\mathbb{E}(Y_{i}Y_{j})}_{=0} \\
+&=& \sum_{k=N+1}^{p}\mathbb{E}\left( Y_{k}^{2} \right)     
+\end{eqnarray*}
+\hspace{-0.4cm}\textbf{B2}. Pour $ k>N $:
+$$ [T_{N}=k]=\left( \cup_{p=N+1}^{k-1}\left\lbrace |S_{p}-S_{N}|\leq \varepsilon \right\rbrace\right)\cap \left\lbrace |S_{k}-S_{N}|> \varepsilon \right\rbrace  $$
+En conséquence $ [T_{N}=k] $ est mésurable \footnote{Le premier membre de la relation précédente étant mésurble car il est une union finie d'ensembles dénombrables.}, i.e. $ [T_{N}=k] \in \mathcal{A} $ pour tout $ k>N $. On remarque que pour $ k\leq N $, $ [T_{N}=k]=\emptyset \in \mathcal{A} $. Ainsi on voit bien que pour tout $ k \in \mathbb{N}^{*} $, $ [T_{N}=k] \in \mathcal{A} $ ainsi $ T_{N} $ est bien une variable aléatoire, en d'autres termes elle est une variable aléatoire.
+
+\hspace{-0.4cm}\textbf{B3a}. Par définition de $ T_{N} $, lorsque $ T_{N} $ est fini alors $ \varepsilon< |S_{T_{N}}-S_{N}| $ donc:
+$$ \varepsilon^{2} \mathbf{1}_{T_{N}=k}\leq (S_{k}-S_{N})^{2} \mathbf{1}_{[T_{N}=k]} $$
+En appliquant l'opérateur de l'espérance $ \mathbb{E} $ à la relation précédente, alors:
+$$ \varepsilon^{2}\mathbb{P}(T_{N}=k)\leq \mathbb{E}\left(  (S_{k}-S_{N})^{2} \mathbf{1}_{[T_{N}=k]} \right)  $$
+
+\hspace{-0.4cm}\textbf{B3b}. On sait que: $ S_{p}-S_{k}=\sum_{j=k+1}^{p}Y_{j}=f(Y_{k+1},\ldots,Y_{p}) $ pour une certaine fonction $ f $. Aussi
+$$(S_{k}-S_{N}) \mathbf{1}_{[T_{N}=k]}
+= \left\{ 
+\begin{array}{rl}
+\sum_{i=N+1}^{k}Y_{i} &  \mbox{si } T_{N}=k  \\ 
+0 &  \mbox{sinon }   
+\end{array} 
+\right.
+=g(Y_{N+1},\ldots,Y_{k}) \mbox{ pour une certaine fonction } g $$
+Maintenant les variables aléatoires $ (Y_{N+1},\ldots,Y_{p}) $ étant indépendantes, il en est de même que pour les v.a. $ g(Y_{N+1},\ldots,Y_{k}) $ et $ f(Y_{k+1},\ldots,Y_{p}) $. Écrit autrement on vient de prouver que $ S_{p}-S_{k} $ et $ (S_{k}-S_{N}) \mathbf{1}_{T_{N}=k} $ sont indépendantes.
+
+\hspace{-0.4cm}\textbf{B3c}. Pour $ N<k\leq p $, on a:
+\begin{eqnarray*}
+\mathbb{E}\left(  (S_{p}-S_{N})^{2} \mathbf{1}_{[T_{N}=k]} \right) 
+&=& \mathbb{E}\left(  (S_{k}-S_{N})^{2} \mathbf{1}_{[T_{N}=k]}+(S_{p}-S_{k})^{2} \mathbf{1}_{[T_{N}=k]}+2(S_{p}-S_{k})(S_{k}-S_{N}) \mathbf{1}_{[T_{N}=k]} \right)\\
+&=& \mathbb{E}\left( (S_{k}-S_{N})^{2} \mathbf{1}_{[T_{N}=k]} \right) +\mathbb{E}\left( (S_{p}-S_{k})^{2} \mathbf{1}_{[T_{N}=k]} \right)+2  \underbrace{\mathbb{E}\left( (S_{p}-S_{k})(S_{k}-S_{N}) \mathbf{1}_{[T_{N}=k]} \right)}_{=0} \\
+&=& \mathbb{E}\left( (S_{k}-S_{N})^{2} \mathbf{1}_{[T_{N}=k]} \right) +\underbrace{\mathbb{E}\left( (S_{p}-S_{k})^{2} \mathbf{1}_{[T_{N}=k]} \right)}_{\geq 0}  \\
+&\geq & \mathbb{E}\left( (S_{k}-S_{N})^{2} \mathbf{1}_{[T_{N}=k]} \right) \\
+& \geq & \varepsilon^{2}\mathbb{P}(T_{N}=k) \mbox{ (D'après la question Q3b) } 
+\end{eqnarray*} 
+
+\hspace{-0.4cm}\textbf{B3d}. Pour $ p>N $:
+\begin{eqnarray*}
+\varepsilon^{2} \sum_{k=N+1}^{p}\mathbb{P}(T_{N}=k)
+&\leq & \sum_{k=N+1}^{p}\mathbb{E}\left(  (S_{p}-S_{N})^{2} \mathbf{1}_{[T_{N}=k]} \right) \\
+&=& \mathbb{E}\left( \sum_{k=N+1}^{p}  (S_{p}-S_{N})^{2} \mathbf{1}_{[T_{N}=k]} \right)\\
+&=& \mathbb{E}\left(  (S_{p}-S_{N})^{2} \sum_{k=N+1}^{p}\mathbf{1}_{[T_{N}=k]} \right)\\
+&=& \mathbb{E}\left(  (S_{p}-S_{N})^{2} \mathbf{1}_{[N+1 \leq T_{N}\leq p]} \right)\\
+&\leq & \mathbb{E}\left(  (S_{p}-S_{N})^{2}\right)\\
+&=& \sum_{i=N+1}^{p}\mathbb{E}\left( Y_{i}^{2} \right)
+\end{eqnarray*}
+\hspace{-0.4cm}\textbf{B4}. D'après la question B3d.
+\begin{eqnarray*}
+\mathbb{P}([N+1 \leq T_{N}\leq p])
+&=& \sum_{k=N+1}^{p}\mathbb{P}(T_{N}=k) \\
+&\leq & \frac{1}{\varepsilon^{2}} \sum_{i=N+1}^{p}\mathbb{E}\left( Y_{i}^{2} \right) \\
+&\leq & \frac{1}{\varepsilon^{2}} \sum_{i=N+1}^{+\infty}\mathbb{E}\left( Y_{i}^{2} \right) \mbox{ (En effet } \sum \mathbb{E}\left( Y_{m}^{2} \right) \mbox{ converge.) }
+\end{eqnarray*}
+
+Or dire qu'il existe un entier $ k $ compris entre $ N+1 $ et $ p $ tel que $ |S_{k}-S_{N}|> \varepsilon $ veut dire que $ N+1 \leq T_{N}\leq p $ en d'autres termes:
+$$ \cup_{k=N+1}^{p}\left\lbrace |S_{k}-S_{N}|> \varepsilon \right\rbrace \subset [N+1 \leq T_{N}\leq p] $$ 
+Donc il s'en suit:
+\begin{eqnarray*}
+\mathbb{P}\left( \cup_{k=N+1}^{p}\left\lbrace |S_{k}-S_{N}|> \varepsilon \right\rbrace \right)
+&\leq & \mathbb{P}([N+1 \leq T_{N}\leq p])\\
+&\leq & \frac{1}{\varepsilon^{2}} \sum_{i=N+1}^{+\infty}\mathbb{E}\left( Y_{i}^{2} \right)  
+\end{eqnarray*}
+Ainsi en faisant tendre $ p $ vers $ +\infty $ on a bel et bien:
+\begin{eqnarray*}
+\mathbb{P}\left( \cup_{p>N}\left\lbrace |S_{p}-S_{N}|> \varepsilon \right\rbrace \right)
+&=& \mathbb{P}\left( \cup_{k=N+1}^{+\infty}\left\lbrace |S_{k}-S_{N}|> \varepsilon \right\rbrace \right) \\
+&=& \lim_{p\rightarrow +\infty} \mathbb{P}\left( \cup_{k=N+1}^{p}\left\lbrace |S_{k}-S_{N}|> \varepsilon \right\rbrace \right) \\
+&\leq & \lim_{p\rightarrow +\infty} \frac{1}{\varepsilon^{2}} \sum_{i=N+1}^{+\infty}\mathbb{E}\left( Y_{i}^{2} \right) \\
+&=&\frac{1}{\varepsilon^{2}} \sum_{i=N+1}^{+\infty}\mathbb{E}\left( Y_{i}^{2} \right)  
+\end{eqnarray*}
+\hspace{-0.4cm}\textbf{C1}. Soit $ \omega \in \cup_{p,n\geq N}\left\lbrace |S_{p}-S_{n}|> \varepsilon \right\rbrace $. Raisonnons par l'absurde et supposons que $ \omega \not\in \cup_{p > N}\left\lbrace |S_{p}-S_{N}|> \frac{\varepsilon}{2} \right\rbrace $. Comme $ \omega \in \cup_{p,n\geq N}\left\lbrace |S_{p}-S_{n}|> \varepsilon \right\rbrace $, il existe $ p,n\geq N $ tel que $ |S_{p}(\omega)-S_{n}(\omega)|> \varepsilon $. Si $ p=N $ ou $ n=N $ on alors $ \omega \in \cup_{p\geq N}\left\lbrace |S_{p}-S_{N}|> \frac{\varepsilon}{2} \right\rbrace $, ce qui est contradictoire \footnote{On aura soit $ |S_{p}(\omega)-S_{N}(\omega)|> \varepsilon> \frac{\varepsilon}{2}$ ou $ |S_{n}(\omega)-S_{N}(\omega)|> \varepsilon> \frac{\varepsilon}{2}$, le cas $ n=p=N $ étant exclus.}. Par conséquent $ p,n>N $, ce qui implique en gardant à l'esprit que $ \omega \not\in \cup_{p> N}\left\lbrace |S_{p}-S_{N}|> \frac{\varepsilon}{2} \right\rbrace $, les inégalités suivantes: $ |S_{p}(\omega)-S_{N}(\omega)|\leq \frac{\varepsilon}{2} $ et $ |S_{n}(\omega)-S_{N}(\omega)|\leq \frac{\varepsilon}{2} $ . En appliquant l'inégalité triangulaire:
+$$ |S_{p}(\omega)-S_{n}(\omega)|=|(S_{p}(\omega)-S_{N}(\omega))+(S_{N}(\omega)-S_{n}(\omega))|\leq |S_{p}(\omega)-S_{N}(\omega)|+|S_{n}(\omega)-S_{N}(\omega)|\leq \frac{\varepsilon}{2}+\frac{\varepsilon}{2}=\varepsilon $$
+Résultat en contradiction avec le fait que $ \omega \in \cup_{p,n\geq N}\left\lbrace |S_{p}-S_{n}|> \varepsilon \right\rbrace $. Notre hypothèse est donc fausse et $ \omega \in \cup_{p> N}\left\lbrace |S_{p}-S_{N}|> \frac{\varepsilon}{2} \right\rbrace $. D'où l'inclusion:
+$$ \cup_{p,n\geq N}\left\lbrace |S_{p}-S_{n}|> \varepsilon \right\rbrace \subset \cup_{p> N}\left\lbrace |S_{p}-S_{N}|> \frac{\varepsilon}{2} \right\rbrace $$
+\hspace{-0.4cm}\textbf{C2}. Il n'est pas difficile de voir que $ \mathbb{E}(X_{k}/k)=0 \mbox{ et } \mathbb{E}((X_{k}/k)^{2})=1/k^{2}, \forall k \in \mathbb{N}^{*} $. Donc la série $ \sum \mathbb{E}((X_{m}/m)^{2}) $ converge grâce à la règle de Riemann. Maintenant son reste $ R_{n}=\sum_{i=n+1}^{+\infty}\mathbb{E}((X_{i}/i)^{2}) $ converge vers 0.
+\\ Maintenant comme la suite $ (X_{k}/k)_{k \in \mathbb{N}^{*}} $ est une suite de \textbf{v.a. indépendantes centrées} et tel que $ \sum \mathbb{E}((X_{m}/m)^{2}) $ converge, il vient alors que : 
+$$ \mathbb{P}\left( \cup_{p>N}\left\lbrace |S_{p}-S_{N}|> \frac{\varepsilon}{2} \right\rbrace \right) \leq \frac{4}{\varepsilon^{2}}R_{N+1} $$
+D'après la question C1
+\begin{eqnarray*}
+\mathbb{P}\left( \cup_{p,n\geq N}\left\lbrace |S_{p}-S_{n}|> \varepsilon \right\rbrace \right) 
+&\leq& \mathbb{P}\left( \cup_{p> N}\left\lbrace |S_{p}-S_{N}|> \frac{\varepsilon}{2} \right\rbrace \right)\\
+& \leq & \frac{4}{\varepsilon^{2}}R_{N+1} 
+\end{eqnarray*}
+Ainsi d'après le théorème des gendarmes:
+$$ \lim_{N\rightarrow +\infty} \mathbb{P}\left( \cup_{p,n\geq N}\left\lbrace |S_{p}-S_{n}|> \varepsilon \right\rbrace \right)=0 $$ 
+Enfin en utilisant A2c nous avons donc que l'ensemble des $ \omega \in \Omega $ tel que $ S_{n}(\omega) $ converge est de probabilité 1. Autrement dit, la série  $ \sum_{n}\frac{X_{n}}{n} $ converge presque sûrement.
+
+\newpage
+\section{Épreuve à option (A): Mathématiques}
+\subsection{Partie 1: étude des espaces $ E_{n}(a) $}
+\hspace{-0.4cm}\textbf{Q1a}. Soit $ f \in E $, au voisinage de $ a $ il vient que :
+$$ f(x)=\sum_{k=0}^{n}\frac{f^{(k)}(a)}{k!}(x-a)^{k}+o((x-a)^{n}) $$
+Quand $ f^{(k)}(a)=0, \forall k \in \left\lbrace 1,2,\ldots,n \right\rbrace  $ alors $ f(x)=o((x-a)^{n}) $, i.e $ f \in E_{n}(a) $. Ceci conclut la première partie de la preuve.
+\\Maintenant supposons que $ f \in E_{n}(a) $ et $ \exists k_{0} \in \left\lbrace 1,2,\ldots,n \right\rbrace $ tel que $ f^{(k_{0})}\neq 0 $. Donc on peut définir $ k^{*}=\inf \left\lbrace k | 1 \leq k \leq n,f^{(k)}\neq 0  \right\rbrace  $. Dans ce cas on a:
+$$ f(x)=\frac{f^{(k^{*})}(a)}{k^{*}!}(x-a)^{k^{*}}+o((x-a)^{k^{*}}) $$
+Ce qui veut dire $ f $ ne peut pas être négligeable devant $ o((x-a)^{n}) $, Contradiction! Par conséquent $ f^{(k)}(a)=0, \forall k \in \left\lbrace 1,2,\ldots,n \right\rbrace  $. On vient donc de prouver que:
+$$ f \in E_{n}(a) \Leftrightarrow f^{(k)}(a)=0, \forall k \in \left\lbrace 1,2,\ldots,n \right\rbrace $$
+\\ C.Q.F.D. 
+
+\hspace{-0.4cm}\textbf{Q1b}. Définissons $ E_{\infty}(a) $ l'ensemble des fonctions de $ E $ qui sont \textit{ultraplates} en $ a $. On a alors:
+$$ E_{\infty}(a)=\cap_{n=1}^{+\infty}E_{n}(a) $$
+On va caractériser $ E_{\infty}(a) $:
+\begin{eqnarray*}
+f \in E_{\infty}(a)
+& \Leftrightarrow & \forall n \in \mathbb{N}^{*},f \in E_{n}(a) \\
+& \Leftrightarrow & \forall n \in \mathbb{N}^{*},\forall k \in \left\lbrace 1,2,\ldots,n \right\rbrace, f^{(k)}(a)=0 \\
+& \Leftrightarrow & \forall n \in \mathbb{N}^{*}, f^{(n)}(a)=0 
+\end{eqnarray*}
+Pour revenir à notre question:
+\begin{eqnarray*}
+s \in E_{\infty}(0)
+& \Leftrightarrow & \forall n \in \mathbb{N}^{*}, s^{(n)}(0)=0\\
+& \Leftrightarrow & \forall n \in \mathbb{N}^{*}, n!a_{n}=0 \\
+& \Leftrightarrow & \forall n \in \mathbb{N}^{*}, a_{n}=0\\
+& \Leftrightarrow & s=a_{0} \\
+& \Leftrightarrow & s \mbox{ est constante}
+\end{eqnarray*}
+
+\hspace{-0.4cm}\textbf{Q2a}. On remarque sans problème que:
+$$ \forall x>0,b'(x)=\frac{-2\ln(x)}{x}\exp(-\ln(x)^{2}) $$
+Par conséquent la fonction $ b $ est croissante sur $ \left] 0,1\right]  $ et décroissante sur l'intervalle $ \left[ 1,+\infty\right[  $.
+On calcule sa dérivée seconde:
+\begin{eqnarray*}
+\forall x>0,b''(x)
+&=&\frac{-2}{x^{2}}\exp(-\ln(x)^{2})+\frac{2\ln(x)}{x^2}\exp(-\ln(x)^{2})+\frac{4\ln(x)^{2}}{x}\exp(-\ln(x)^{2}) \\
+&=& \frac{4\ln(x)^{2}+2\ln(x)-2}{x}\exp(-\ln(x)^{2})\\
+&=& \frac{4(\ln(x)+1)(\ln(x)-\frac{1}{2})}{x}\exp(-\ln(x)^{2})
+\end{eqnarray*}
+
+On est maintenant à mesure de sortir les points d'inflexions:
+\begin{eqnarray*}
+b''(x)=0
+&\Leftrightarrow & \ln(x)=-1 \mbox{ ou }\ln(x)=\frac{1}{2} \\
+&\Leftrightarrow & x=\frac{1}{e} \mbox{ ou } x=\sqrt{e}
+\end{eqnarray*}
+Au final leurs coordonnées sont:$ (\frac{1}{e},\frac{1}{e}) $ et $ (\sqrt{e},\frac{1}{e^{1/4}}) $. Un aperçu de l'évolution de la fonction $ b $ peut se voir à la figure \ref{b graph}.
+\begin{figure}[!htbp]
+\centering
+\caption{Graphe de la fonction $ b $}
+\label{b graph}
+\centerline{\includegraphics[height=6cm,scale=1,width=8cm]{mygraphb2.eps}}
+\begin{center}
+\end{center} 
+\end{figure}
+
+\hspace{-0.4cm}\textbf{Q2b}. A cette question on montre par récurrence que pour tout $ n \in \mathbb{N}^{*} $ $ b^{(n)} $ est continue et dérivable sur $ \left]0,+\infty \right[  $  et qu'il existe un polynôme $ B_{n} $ de degré $ n $ et à coefficient dominant $ (-2)^{n} $ tels que:
+$$ \forall x>0, b^{(n)}(x)=\frac{B_{n}(\ln(x))}{x^{n}}\exp(-\ln(x)^{2}) $$
+A la question 2a. on a vu que 
+$$ \forall x>0,b'(x)=\frac{-2\ln(x)}{x}\exp(-\ln(x)^{2}) $$
+ce qui veut dire que $ b' $ est continue et dérivable \footnote{Évidemment grâce aux théorèmes généraux sur la dérivabilité et la continuité.} sur $ \left]0,+\infty \right[  $ et qu'en choisissant $ B_{1}(X)=-2X $ notre hypothèse de récurrence est vérifiée pour $ n=1 $. A présent supposons que notre hypothèse est vraie pour un certain $ n \in \mathbb{N}^{*} $, on montre qu'elle est aussi vraie pour $ n+1 $. Par hypothèse de récurrence $ b^{(n)} $ est dérivable, donc l'on peut écrire:
+\begin{eqnarray*}
+\forall x>0,b^{(n+1)}(x)
+&=& b^{(n)'}(x)\\
+&=& \frac{B_{n}'(\ln(x))}{x^{n+1}}\exp(-\ln(x)^{2})-\frac{nB_{n}(\ln(x))}{x^{n+1}}\exp(-\ln(x)^{2})-2\frac{B_{n}(\ln(x))\ln(x)}{x^{n+1}}\exp(-\ln(x)^{2})\\
+&=& \frac{B_{n}'(\ln(x))-nB_{n}(\ln(x))-2B_{n}(\ln(x))\ln(x)}{x^{n+1}}\exp(-\ln(x)^{2})\\
+&=& \frac{B_{n+1}(\ln(x))}{x^{n+1}}\exp(-\ln(x)^{2})
+\end{eqnarray*}
+Où on a posé que $ B_{n+1}=B_{n}'-nB_{n}-2XB_{n} $. Ainsi à l'aide des théorèmes généraux $ b^{(n+1)} $ est continue et dérivable sur $ \left]0,+\infty \right[  $. En outre avec notre récurrence polynômiale on voit bien que $ \deg(B_{n+1})=n+1 $ avec un coefficient dominant égal à $ -2(-2)^{n}=(-2)^{n+1} $. Ceci achève la récurrence  et répond à la question.
+
+\hspace{-0.4cm}\textbf{Q2c}. Déjà la fonction $ b $ est prolongeable par continuité en 0 car $ \lim_{x\longrightarrow 0^{+}}b(x)= \lim_{u\longrightarrow -\infty}\exp(u)=0=c(0) $. Ainsi notons cette fonction $ \bar{b} $. De même toutes les dérivées $ b^{(n)} $ sont prolongeables par continuité en 0 pour tout $ n \in \mathbb{N}^{*} $:
+\begin{eqnarray*}
+\lim_{x\longrightarrow 0^{+}}b^{(n)}(x)
+&=& \lim_{x\longrightarrow 0^{+}}\frac{B_{n}(\ln(x))}{x^{n}}\exp(-\ln(x)^{2})\\
+&=& \lim_{u\longrightarrow -\infty} B_{n}(u) \exp(-u^{2}-nu)\\
+&=& 0 \mbox{ (car } \forall k \in \mathbb{N}, \lim_{u\longrightarrow -\infty}u^{k} \exp(-u^{2}-nu)=0)
+\end{eqnarray*}
+Ainsi globalement $ \bar{b} $ est de classe $ \mathcal{C}^{\infty} $ sur $ \left[ 0,+\infty\right[  $ et vérifie pour tout $ n \in \mathbb{N} $:
+$$ \bar{b}^{(n)}(x)=
+\left\{ 
+\begin{array}{rl}
+b^{(n)}(x) &  \mbox{si } x> 0  \\ 
+0 &  \mbox{si } x=0   
+\end{array} 
+\right. $$
+par définition on a $ c(x)=\bar{b}(|x|),\forall x \in \mathbb{R}$, de ce qui précède la fonction $ c $ est donc indéfiniment dérivable en tout point $ x \neq 0 $. Maintenant il reste à regarder le cas zéro, à ce niveau on prouve que $ c^{(n)}=0 $ pour tout $ n \in \mathbb{N} $. La relation est déjà vraie en $ n=0 $, on la vérifie maintenant pour $ n>0 $:
+$$ \lim_{x\longrightarrow 0^{+}}c^{(n)}(x)=\lim_{x\longrightarrow 0^{+}}b^{(n)}(x)=0 $$
+$$ \lim_{x\longrightarrow 0^{-}}c^{(n)}(x)=\lim_{x\longrightarrow 0^{-}}(-1)^{n}b^{(n)}(-x)=\lim_{x\longrightarrow 0^{+}}(-1)^{n}b^{(n)}(x)=0 $$
+Du coup $ c^{(n)} $ est continue en zéro et vérifie $ c^{(n)}=0 $ pour tout $ n \in \mathbb{N}^{*} $. Ainsi d'après la question 1a $ c $ est \textit{ultraplate} en 0. On peut écrire:
+$$ \forall x \neq 0,c'(x)=\frac{-2\ln(|x|)}{x}\exp(-\ln(|x|)^{2}) $$
+Ainsi les autres points non nuls qui annulent $ c' $ sont $ 1 $ et $ -1 $. Cependant ces points n'annulent pas $ c'' $ car ils ne sont pas solution de $ \ln(|x|) \in \left\lbrace -1,\frac{1}{2} \right\rbrace  $. En conclusion les seuls autres points en lesquels $ c $ est plate sont $ 1 $ et $ -1 $ et cela d'ordre 1. 
+
+\hspace{-0.4cm}\textbf{Q3a}. Soit $n \in \mathbb{N}^{*} $ et $ a \in \mathbb{R} $. On répond à la question en utilisant tout simplement la définition d'une sous-algèbre:
+\begin{itemize}
+\item[$ \dagger $] $ \mathbf{1}_{E} \in E_{n}(a) $ où $ \mathbf{1}_{E}:x \in \mathbb{R} \mapsto 1$, ses dérivées étant nulles en tout point.
+\item[$ \dagger $] $ \forall \lambda,\mu \in \mathbb{R} $, $ \forall f,g \in E_{n}(a) $ on a $ \lambda f+\mu g \in E_{n}(a) $ en vertu de la question 1a et de la linéarité de la dérivation.
+\item[$ \dagger $] Maintenant prenons $ f,g \in  E_{n}(a)$. On prouve alors que $ fg \in E_{n}(a) $. Grâce à la formule de Leibniz:
+$$ (fg)^{(k)}(x)=\sum_{j=0}^{k} C_{k}^{j}f^{(j)}(x)g^{(k-j)}(x), \forall x \in \mathbb{R},\forall k \in \mathbb{N}^{*}  $$
+Par définition $ f^{(k)}(a)=g^{(k)}(a)=0, \forall k \in \left\lbrace 1,2,\ldots,n \right\rbrace $, ce qui implique $ (fg)^{(k)}(a)=0,  \forall k \in \left\lbrace 1,2,\ldots,n \right\rbrace $. En d'autres termes $ fg \in E_{n}(a) $.
+\end{itemize}
+
+\hspace{-0.4cm}\textbf{Q3b}. on prouve que $ E_{n}(a) $ n'est pas un idéal de $ E $. En effet on exhibe $ f \in E_{n}(a) $ et $ g \in E $ tel que $ fg \not\in E_{n}(a) $. On prend $ f(x)=1,g(x)=(x-a+1)^{n+1} $. Donc $ (fg)^{(k)}(a)=\frac{(n+1)!}{(n+1-k)!},  \forall k \in \left\lbrace 1,2,\ldots,n \right\rbrace $, i.e $ fg \not\in E_{n}(a) $.
+
+\hspace{-0.4cm}\textbf{Q4a}. On montre que $ x\mapsto f(x-a) $ est \textit{ultraplate} en $ a $.
+\begin{eqnarray*}
+\lim_{x\rightarrow a}\frac{f(x-a)}{(x-a)^{n}}
+&=& \lim_{x\rightarrow a}\frac{f(u)}{u^{n}} \mbox{ (On utilise le changement de variable }u=x-a) \\
+&=& 0 \mbox{ (car }f \mbox{ est \textit{ultraplate} en 0)}
+\end{eqnarray*}
+Soit $ f(x-a)=o((x-a)^{n}), \forall n \in \mathbb{N}$. C.Q.F.D.  
+
+\hspace{-0.4cm}\textbf{Q4b}. On pose tout simplement $ d(x)=c(x)c_{1}(x)c_{-1}(x) $ où $c_{1}: x\mapsto c(x-1) $ et $c_{-1}: x\mapsto c(x+1) $ sont des fonctions respectivement \textit{ultraplate} en  1 et -1. Pour vérifier que $ d $ est \textit{ultraplate} en 0,1 et -1 il suffit de remarquer:
+$$ d^{(n)}(x)=\sum_{i+j+l=n}\frac{n!}{i!j!l!}c^{(i)}(x)c_{1}^{(j)}(x)c_{-1}^{(l)}(x),  \forall n \in \mathbb{N}^{*}$$
+De cette relation on déduit aisément en prenant successivement $ x=0,1,-1 $ que:
+$$ c^{(n)}(0)=c_{1}^{(n)}(1)=c_{-1}^{(n)}(-1)=0,\forall n \in \mathbb{N}^{*} $$
+Enfin d'après notre caractérisation à la question 1b, on voit bien que $ d $ est \textit{ultraplate} en 0,1 et -1.
+
+\subsection{Partie 2:interpolations polynomiales avec ajustement de dérivées}
+\hspace{-0.4cm}\textbf{Q1a}. Soit un polynôme $ P_{n} \in \mathbb{R}_{n+2}[X] $ vérifiant $ P_{n}(0)=0;P_{n}(1)=1 $ et $ P_{n} \in E_{n}(0)\cap E_{1}(1)  $. On peut déjà écrire $ P_{n}=\sum_{k=0}^{n+2}a_{k}X^{k} $. Maintenant de $ P_{n}(0)=0 $ on tire que $ a_{0}=0 $. Également $ P_{n} \in E_{n}(0) $ donc $ P_{n}^{(k)}(0)=k!a_{k}=0 $ ou encore $ a_{k}=0 $ pour tout $ 1 \leq k \leq n $. On arrive donc au point où $ P_{n}=a_{n+1}X^{n+1}+a_{n+2}X^{n+2} $. Maintenant en utilisant les deux dernières conditions $ P_{n}(1)=P_{n}'(1)=0 $. On en vient au système ci-dessous:
+$$ 
+\left\{ 
+\begin{array}{rl}
+a_{n+1}+a_{n+2}=1  \\ 
+(n+1)a_{n+1}+(n+2)a_{n+2}=1   
+\end{array} 
+\right. 
+\Leftrightarrow 
+\left\{ 
+\begin{array}{rl}
+a_{n+1}=n+2  \\ 
+a_{n+2}=-n-1   
+\end{array} 
+\right. 
+$$
+D'où l'unicité de $ P_{n} $ qui s'écrit $ P_{n}=(n+2)X^{n+1}-(n+1)X^{n+2}=X^{n+1}(n+2-(n+1)X) $.
+
+\hspace{-0.4cm}\textbf{Q1b}. Il vient pour tout $ x \in [0,1] $:
+$$ \lim_{n\rightarrow +\infty}P_{n}(x)=\lim_{n\rightarrow +\infty}(n+2)x^{n+1}-(n+1)x^{n+2}=0 $$
+Par conséquent $ (P_{n})_{n \in \mathbb{N}^{*}} $ converge simplement vers la fonction nulle sur $ [0,1] $. Toutefois cette convergence n'est pas uniforme sur $ [0,1] $ car $ \sup_{[0,1]}|P_{n}|=1 $. Au demeurant la convergence est uniforme sur tout intervalle $ [0,\xi] $ avec $\xi < 1 $ car $ \sup_{[0,\xi]}|P_{n}|=(n+2)\xi^{n+1}-(n+1)\xi^{n+2}\rightarrow 0 $.
+
+\hspace{-0.4cm}\textbf{Q2a}. La linéarité de $ \Phi $ est immédiate, on s'attaque à la question sur son noyau. Soit un polynôme $ P \in \ker(\Phi) $. Il vient alors que $ \forall 1\leq i \leq p $ et $ \forall 0 \leq j  \leq n_{i} $, $ P^{(j)}(a_{i})=0 $. En d'autres termes $ a_{i} $ est une racine de multiplicité au moins $ n_{i}+1 $ de $ P $, i.e. $ P $ est divisible par $ (X-a_{i})^{n_{i}+1} $ et ce $ \forall 1\leq i \leq p $. En résumant toute l'information $ \prod_{i=1}^{p} (X-a_{i})^{n_{i}+1}$ divise $ P $. Ce qui veut dire qu'il existe un polynôme $ Q $ tel que $ P=Q \prod_{i=1}^{p} (X-a_{i})^{n_{i}+1} $. On vient de prouver que $ \ker(\Phi) \subset \left( \prod_{i=1}^{p} (X-a_{i})^{n_{i}+1}\right)  \mathbb{R}[X]$, l'inclusion réciproque étant immédiate on alors:
+$$ \ker(\Phi) = \left( \prod_{i=1}^{p} (X-a_{i})^{n_{i}+1}\right)  \mathbb{R}[X] $$ 
+On prouve maintenant que $ \mathbb{R}_{m}[X] $ et $ \ker(\Phi) $ sont supplémentaires dans $ \mathbb{R}[X] $. D'abord comme $\deg\left( \prod_{i=1}^{p} (X-a_{i})^{n_{i}+1}\right)=m+1 $ on a d'après l'égalité ensembliste précédente que $ \mathbb{R}_{m}[X] \cap \ker(\Phi)=\left\lbrace 0\right\rbrace  $. Enfin en prenant un élément P de $ \mathbb{R}[X] $, en opérant  sa division euclidienne avec $ \prod_{i=1}^{p} (X-a_{i})^{n_{i}+1} $ il existe un polynôme $ Q $ et un polynôme (reste) $ R $ tel que $ \deg(R)\leq m $ vérifiant:
+$$ P=\underbrace{Q.\prod_{i=1}^{p} (X-a_{i})^{n_{i}+1}}_{\in \ker(\Phi)}  + \underbrace{R}_{\in \mathbb{R}_{m}[X]}  $$ 
+Par conséquent:
+$$ \mathbb{R}[X]= \ker(\Phi)\oplus \mathbb{R}_{m}[X]$$
+\hspace{-0.4cm}\textbf{Q2b}. De la question précédente on déduit que la restriction $ \Phi_{| \mathbb{R}_{m}[X]} $ de $ \Phi $ à $ \mathbb{R}_{m}[X] $ induit un isomorphisme sur $ \mathbb{R}^{m+1} $. Ainsi pour tout vecteur $ \kappa $ de $ \mathbb{R}^{m+1} $ il existe un unique polynôme $ P_{\kappa} $ de $ \mathbb{R}_{m}[X] $ tel que $ \Phi(P_{\kappa})=\kappa $.
+\\ Pour revenir à la question pour $ 1 \leq i \leq p $, considérons le vecteur $ x_{i} $ de $ \mathbb{R}^{n_{i}} $ tel que $ x_{i}=(\alpha_{i},0,\ldots,0) $. On définit le grand vecteur $ \Theta=(x_{1} \ldots x_{p}) $ en matrice blocs. Du coup chercher un polynôme $ P $ de $ \mathbb{R}_{m}[X] $ tel que $ P \in \cap_{k=1}^{p}E_{n_{k}}(a_{k}) $ et vérifiant $ P(a_{k})=\alpha_{k} $ pour tout $  1\leq k \leq n $ revient à  résoudre:
+$$ \Phi(P)=\Theta $$  
+Ainsi l'argument ci-dessous justifie l'existence et l'unicité de $ P $ et on peut noter:
+$$ P=P_{\Theta} $$
+\hspace{-0.4cm}\textbf{Q3a}. C'est juste le résultat de Q2b avec $ p=3 $, $ a_{1}=0,a_{2}=-1,a_{3}=1 $, $ \alpha_{1}=0,\alpha_{2}=\alpha_{3}=1 $. Le $ m $ correspondant est alors $$ m=3-1+n+1+1=n+4. $$ 
+\hspace{-0.4cm}\textbf{Q3b}. On va appliquer la même stratégie qu'à la question Q1a. Écrivons $ H_{n}=\sum_{k=0}^{n+4}a_{k}X^{k} $. En utilisant le fait que $ H_{n}(0)=0 $ et $ H_{n} \in E_{n}(0) $ permet d'obtenir que $ a_{k}=0 $ pour $ k\leq n $. Ainsi:$$ H_{n}=a_{n+1}X^{n+1}+a_{n+2}X^{n+2}+a_{n+3}X^{n+3}+a_{n+4}X^{n+4}$$.
+Maintenant il reste à utiliser les quatre dernières conditions $ H_{n}(1)=H_{n}(-1)=1 $, $ H'_{n}(1)=H'_{n}(-1)=0 $ pour former un système linéaire que nous appelons $ (\Sigma) $.
+%$$ 
+%(\Sigma)\Leftrightarrow
+%\left\{ 
+%\begin{array}{rl}
+%a_{n+1}+a_{n+2}+a_{n+3}+a_{n+4}=1  \\ 
+%-a_{n+1}+a_{n+2}-a_{n+3}+a_{n+4}=(-1)^{n}  \\
+%(n+1)a_{n+1}+(n+2)a_{n+2}+(n+3)a_{n+3}+(n+2=4)a_{n+4}=0\\
+%-(n+1)a_{n+1}+(n+2)a_{n+2}-(n+3)a_{n+3}+(n+2=4)a_{n+4}=0\\ 
+%\end{array} 
+%\right. 
+%$$
+
+\begin{eqnarray*}
+(\Sigma)
+&\Leftrightarrow & \left\{ 
+\begin{array}{rl}
+a_{n+1}+a_{n+2}+a_{n+3}+a_{n+4}=1  \\ 
+-a_{n+1}+a_{n+2}-a_{n+3}+a_{n+4}=(-1)^{n}  \\
+(n+1)a_{n+1}+(n+2)a_{n+2}+(n+3)a_{n+3}+(n+4)a_{n+4}=0\\
+-(n+1)a_{n+1}+(n+2)a_{n+2}-(n+3)a_{n+3}+(n+4)a_{n+4}=0\\ 
+\end{array} 
+\right.\\
+&\Leftrightarrow & \left\{ 
+\begin{array}{rl}
+a_{n+2}+a_{n+4}=\frac{1+(-1)^{n}}{2}  \\ 
+a_{n+1}+a_{n+3}=\frac{1-(-1)^{n}}{2}  \\
+(n+1)a_{n+1}+(n+3)a_{n+3}=0\\
+(n+2)a_{n+2}+(n+4)a_{n+4}=0\\ 
+\end{array} 
+\right. \\
+&\Leftrightarrow & \left\{ 
+\begin{array}{rl}
+a_{n+2}=\frac{1+(-1)^{n}}{4}(n+4)  \\ 
+a_{n+4}=-\frac{1+(-1)^{n}}{4}(n+2) \\
+a_{n+1}=\frac{1-(-1)^{n}}{4}(n+3)\\
+a_{n+3}=-\frac{1-(-1)^{n}}{4}(n+1)\\ 
+\end{array} 
+\right.
+\end{eqnarray*}
+Donc selon que $ n=2k $ ou $ n=2k+1 $, on a:
+$$ H_{2k}=H_{2k+1}=H_{2\left[\frac{n}{2} \right] }=(k+2)X^{2k+2}-(k+1)X^{2k+4} $$ 
+\hspace{-0.4cm}\textbf{Q3c}. Il vient pour tout $ x \in \left] -1,1\right[  $:
+$$ \lim_{n\rightarrow +\infty}H_{n}(x)= \lim_{n\rightarrow +\infty} \left( \left[\frac{n}{2} \right]+2\right) x^{2\left[\frac{n}{2} \right]+2}-\left( \left[\frac{n}{2} \right]+1\right) x^{2\left[\frac{n}{2} \right]+4}=0  $$
+Par conséquent $ (H_{n})_{n \in \mathbb{N}^{*}} $ converge simplement vers la fonction nulle sur $ \left] -1,1\right[ $. Toutefois cette convergence n'est pas uniforme sur $ \left] -1,1\right[ $ car $ \sup_{\left] -1,1\right[}|H_{n}|=1 $. Au demeurant la convergence est uniforme sur tout intervalle $ [-\zeta,\zeta] $ avec $0<\zeta < 1 $ car $ \sup_{[-\zeta,\zeta]}|P_{n}|= \left( \left[\frac{n}{2} \right]+2\right) \zeta^{2\left[\frac{n}{2} \right]+2}-\left( \left[\frac{n}{2} \right]+1\right) \zeta^{2\left[\frac{n}{2} \right]+4} \rightarrow 0 $. 
+
+\subsection{Partie 3: fonctions génératrices plates en 0}
+\hspace{-0.4cm}\textbf{Q1a}. Si $ G_{X} $ est plate d'ordre $ n $ en 0, alors $ G_{X} \in E_{n}(0) $. Par conséquent $ G_{x}^{(k)}=k!p_{k}=0 $ soit $ p_{k}=0 $ pour tout $ k \in \left\lbrace 1,...,n\right\rbrace  $. Du coup on peut écrire:
+$$ G_{X}(x)-G_{X}(0)=\sum_{k=n+1}^{+\infty}p_{n}x^{n}=p_{n+1}x^{n+1}+x^{n+2}\sum_{k=0}^{+\infty}p_{n+2+k}x^{k}  $$ 
+Mais comme $ G_{X} $ ne peut pas être négligeable devant $ x^{(n+1)} $ alors on a nécessairement  $ p_{n+1}>0 $.
+\\ Réciproquement supposons que $ p_{k}=0, \forall k \in \left\lbrace 1,...,n\right\rbrace $ et $ p_{n+1}>0 $. On a encore:
+$$ G_{X}(x)-G_{X}(0)=\sum_{k=n+1}^{+\infty}p_{n}x^{n}=p_{n+1}x^{n+1}+x^{n+2}\sum_{k=0}^{+\infty}p_{n+2+k}x^{k}  $$
+ce qui prouve que dans ce cas $ G_{X} $ est plate d'ordre $ n $.
+\\En résumé:
+$$ G_{x} \mbox{ est plate en 0 d'ordre }n  \mbox{ ssi } p_{k}=0, \forall k \in \left\lbrace 1,...,n\right\rbrace \mbox{ et }  p_{n+1}>0.$$
+\hspace{-0.4cm}\textbf{Q1b} On utilise la question Q1a de la partie 1:
+\begin{eqnarray*}
+G_{X}\mbox{ est \textit{ultraplate} en 0 }
+& \Leftrightarrow & G_{X}=G_{X}(0) \mbox{ sachant que } \sum_{k=0}^{+\infty}P([X=k])=1 \\
+& \Leftrightarrow & P([X=k])=0,\forall k \in \mathbb{N}^{*} \mbox{ sachant que } \sum_{k=0}^{+\infty}P([X=k])=1 \\
+& \Leftrightarrow & P([X=0])=1
+\end{eqnarray*} 
+\hspace{-0.4cm}\textbf{Q2a}. Le rayon de $ S $ étant infini, elle est de classe $ \mathcal{C}^{\infty} $ sur $ \mathbb{R} $. Maintenant considérons la suite de polynôme $ (P_{n})n\geq 0 $ tel que $ P_{n}=\prod_{k=0}^{n-1}(X-k) $\footnote{Par convention $ P_{0}=1 $}. On a une suite de polynôme à degré échelonné donc pour tout entier $ n $, la famille $ (P_{0},\ldots,P_{n}) $ constitue une base pour $ \mathbb{R}_{n}[X) $. Par conséquent il existe des réels $ \beta_{0},\ldots,\beta_{n} $ tel que: $ X^{n}=\sum_{k=0}^{n}\beta_{k}P_{k} $. En d'autre termes:
+$$ k^{n}=\sum_{j=0}^{n}\beta_{j}P_{j}(k), \forall k \in \mathbb{N} $$
+Ainsi en posant $ M_{[n]}=\sum_{k=0}^{+\infty}k^{n}p_{k}x^{k} $, La série $ M_{[n]} $ est aussi de rayon infini, converge et vérifie:
+$$ M_{[n]}(x)=\sum_{j=0}^{n}\beta_{j}x^{j}G_{X}^{(j)}(x), \forall x \in \mathbb{R} $$
+Dans de telles conditions $ \mathbb{E}(X^{n}) $ existe pour tout entier $ n $ et se définit comme suit:
+$$ \mathbb{E}(X^{n})=M_{[n]}(1)=\sum_{j=0}^{n}\beta_{j}G_{X}^{(j)}(1). $$  
+\hspace{-0.4cm}\textbf{Q2b}. Dans le cas où $ G_{x} $ est plate d'ordre $ n $ on a alors $p_{k}=0, \forall k \in \left\lbrace 1,...,n\right\rbrace$  et  $p_{n+1}>0$. Ceci implique que $ \sum_{k=n+1}^{+\infty}P([X=k])=1 $ et $ \mathbb{E}(X)=\sum_{k=n+1}^{+\infty}kP([X=k]) $. Alors il s'en suit que: 
+\begin{eqnarray*}
+ \mathbb{E}(X)
+ &=&\sum_{k=n+1}^{+\infty}kP([X=k])\\
+ &\geq & \sum_{k=n+1}^{+\infty}(n+1)P([X=k])\\
+ &=& n+1
+\end{eqnarray*}
+L'égalité survient que lorsque $ X $ ne charge que $ n+1 $, i.e. $ P([X=n+1])=1 $.
+
+\hspace{-0.4cm}\textbf{Q3a}. On va construire cette variable aléatoire tout en gardant à l'esprit que $ \mathbb{E}(X)=G'(1) $. On pose $ m=[c]+1 $ et $ \lambda=\frac{c-n-1}{m-n-1} $. Le réel $ \lambda $ est bien dans l'intervalle $ \left] 0,1\right[ $ car $ n+1<c<m $. Soit la variable aléatoire à deux valeurs X tel que $ P([X=n+1])=1-\lambda $ et $ P([X=m])=\lambda $:
+$$ X\sim n+1+(m-n-1)\mathcal{B}(\lambda) $$
+On a alors:
+$$ \mathbb{E}(X)=\frac{m-c}{m-n-1}(n+1)+\frac{c-n-1}{m-n-1}m=c $$
+C.Q.F.D.
+
+\hspace{-0.4cm}\textbf{Q3b}. Remarquons que: $ X^{2}=X(X-1)+X=P_{2}+P_{1} $ donc $  \mathbb{E}(X^{2})=G''_{X}(1)+G'_{X}(1) $. Donc la variance est alors $ \mathbb{V}(X)= \mathbb{E}(X^{2})- \mathbb{E}(X)^{2}=G''_{X}(1)+G'_{X}(1)-G_{X}^{'2}(1) $ et comme $  \mathbb{V}(X)\geq 0 $ alors 
+$$ G''_{X}(1)\geq G_{X}^{'2}(1)-G'_{X}(1)=G'_{X}(1)(G'_{X}(1)-1) $$
+Mais pour cette classe de variable aléatoire $ G'_{X}(1)=c $ d'où
+$$ G''_{X}(1)\geq c(c-1) $$
+Pour la suite, on note $ \mathcal{V}(c) $ l'ensemble de variables aléatoires $ X $ définies sur $ \mathbb{N} $ vérifiant $ G'_{X}(1)=c $.
+
+\hspace{-0.4cm}\textbf{Q3c} Au vu de la question précédente le cas d'égalité survient quand $ \mathbb{V}(X)=0 $ c'est à dire quand $ X $ est constante. Donc il existerait un entier $ k_{0}\geq n+1 $ tel que $ X=k_{0} $ presque-sûrement. Dans cette configuration on a bien $ \mathbb{E}(X)=G'_{X}(1)=c=k_{0} $. Ainsi le cas d'égalité impose que $ c $ soit un entier. On prouve bien que la borne inférieure $ G''_{X}(1) $ est atteinte dans $ \mathcal{V}(c) $ quand $ c $ est un entier.
+\\ \textcolor{red}{Quand au dernier volet de la question nous pensons qu'il y a une erreur dans le sujet. Quand bien même que $ G''_{X}(1) $ est minorée dans $ \mathcal{V}(c) $ quand $ c \not\in \mathbb{N} $, elle n'atteint pas sa borne inférieure. Donc on ne peut parler de valeur minimale.}
+\\ Raisonnons par l'absurde et supposons que:
+\begin{equation}
+\label{minimam}
+Y=\arg \min_{X \in \mathcal{V}(c)}G''_{X}(1)
+\end{equation}
+Ici comme $ c \not\in \mathbb{N} $, $ Y $ ne peut charger un seul point. Elle charge donc au moins deux points. Choisissons deux points parmi ceux qu'elle charge, disons $ i,j $ avec $ i<j $. On définit la variable aléatoire $ Z $ comme suit $ P[Z=i]=P([Y=i])+\frac{j}{i}\epsilon $, $ P[Z=j]=P([Y=j])-\epsilon $ et $ P[Z=k]=P([Y=k]) $ pour tout $ k \not\in \left\lbrace i,j \right\rbrace  $ ,avec $ \epsilon $ un réel  positif et suffisamment petit. Par construction $ Z \in  \mathcal{V}(c)$ car: $ iP[Z=i]+jP[Z=j]=iP([Y=i])+jP([Y=j]) $. Ainsi on a:
+\begin{eqnarray*}
+G''_{Z}(1)-G''_{Y}(1)
+&=& i^{2}P[Z=i]+j^{2}P[Z=j]-i^{2}P([Y=i])-j^{2}P([Y=j])\\
+&=& i^{2}\left( P([Y=i])+\frac{j}{i}\epsilon \right) +j^{2}(P([Y=j])-\epsilon)-i^{2}P([Y=i])-j^{2}P([Y=j])\\
+&=& \epsilon j (i-j) \\
+&<& 0
+\end{eqnarray*}
+On a prouvé que $ G''_{Z}(1)< G''_{Y}(1) $, chose qui contredit \ref{minimam}. D'où le résultat. 
+
+\subsection{Partie 4: approximations polynomiales}
+\hspace{-0.4cm}\textbf{Q1a}. Considérons une suite $ (f_{n})_{n\geq 0} $ de $ F $ qui converge vers une certaine fonction $ f $. Comme $ f_{n} \in F $, alors $ f_{n}(0)=0 $ donc en faisant tendre $ n $ vers $ +\infty $ on obtient $ f(0)=0 $, i.e $ f \in F $. Ainsi $ F $ est bien un fermé.
+
+\hspace{-0.4cm}\textbf{Q1b}. En définissant $ f_{n}:x\mapsto \sqrt{x^2+\frac{1}{n}}-\sqrt{\frac{1}{n}} $. On remarque sans difficulté que les $ f_{n} $ sont négligeables devant $ x $ au voisinage de 0:
+$$ \lim_{x\rightarrow 0}\frac{f_{n}(x)}{x}=\lim_{x\rightarrow 0}\frac{x}{\sqrt{x^2+\frac{1}{n}}+\sqrt{\frac{1}{n}}}=0 $$
+On voit aisément que $ (f_{n})_{n\geq 1} $ converge vers $ x \mapsto |x| $. Maintenant on laisse le lecteur prouver que:
+$$ \max_{x \in [-1,1]}|f_{n}(x)-|x||=1+\sqrt{\frac{1}{n}}-\sqrt{1+\frac{1}{n}}\sim \frac{1}{\sqrt{n}} $$ 
+Ce qui veut dire que $ (f_{n})_{n\geq 1} $ converge uniformément vers $ \mu: x \mapsto |x| $. Cependant $ \mu $ n'est pas négligeable devant $ x $ au voisinage de $ 0 $, i.e l'ensemble des fonctions de $ F $ négligeables devant $ x $ au voisinage de 0 n'est pas une partie fermée.
+
+\hspace{-0.4cm}\textbf{Q2a}. Il est évident que pour toute fonction $ f \in F $, $ T(f) \in F $. Il est facile de voir que $ T $ est une application linéaire, donc on montre qu'elle est continue comme ci-dessous:
+\begin{eqnarray*}
+|T(f)(x)|
+& \leq & |\int_{0}^{x}\parallel f \parallel dx | \\
+&=& \parallel f \parallel |x| \\
+&\leq & \parallel f \parallel 
+\end{eqnarray*}
+Par conséquent $ || T(f) || \leq || f || $.  Ceci prouve la continuité de $ T $.
+
+
+\hspace{-0.4cm}\textbf{Q2b}. Par définition de $ T $, il apparaît que pour tout $ f \in F $, que $ T(f)=0 $ et $ T(f)'=f $. En particulier on peut prouver par récurrence (laissée au lecteur) que pour tout $ k\leq n $, $ \left( T^{n}(f)\right) ^{(k)}=T^{n-k}(f) $. Ainsi en posant $ y=T^{n}(f) $, $ y $ est solution de l'équation différentielle:
+$$ (\mathcal{E}):y^{(n)}=f,\quad y(0)=y'(0)=\ldots=y^{(n-1)}(0)=0 $$
+Les conditions initiales garantissant l'unicité de la solution de $ \mathcal{E} $; alors $ T^{n}(f) $ est l'unique fonction de $ F $ nulle en 0 dont la dérivée $ n$-ième est $ f $ et dont toutes les dérivées d'ordre inférieur à $ n $ s'annulent en 0. 
+\\ \textit{Remarque}: On a prouvé à la question précédente que $ ||T||\leq 1 $, mieux on a aussi (pour anticiper) que $ T^{n} $ est continue avec $ ||T^{n}||\leq 1 $, pour tout entier $ n $.
+
+\hspace{-0.4cm}\textbf{Q2c}. Soit $ f,g \in F $, tel que $ T(f)=T(g) $. Ceci veut dire que $ T(f-g)=0 $. Donc en dérivant la dernière relation on obtient bien $ f-g= 0$ ou $ f=g $. Par conséquent $ T $ est injective. Par ailleurs, on remarque que si $ h \in T(F) $ alors $ h(0)=0 $, ainsi par exemple $ \mathbf{1}_{[-1,1]} \not\in T(F) $. On conclut que $ T $ n'est pas surjective.
+
+\hspace{-0.4cm}\textbf{Q3a}. L'application $ f^{(k+3)}:[-1,1]\rightarrow \mathbb{R} $ étant continue sur $ [-1,1] $, il existe alors d'après le le Premier Théorème de Weierstrass une suite de polynômes $ (P_{n})_{n \in \mathbb{N}^{*}} $ qui converge uniformement vers $ f^{(k+3)} $ sur le segment $ [-1,1] $. A titre d'exemple on peut prendre le classique polynôme de Bernstein:
+$$ P_{n}(x)=B_{n}\left( \frac{x+1}{2} \right)=\sum_{k=0}^{n}C_{n}^{k}\left( \frac{1+x}{2} \right)^{k} \left( \frac{1-x}{2} \right)^{n-k} f^{(k+3)}\left( \frac{2k-n}{n} \right).  $$ 
+
+
+\hspace{-0.4cm}\textbf{Q3b}. La fonction $ T^{k+3} $ est aussi continue. Pour tout entier $ n $ on a:
+\begin{eqnarray*}
+||T^{k+3}(P_{n})-T^{k+3}(f^{(k+3)})||
+&=& || T^{k+3}(P_{n}-f^{(k+3)}) || \\
+& \leq & ||T^{k+3}|| \cdot || P_{n}-f^{(k+3)} || \\
+& \leq & || P_{n}-f^{(k+3)} || \mbox{ car } ||T^{k+3}||\leq 1
+\end{eqnarray*}
+Comme $ \lim_{n\rightarrow +\infty}|| P_{n}-f^{(k+3)} ||=0  $ alors $ \lim_{n\rightarrow +\infty}|| T^{k+3}(P_{n})-T^{k+3}(f^{(k+3)}) || =0$. Ce qui veut dire que $ (T^{k+3}(P_{n}))_{n \in \mathbb{N}^{*}} $ converge uniformément sur $ [-1,1] $ vers la fonction $ T^{k+3}(f^{(k+3)}) $. Par ailleurs $ T^{k+3}(f^{(k+3)}) $ est solution de l'équation différentielle:
+$$ (\mathcal{E}'):y^{(k+3)}=f^{(k+3)},\quad y(0)=y'(0)=\ldots=y^{(k+2)}(0)=0 $$ 
+En intégrant $ (\mathcal{E}') $ on voit aisément qu'il existe $ R \in \mathbb{R}_{k+2}[X] $ tel que $ T^{k+3}(f^{(k+3)})=f+R $. Mais à l'aide des conditions initiales : $ R^{(j)}(0)=-f^{(j)}(0) $ pour $ j\leq k+2 $. Mais comme $ f $ est plate d'ordre $ k $ en 0, alors $ R^{(j)}(0)=-f^{(j)}(0)=0 $ pour $ j\leq k $. Donc nous sommes suffisamment armés pour appliquer la formule de Taylor:
+$$ R(x)=\sum_{j=0}^{k+2}\frac{R^{(j)}(0)}{j!}x^{j}=-\frac{f^{(k+1)}(0)}{(k+1)!}x^{k+1}-\frac{f^{(k+2)}(0)}{(k+2)!}x^{k+2} $$
+
+\hspace{-0.4cm}\textbf{Q3c}. d'après la question Q2b de la partie 2, il existe un unique polynôme de degré au plus $ k+2 $ noté $ \Lambda_{[k]} $ vérifiant:
+$$ \Lambda_{[k]}(1)=f(1),\quad \Lambda_{[k]}(-1)=f(-1), \quad \Lambda_{[k]}(0)=f(0),\quad \Lambda'_{[k]}(0)=\ldots=\Lambda_{[k]}^{(k)}=0 $$  
+En procédant comme dans la deuxième partie du problème, on montre que:
+$$ \Lambda_{[k]}(x)=f(0)+\mu_{k+1}x^{k+1}+\mu_{k+2}x^{k+2} $$
+Où:
+$$ \mu_{k+1}=\frac{(f(1)-f(0)+(-1)^{k+1}(f(-1)-f(0))}{2}, \quad \mu_{k+2}=\frac{(f(1)-f(0)-(-1)^{k+1}(f(-1)-f(0))}{2} $$
+Maintenant en prenant $ p=3 $, $ a_{1}=0,a_{2}=-1,a_{3}=3 $, puis $ n_{1}=k,n_{2}=n_{3}=0 $ pour la fonction $ \Phi $ de la partie 2; il vient donc que $ \Phi(Q_{n})=\Phi(\Lambda_{[k]}), \forall n \in \mathbb{N}^{*} $. Dans ce cas comme $ \ker(\Phi) $ est l'idéal de $ \mathbb{R}[X] $ engendré par $ X^{k+1}(X^{2}-1) $ alors il existe donc une suit de polynôme  $ (T_{n})_{n \in \mathbb{N}^{*}} $  tel que:
+\begin{equation}
+\label{identi}
+Q_{n}= \Lambda_{[k]}+T_{n}X^{k+1}(X^{2}-1)
+\end{equation}
+Maintenant en considérant la fonction $ \varphi $ de $ [-1,+1] $ dans $ \mathbb{R} $ telle que $\varphi: x\mapsto \frac{f(x)-\Lambda_{[k]}(x)}{x^{k+1}(x^{2}-1)} $. Il n'est pas difficile que la fonction $ \varphi $ est continue partout sur $ [-1,+1] $. Pour le voir il suffit d'appliquer la règle de l'hôpital:
+$$ \lim_{x\rightarrow 0}\frac{f(x)-\Lambda_{[k]}(x)}{x^{k+1}}=\lim_{x\rightarrow 0}\frac{f^{(k+1)}(x)-\Lambda^{(k+1)}_{[k]}(x)}{(k+1)!} =\frac{f^{(k+1)}(0)-\Lambda^{(k+1)}_{[k]}(0)}{(k+1)!}$$
+$$ \lim_{x\rightarrow \varepsilon}\frac{f(x)-\Lambda_{[k]}(x)}{x-\varepsilon}=\lim_{x\rightarrow \varepsilon}\frac{f'(x)-\Lambda'_{[k]}(x)}{1}= f'(\varepsilon)-\Lambda'_{[k]}(\varepsilon),\quad \varepsilon \in \left\lbrace -1,1\right\rbrace  $$ 
+$ \varphi $ étant continue, via le Premier théorème de Weierstrass on peut choisir $ (T_{n})_{n \in \mathbb{N}^{*}} $ de sorte qu'elle converge uniformément vers $ \varphi $ sur $ [-1,+1] $ et que $ T_{n}(0)=\varphi(0) $ pour tout entier $ n\geq 1 $ \footnote{En effet par le Premier théorème de Weierstrass  il existe une $ (U_{n})_{n \in \mathbb{N}^{*}} $ qui converge uniformément vers $ \varphi $ sur $ [-1,+1] $. A ce niveau il suffit de poser $ T_{n}=U_{n}+(\varphi(x)-U_{n}(x))\mathbf{1}_{[x=0]} $. On laisse le lecteur prouver que cette suite $ (T_{n})_{n \in \mathbb{N}^{*}} $ marche.}. Dans de telles conditions on montre maintenant que $ (Q_{n})_{n \in \mathbb{N}^{*}} $ ainsi définie converge uniformément vers $ f $. Pour cela, on remarque $ f= \Lambda_{[k]}+\varphi X^{k+1}(X^{2}-1)$. On a alors:
+\begin{eqnarray*}
+|| Q_{n}-f ||
+&=& ||(\Lambda_{[k]}+T_{n}X^{k+1}(X^{2}-1)) -(\Lambda_{[k]}+\varphi X^{k+1}(X^{2}-1)) || \\
+&=& || X^{k+1}(X^{2}-1)(T_{n}-\varphi)|| \\
+&\leq & ||X^{k+1}(X^{2}-1)) || \cdot || T_{n}-\varphi || \\
+&\leq &  || T_{n}-\varphi ||\rightarrow 0
+\end{eqnarray*}
+D'où le résultat. Mais il reste à achever de montrer que les $ Q_{n} $ sont plates d'ordre $ k $ en 0. Déjà la relation (\ref{identi}) prouve que $ Q_{n}^{(j)}(0)=0, \forall 1\leq j \leq k $ pour tout entier  $ n\geq 1 $. Il reste à montrer que $ Q_{n}^{(k+1)}(0)\neq 0 $. A l'aide toujours de la relation (\ref{identi}) on obtient: $ Q_{n}^{(k+1)}(0)=\Lambda^{(k+1)}_{[k]}(0)-(k+1)!T_{n}(0) $. Mais en se référant aux calculs de limite ci-dessus:
+$$ T_{n}(0)=\varphi(0)=-\frac{f^{(k+1)}(0)-\Lambda^{(k+1)}_{[k]}(0)}{(k+1)!} $$ 
+Finalement $ Q_{n}^{(k+1)}(0)=f^{(k+1)}(0)\neq 0  $ car $ f $  est plate en $ 0 $ d'ordre $ k $. 
+\\C.Q.F.D.
+
+\newpage
+\vspace{5cm}
+\begin{center}
+\huge
+{\fontfamily{pzc}\selectfont
+J'espère que cette Solution vous aidera  et Bonne Chance pour votre Concours. 
+\\Contactez moi à \textbf{l'adresse de haut de page} en cas de questions.
+\\ Également avertissez moi si vous soupçonnez une quelconque erreur.
+\\Cordialement Ulrich GOUE}
+\end{center}
+
+%%%%%%%%%%%%%%%%%%%%%%%% WRITE INSIDE  WRITE INSIDE   WRITE INSIDE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  \end{spacing}
+  \end{document}
